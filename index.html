@@ -313,8 +313,25 @@
     .aj-add{width:100%;margin:2px 0 10px;padding:7px;border:1px dashed #D8D3CC;border-radius:6px;background:transparent;
       color:var(--gy);font-size:11px;cursor:pointer;font-family:'DM Sans',sans-serif;}
     .aj-add:hover{border-color:var(--or);color:var(--or);}
+    .aj-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start;}
+    #rp-vias .seg-table th,#rp-vias .seg-table td{padding:6px 8px;font-size:9px;}
+    #rp-vias .insight-box{margin-top:12px;padding:12px 16px;font-size:10px;}
     .via-tot{background:#FFF8F5;border-radius:6px;padding:8px 10px;margin-bottom:10px;}
     .vias-table td.pos{color:#2E7D32;} .vias-table td.neg{color:#B91C1C;}
+
+    /* muchos comparables: dos columnas para que entren en una hoja */
+    #p-comp-cards.many{gap:7px !important;}
+    #p-comp-cards.many .comp-card{gap:10px;padding:9px 11px;border-radius:6px;border-left-width:3px;}
+    #p-comp-cards.many .comp-card-num{font-size:17px;}
+    #p-comp-cards.many .comp-card-title{font-size:9.5px;margin-bottom:2px;line-height:1.25;}
+    #p-comp-cards.many .comp-card-url{font-size:6.5px;line-height:1.2;}
+    #p-comp-cards.many .comp-card-arrow{font-size:12px;}
+    /* ---- Barra de guardado ---- */
+    #save-bar{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;padding:0 18px 10px;}
+    #save-bar button{padding:8px 6px;border:1px solid #E5E2DE;border-radius:6px;background:#F4F2EF;color:#1C1C1C;
+      font-size:11px;cursor:pointer;font-family:'DM Sans',sans-serif;}
+    #save-bar button:hover{border-color:var(--or);color:var(--or);}
+    #save-hint{padding:0 18px 8px;font-size:10px;color:var(--gy);}
 </style>
 </head>
 <body>
@@ -578,6 +595,13 @@
     </div>
 
   </div><!-- /form-scroll -->
+  <div id="save-hint">—</div>
+  <div id="save-bar">
+    <button onclick="descargarEstado()" title="Descarga un .json con toda la tasación">💾 Guardar</button>
+    <button onclick="document.getElementById('file-estado').click()" title="Carga un .json guardado">📂 Cargar</button>
+    <button onclick="nuevaTasacion()" title="Vacía el formulario">🗑 Nueva</button>
+  </div>
+  <input type="file" id="file-estado" accept="application/json,.json" style="display:none" onchange="cargarArchivo(this)">
   <button id="print-btn" onclick="window.print()">🖨 Exportar informe en PDF</button>
 </div>
 
@@ -688,11 +712,17 @@
         <thead><tr><th>Vía de valuación</th><th>Base de cálculo</th><th>Valor central</th></tr></thead>
         <tbody id="p-vias-tbody"><!-- JS --></tbody>
       </table>
-      <div class="seg-note" style="margin-top:16px;"><strong>Ajustes aplicados</strong></div>
-      <table class="seg-table vias-table">
-        <thead><tr><th>Factor</th><th>Vía</th><th>Ajuste</th></tr></thead>
-        <tbody id="p-aj-tbody"><!-- JS --></tbody>
-      </table>
+      <div class="seg-note" style="margin-top:14px;"><strong>Ajustes aplicados</strong></div>
+      <div class="aj-cols">
+        <table class="seg-table vias-table">
+          <thead><tr><th>Vía A · Casa usada</th><th>Ajuste</th></tr></thead>
+          <tbody id="p-aj-a-tbody"><!-- JS --></tbody>
+        </table>
+        <table class="seg-table vias-table">
+          <thead><tr><th>Vía B · Lote</th><th>Ajuste</th></tr></thead>
+          <tbody id="p-aj-b-tbody"><!-- JS --></tbody>
+        </table>
+      </div>
       <div class="price-range" style="margin-top:16px;">
         <div class="pr-icon">◆</div>
         <div><div class="pr-lbl">Valor de referencia · rango defendible</div><div class="pr-val" id="p-vias-rango">—</div></div>
@@ -990,6 +1020,8 @@ function sync() {
   }
   g('p-barrio-metod').textContent = barrio;
   if (typeof syncVias === 'function') syncVias();
+  if (typeof renumberPages === 'function') renumberPages();
+  if (typeof autoguardar === 'function') autoguardar();
 
   // ── TABLA SEGMENTOS
   g('p-seg-note').innerHTML = `Base: <strong>${fmt1(mhom)} m² homogeneizados</strong> · <span class="hom-detail">${Math.round(gv('f-pc'))}% cub · ${Math.round(gv('f-ps'))}% semi · ${Math.round(gv('f-pd'))}% desc</span>`;
@@ -1173,20 +1205,19 @@ function syncVias(){
   const tb = g('p-vias-tbody');
   if (tb) tb.innerHTML = rowV('a', V.A, V.via === 'a') + rowV('b', V.B, V.via === 'b');
 
-  const ab = g('p-aj-tbody');
-  if (ab){
+  ['a','b'].forEach(k => {
+    const tb = g('p-aj-' + k + '-tbody');
+    if (!tb) return;
     let rows = '';
-    ['a','b'].forEach(k => {
-      AJ[k].forEach(x => {
-        if (!x.t && !x.p) return;
-        rows += `<tr><td>${x.t || '—'}</td><td>${k.toUpperCase()}</td>` +
-                `<td class="${x.p < 0 ? 'neg' : 'pos'}">${sgn(x.p)}</td></tr>`;
-      });
-      rows += `<tr class="row-hl"><td><strong>Ajuste neto vía ${k.toUpperCase()}</strong></td><td>${k.toUpperCase()}</td>` +
-              `<td><strong>${sgn(sumAj(k)*100)}</strong></td></tr>`;
+    AJ[k].forEach(x => {
+      if (!x.t && !x.p) return;
+      rows += `<tr><td>${x.t || '—'}</td>` +
+              `<td class="${x.p < 0 ? 'neg' : 'pos'}">${sgn(x.p)}</td></tr>`;
     });
-    ab.innerHTML = rows;
-  }
+    rows += `<tr class="row-hl"><td><strong>Ajuste neto</strong></td>` +
+            `<td><strong>${sgn(sumAj(k)*100)}</strong></td></tr>`;
+    tb.innerHTML = rows;
+  });
 
   const ins = g('p-vias-insight');
   if (ins){
@@ -1270,7 +1301,148 @@ function syncComparables() {
       </div>
       <div class="comp-card-arrow">↗</div>
     </a>`).join('');
+  cards.classList.toggle('many', active.length > 7);
+  if (typeof renumberPages === 'function') renumberPages();
 }
+
+// ══════════════════════════════════════════════════════════
+//  NUMERACIÓN DINÁMICA DE PÁGINAS
+//  Cuenta solo las páginas visibles, así el pie no miente cuando
+//  se cambia de modo o cuando la hoja de comparables queda vacía.
+// ══════════════════════════════════════════════════════════
+function renumberPages(){
+  const pages = Array.from(document.querySelectorAll('#preview-panel .rpage'))
+    .filter(p => getComputedStyle(p).display !== 'none');
+  const tot = String(pages.length).padStart(2, '0');
+  pages.forEach((p, i) => {
+    const ftr = p.querySelector('.pg-ftr');
+    if (!ftr) return;                       // portada y plan no llevan pie numerado
+    const spans = ftr.querySelectorAll(':scope > span');
+    if (!spans.length) return;
+    spans[spans.length - 1].textContent = String(i + 1).padStart(2, '0') + ' / ' + tot;
+  });
+}
+
+// ══════════════════════════════════════════════════════════
+//  GUARDAR / CARGAR
+//  Autoguardado en el navegador + archivo .json + link compartible (#d=)
+// ══════════════════════════════════════════════════════════
+const LS_KEY = 'houghton-tasacion-v1';
+
+function camposEstado(){
+  return Array.from(document.querySelectorAll('#form-panel input, #form-panel select, #form-panel textarea'))
+    .filter(el => el.id && el.type !== 'file');
+}
+
+function getEstado(){
+  const campos = {};
+  camposEstado().forEach(el => {
+    campos[el.id] = (el.type === 'checkbox') ? el.checked : el.value;
+  });
+  const qty = {};
+  document.querySelectorAll('.acb-qty').forEach((el, i) => {
+    const cb = el.closest('.acb')?.querySelector('input[type="checkbox"]');
+    if (cb && cb.id) qty[cb.id] = el.value;
+  });
+  return { v: 1, campos, qty, aj: AJ, comparables: (typeof comparables !== 'undefined' ? comparables : []) };
+}
+
+function setEstado(st){
+  if (!st || !st.campos) return false;
+  Object.entries(st.campos).forEach(([id, val]) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (el.type === 'checkbox') el.checked = !!val; else el.value = val;
+  });
+  Object.entries(st.qty || {}).forEach(([cbId, val]) => {
+    const cb = document.getElementById(cbId);
+    const qi = cb?.closest('.acb')?.querySelector('.acb-qty');
+    if (qi) qi.value = val;
+  });
+  if (st.aj && st.aj.a && st.aj.b){ AJ.a = st.aj.a; AJ.b = st.aj.b; renderAj('a'); renderAj('b'); }
+  if (Array.isArray(st.comparables) && typeof comparables !== 'undefined'){
+    comparables = st.comparables; renderCompForm();
+  }
+  applyModo(); calcM2(); sync(); syncComparables();
+  return true;
+}
+
+let hintTimer = null;
+function hint(txt){
+  const el = document.getElementById('save-hint');
+  if (!el) return;
+  el.textContent = txt;
+  clearTimeout(hintTimer);
+  hintTimer = setTimeout(() => {
+    el.textContent = 'Autoguardado en este navegador · ' + new Date().toLocaleTimeString('es-AR');
+  }, 2500);
+}
+
+function autoguardar(){
+  try { localStorage.setItem(LS_KEY, JSON.stringify(getEstado())); } catch(e){}
+}
+
+function nombreArchivo(){
+  const dir = (document.getElementById('f-dir')?.value || 'tasacion').trim();
+  const f = new Date().toISOString().slice(0, 10);
+  return f + '-' + dir.replace(/[^A-Za-z0-9]+/g, '-').replace(/^-|-$/g, '') + '.json';
+}
+
+function descargarEstado(){
+  const blob = new Blob([JSON.stringify(getEstado(), null, 2)], { type:'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = nombreArchivo();
+  a.click();
+  URL.revokeObjectURL(a.href);
+  hint('Archivo descargado');
+}
+
+function cargarArchivo(input){
+  const f = input.files && input.files[0];
+  if (!f) return;
+  const r = new FileReader();
+  r.onload = () => {
+    try {
+      setEstado(JSON.parse(r.result));
+      autoguardar();
+      hint('Tasación cargada');
+    } catch(e){ hint('El archivo no es una tasación válida'); }
+  };
+  r.readAsText(f);
+  input.value = '';
+}
+
+function nuevaTasacion(){
+  if (!confirm('¿Vaciar el formulario y empezar una tasación nueva?')) return;
+  try { localStorage.removeItem(LS_KEY); } catch(e){}
+  location.hash = '';
+  location.reload();
+}
+
+// Estado embebido en el link: #d=<base64 del json>
+function estadoDesdeHash(){
+  const m = location.hash.match(/[#&]d=([^&]+)/);
+  if (!m) return null;
+  try { return JSON.parse(decodeURIComponent(escape(atob(m[1].replace(/-/g,'+').replace(/_/g,'/'))))); }
+  catch(e){ return null; }
+}
+
+function restaurarEstado(){
+  const desdeHash = estadoDesdeHash();
+  if (desdeHash && setEstado(desdeHash)){ hint('Tasación cargada desde el link'); return; }
+  try {
+    const raw = localStorage.getItem(LS_KEY);
+    if (raw && setEstado(JSON.parse(raw))) hint('Tasación restaurada');
+  } catch(e){}
+}
+
+// Bootstrap final: restaura, engancha el autoguardado y numera las páginas
+restaurarEstado();
+document.querySelectorAll('#form-panel input, #form-panel select, #form-panel textarea')
+  .forEach(el => el.addEventListener('input', () => { autoguardar(); hint('Guardando…'); }));
+document.addEventListener('change', () => { autoguardar(); renumberPages(); });
+renumberPages();
 
 </script>
 </body>
