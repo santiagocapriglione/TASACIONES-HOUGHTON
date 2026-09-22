@@ -459,8 +459,8 @@
         <div class="field"><label>USD/m² prom. cierre</label><input id="f-pc2" type="number" value="0"></div>
       </div>
       <div class="field"><label>Competencia directa (unid.)</label><input id="f-compd" value=""></div>
-      <div class="auto-row" style="margin-top:6px;"><span class="auto-lbl">Valor pub. promedio</span><span class="auto-val" id="av-valpub" style="font-size:12px;">—</span></div>
-      <div class="auto-row"><span class="auto-lbl">Rango de precio realista (Comp.2 – Comp.3)</span><span class="auto-val" id="av-rango" style="font-size:11px;min-width:140px;">—</span></div>
+      <div class="auto-row" style="margin-top:6px;"><span class="auto-lbl" id="av-valpub-lbl" title="Valor de tasación adoptado (el mismo que figura en Resultado y en la portada).">Valor pub. promedio</span><span class="auto-val" id="av-valpub" style="font-size:12px;">—</span></div>
+      <div class="auto-row"><span class="auto-lbl" id="av-rango-lbl">Rango de precio realista (Comp.2 – Comp.3)</span><span class="auto-val" id="av-rango" style="font-size:11px;min-width:140px;">—</span></div>
       <div style="display:grid;grid-template-columns:24px 1fr 72px;gap:6px;margin-bottom:7px;align-items:end;">
         <input type="checkbox" id="f-c1-on" checked onchange="sync()" style="width:16px;height:16px;accent-color:var(--or);margin-top:24px;cursor:pointer;">
         <div class="field" style="margin-bottom:0;"><label>Categoría 1</label><input id="f-c1-lbl" value=""></div>
@@ -487,10 +487,10 @@
     <div class="fsec" id="fsec-vias" style="display:none;">
       <div class="slbl">Vía A · Casa usada (por m² cubierto)</div>
       <div class="fr2">
-        <div class="field"><label>P25 USD/m²</label><input id="f-a-p25" type="number" value="0"></div>
-        <div class="field"><label>Mediana USD/m²</label><input id="f-a-med" type="number" value="0"></div>
+        <div class="field"><label title="Percentil 25 de los comparables: por debajo de este valor se ubica el 25% más barato. Define el piso del rango.">P25 USD/m²</label><input id="f-a-p25" type="number" value="0"></div>
+        <div class="field"><label title="Valor central de los comparables. Es el que se usa para el Valor vía A.">Mediana USD/m²</label><input id="f-a-med" type="number" value="0"></div>
       </div>
-      <div class="field" style="margin-top:8px;"><label>P75 USD/m²</label><input id="f-a-p75" type="number" value="0"></div>
+      <div class="field" style="margin-top:8px;"><label title="Percentil 75 de los comparables: por debajo de este valor se ubica el 75%, es decir que solo el 25% más caro lo supera. Define el techo optimista del rango.">P75 USD/m²</label><input id="f-a-p75" type="number" value="0"></div>
       <div class="seg-hdr" style="grid-template-columns:1fr 68px 28px;"><span>Ajuste</span><span>%</span><span></span></div>
       <div id="aj-a-rows"></div>
       <button class="aj-add" onclick="addAj('a')">+ Agregar ajuste</button>
@@ -501,10 +501,10 @@
 
       <div class="slbl" style="margin-top:16px;">Vía B · Lote para desarrollo (por m² de terreno)</div>
       <div class="fr2">
-        <div class="field"><label>P25 USD/m²</label><input id="f-b-p25" type="number" value="0"></div>
-        <div class="field"><label>Mediana USD/m²</label><input id="f-b-med" type="number" value="0"></div>
+        <div class="field"><label title="Percentil 25 de los comparables: por debajo de este valor se ubica el 25% más barato. Define el piso del rango.">P25 USD/m²</label><input id="f-b-p25" type="number" value="0"></div>
+        <div class="field"><label title="Valor central de los comparables. Es el que se usa para el Valor vía B.">Mediana USD/m²</label><input id="f-b-med" type="number" value="0"></div>
       </div>
-      <div class="field" style="margin-top:8px;"><label>P75 USD/m²</label><input id="f-b-p75" type="number" value="0"></div>
+      <div class="field" style="margin-top:8px;"><label title="Percentil 75 de los comparables: por debajo de este valor se ubica el 75%, es decir que solo el 25% más caro lo supera. Define el techo optimista del rango.">P75 USD/m²</label><input id="f-b-p75" type="number" value="0"></div>
       <div class="seg-hdr" style="grid-template-columns:1fr 68px 28px;"><span>Ajuste</span><span>%</span><span></span></div>
       <div id="aj-b-rows"></div>
       <button class="aj-add" onclick="addAj('b')">+ Agregar ajuste</button>
@@ -933,11 +933,22 @@ function sync() {
   g('ep-comp').textContent = 'USD ' + fmt(priceComp);
   g('ep-alta').textContent = 'USD ' + fmt(priceAlta);
 
-  // ── Auto mercado values from segments
-  const valpubAuto = segVals['s0'].pub;
-  const rangoStr   = 'USD ' + fmt(segVals['s2'].pub) + ' – USD ' + fmt(segVals['s3'].pub);
+  // ── Auto mercado values: en casas/lotes salen de las Vías (A/B), no de la
+  // tabla de Segmentos (que en ese modo queda oculta y no la puede editar el usuario).
+  // Así el mismo número de tasación se usa en Mercado, en el cuerpo del PDF y en la portada.
+  let valpubAuto, rangoStr;
+  if (isCasa()) {
+    const V = calcVias();
+    valpubAuto = r1k(V.adopt);
+    rangoStr   = 'USD ' + fmt(r1k(V.bajo)) + ' – USD ' + fmt(r1k(V.alto));
+  } else {
+    valpubAuto = segVals['s0'].pub;
+    rangoStr   = 'USD ' + fmt(segVals['s2'].pub) + ' – USD ' + fmt(segVals['s3'].pub);
+  }
   const el_vp = g('av-valpub'); if(el_vp) el_vp.textContent = 'USD ' + fmt(valpubAuto);
   const el_rg = g('av-rango');  if(el_rg) el_rg.textContent = rangoStr;
+  const el_rgl = g('av-rango-lbl');
+  if (el_rgl) el_rgl.textContent = isCasa() ? 'Rango de precio realista (P25 – P75)' : 'Rango de precio realista (Comp.2 – Comp.3)';
 
   // ── PORTADA
   const addrParts = [];
