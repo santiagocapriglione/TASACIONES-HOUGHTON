@@ -422,19 +422,19 @@
         <div>
           <div style="font-size:11px;color:var(--gy);margin-bottom:4px;">Ambientes</div>
           <div id="ambientes-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:4px;">
-            <label class="acb"><input type="checkbox" data-emoji="🛋️" data-label="Living" onchange="sync()"> Living</label>
-            <label class="acb"><input type="checkbox" data-emoji="🍽️" data-label="Comedor" onchange="sync()"> Comedor</label>
-            <label class="acb"><input type="checkbox" data-emoji="🍳" data-label="Cocina" onchange="sync()"> Cocina</label>
-            <label class="acb"><input type="checkbox" data-emoji="🧺" data-label="Lavadero" onchange="sync()"> Lavadero</label>
-            <label class="acb"><input type="checkbox" data-emoji="💻" data-label="Estudio" onchange="sync()"> Estudio</label>
-            <label class="acb"><input type="checkbox" data-emoji="☀️" data-label="Terraza" onchange="sync()"> Terraza</label>
-            <label class="acb"><input type="checkbox" data-emoji="🌿" data-label="Patio" onchange="sync()"> Patio</label>
-            <label class="acb"><input type="checkbox" data-emoji="🌳" data-label="Jardín" onchange="sync()"> Jardín</label>
-            <label class="acb"><input type="checkbox" data-emoji="🔥" data-label="Parrilla" onchange="sync()"> Parrilla</label>
-            <label class="acb"><input type="checkbox" data-emoji="🍖" data-label="Quincho" onchange="sync()"> Quincho</label>
-            <label class="acb"><input type="checkbox" data-emoji="🏊" data-label="Pileta" onchange="sync()"> Pileta</label>
-            <label class="acb"><input type="checkbox" data-emoji="🎮" data-label="Playroom" onchange="sync()"> Playroom</label>
-            <label class="acb"><input type="checkbox" data-emoji="🗄️" data-label="Despensa" onchange="sync()"> Despensa</label>
+            <label class="acb"><input type="checkbox" id="acb-living" data-emoji="🛋️" data-label="Living" onchange="sync()"> Living</label>
+            <label class="acb"><input type="checkbox" id="acb-comedor" data-emoji="🍽️" data-label="Comedor" onchange="sync()"> Comedor</label>
+            <label class="acb"><input type="checkbox" id="acb-cocina" data-emoji="🍳" data-label="Cocina" onchange="sync()"> Cocina</label>
+            <label class="acb"><input type="checkbox" id="acb-lavadero" data-emoji="🧺" data-label="Lavadero" onchange="sync()"> Lavadero</label>
+            <label class="acb"><input type="checkbox" id="acb-estudio" data-emoji="💻" data-label="Estudio" onchange="sync()"> Estudio</label>
+            <label class="acb"><input type="checkbox" id="acb-terraza" data-emoji="☀️" data-label="Terraza" onchange="sync()"> Terraza</label>
+            <label class="acb"><input type="checkbox" id="acb-patio" data-emoji="🌿" data-label="Patio" onchange="sync()"> Patio</label>
+            <label class="acb"><input type="checkbox" id="acb-jardin" data-emoji="🌳" data-label="Jardín" onchange="sync()"> Jardín</label>
+            <label class="acb"><input type="checkbox" id="acb-parrilla" data-emoji="🔥" data-label="Parrilla" onchange="sync()"> Parrilla</label>
+            <label class="acb"><input type="checkbox" id="acb-quincho" data-emoji="🍖" data-label="Quincho" onchange="sync()"> Quincho</label>
+            <label class="acb"><input type="checkbox" id="acb-pileta" data-emoji="🏊" data-label="Pileta" onchange="sync()"> Pileta</label>
+            <label class="acb"><input type="checkbox" id="acb-playroom" data-emoji="🎮" data-label="Playroom" onchange="sync()"> Playroom</label>
+            <label class="acb"><input type="checkbox" id="acb-despensa" data-emoji="🗄️" data-label="Despensa" onchange="sync()"> Despensa</label>
             <div class="acb"><input type="checkbox" id="acb-dorm" data-emoji="🛏️" data-label="Dormitorio" data-label-plural="Dormitorios" onchange="sync()"><label for="acb-dorm" class="acb-lbl">Dormitorio</label><input type="number" class="acb-qty" min="1" max="9" placeholder="#" oninput="syncQty(this)"></div>
             <div class="acb"><input type="checkbox" id="acb-suite" data-emoji="🛌" data-label="Suite" data-label-plural="Suites" onchange="sync()"><label for="acb-suite" class="acb-lbl">Suite</label><input type="number" class="acb-qty" min="1" max="9" placeholder="#" oninput="syncQty(this)"></div>
             <div class="acb"><input type="checkbox" id="acb-bano" data-emoji="🚿" data-label="Baño" data-label-plural="Baños" onchange="sync()"><label for="acb-bano" class="acb-lbl">Baño</label><input type="number" class="acb-qty" min="1" max="9" placeholder="#" oninput="syncQty(this)"></div>
@@ -514,12 +514,13 @@
       </div>
 
       <div class="slbl" style="margin-top:16px;">Resultado</div>
+      <div class="field" style="margin-bottom:8px;"><label title="Elegí qué vía define el valor de la tasación. 'La mayor' toma automáticamente la más alta entre A y B; también podés forzar una sola vía (la otra queda como referencia en el informe).">Vía que define el cálculo</label><select id="f-via-modo" onchange="sync()"><option value="max">La mayor de A y B (automático)</option><option value="a">Solo Vía A · Casa usada</option><option value="b">Solo Vía B · Lote para desarrollo</option></select></div>
       <div class="fr2">
         <div class="field"><label>Margen de publicación %</label><input id="f-margen-pub" type="number" value="11"></div>
         <div class="field"><label>Publicación de terceros USD</label><input id="f-pedido" type="number" value="0"></div>
       </div>
       <div class="via-tot" style="margin-top:10px;">
-        <div class="auto-row" style="margin-bottom:5px;"><span class="auto-lbl">Vía adoptada (la mayor)</span><span class="auto-val" id="av-via" style="font-size:11px;">—</span></div>
+        <div class="auto-row" style="margin-bottom:5px;"><span class="auto-lbl">Vía adoptada</span><span class="auto-val" id="av-via" style="font-size:11px;">—</span></div>
         <div class="auto-row" style="margin-bottom:5px;"><span class="auto-lbl">Valor de referencia</span><span class="auto-val" id="av-adopt" style="font-size:13px;">—</span></div>
         <div class="auto-row" style="margin-bottom:5px;"><span class="auto-lbl">Rango defendible</span><span class="auto-val" id="av-rango-vias" style="font-size:11px;min-width:150px;">—</span></div>
         <div class="auto-row" style="margin-bottom:5px;"><span class="auto-lbl">Precio sugerido de publicación</span><span class="auto-val" id="av-pub-vias" style="font-size:12px;">—</span></div>
@@ -1147,12 +1148,20 @@ function calcVias(){
     v.bajo    = v.p25 * v.base * (1 + v.aj - 0.05);
     v.alto    = v.p75 * v.base * (1 + v.aj + 0.05);
   });
-  const via    = A.central >= B.central ? 'a' : 'b';
-  const adopt  = Math.max(A.central, B.central);
-  const bajo   = Math.max(A.bajo,  B.bajo);
-  const alto   = Math.max(A.alto,  B.alto);
+  const modo = (g('f-via-modo') && g('f-via-modo').value) || 'max';
+  let via, adopt, bajo, alto;
+  if (modo === 'a'){
+    via = 'a'; adopt = A.central; bajo = A.bajo; alto = A.alto;
+  } else if (modo === 'b'){
+    via = 'b'; adopt = B.central; bajo = B.bajo; alto = B.alto;
+  } else {
+    via   = A.central >= B.central ? 'a' : 'b';
+    adopt = Math.max(A.central, B.central);
+    bajo  = Math.max(A.bajo,  B.bajo);
+    alto  = Math.max(A.alto,  B.alto);
+  }
   const margen = gv('f-margen-pub') / 100;
-  return { A, B, via, adopt, bajo, alto, pub: adopt * (1 + margen) };
+  return { A, B, via, adopt, bajo, alto, modo, pub: adopt * (1 + margen) };
 }
 
 const r1k = n => Math.round(n / 1000) * 1000;
@@ -1220,10 +1229,12 @@ function syncVias(){
 
   set('p-vias-note', '');
   const noteEl = g('p-vias-note');
-  if (noteEl) noteEl.innerHTML =
-    'El valor de la propiedad es el <strong>mayor de sus dos usos posibles</strong>: venderse como casa a reciclar o venderse como lote para desarrollo. ' +
-    'Cada vía se calcula con su propio conjunto de comparables y sus propios ajustes. ' +
-    'Vía adoptada: <strong>' + VIA_LBL[V.via] + '</strong>.';
+  if (noteEl) noteEl.innerHTML = (V.modo === 'max')
+    ? ('El valor de la propiedad es el <strong>mayor de sus dos usos posibles</strong>: venderse como casa a reciclar o venderse como lote para desarrollo. ' +
+       'Cada vía se calcula con su propio conjunto de comparables y sus propios ajustes. ' +
+       'Vía adoptada: <strong>' + VIA_LBL[V.via] + '</strong>.')
+    : ('Para este inmueble se adopta la <strong>' + VIA_LBL[V.via] + '</strong> como criterio de valuación. ' +
+       'La otra vía se calcula con sus propios comparables y ajustes, y se incluye únicamente como <strong>referencia y control de encuadre</strong>.');
 
   const rowV = (k, v, hl) => `<tr${hl ? ' class="row-hl"' : ''}>
       <td>${VIA_LBL[k]}</td>
