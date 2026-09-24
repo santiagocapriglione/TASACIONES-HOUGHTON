@@ -1260,12 +1260,20 @@ function syncVias(){
 
   const ins = g('p-vias-insight');
   if (ins){
-    const spread = V.B.central ? Math.abs(V.A.central / V.B.central - 1) * 100 : 0;
-    let txt = '💡 <strong>Lectura estratégica:</strong> las dos vías arrojan valores que difieren en <strong>' +
-              spread.toFixed(0) + ' %</strong>. ';
-    txt += spread <= 15
-      ? 'La convergencia entre ambas es el mejor control de calidad del resultado: el valor está bien encuadrado.'
-      : 'La diferencia es amplia: conviene revisar los comparables de la vía más baja antes de fijar el precio.';
+    const otra = V.via === 'a' ? V.B : V.A;
+    let txt;
+    if (V.modo === 'max'){
+      const spread = V.B.central ? Math.abs(V.A.central / V.B.central - 1) * 100 : 0;
+      txt = '💡 <strong>Lectura estratégica:</strong> las dos vías arrojan valores que difieren en <strong>' +
+            spread.toFixed(0) + ' %</strong>. ';
+      txt += spread <= 15
+        ? 'La convergencia entre ambas es el mejor control de calidad del resultado: el valor está bien encuadrado.'
+        : 'La diferencia es amplia: conviene revisar los comparables de la vía más baja antes de fijar el precio.';
+    } else {
+      txt = '💡 <strong>Lectura estratégica:</strong> el valor se define por la <strong>' + VIA_LBL[V.via] +
+            '</strong>. El otro uso posible del inmueble arroja <strong>USD ' + fmt(r1k(otra.central)) +
+            '</strong> y opera únicamente como <strong>piso teórico</strong>: no determina el precio de venta.';
+    }
     if (ped > 0 && V.adopt > 0){
       const d = (ped / V.adopt - 1) * 100;
       txt += ' La publicación de terceros vigente se ubica <strong>' + sgn(d) +
