@@ -139,6 +139,7 @@
   .char-card.full{ grid-column:1/-1; border-top-color:var(--re); }
   .char-icon{ font-size:16px; margin-bottom:8px; }
   .char-val{ font-family:'Playfair Display',serif; font-size:24px; font-weight:700; color:var(--dk); line-height:1; }
+  .char-val.long{ font-size:16px; line-height:1.25; }
   .char-card.full .char-val{ font-size:13px; font-family:'DM Sans',sans-serif; font-weight:400; color:var(--md); line-height:1.6; }
   .char-lbl{ font-size:9px; color:var(--gy); margin-top:4px; letter-spacing:1px; text-transform:uppercase; }
 
@@ -153,8 +154,8 @@
   .m2-sub{ font-size:9px; color:rgba(255,255,255,0.4); margin-top:4px; letter-spacing:1px; text-transform:uppercase; }
   .m2-pct{ font-size:10px; color:rgba(255,255,255,0.3); margin-top:2px; }
 
-  .distrib-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:18px; }
-  .distrib-item{ text-align:center; background:var(--dk); color:#FFF; border-radius:7px; padding:14px 8px; }
+  .distrib-grid{ --cols:4; display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-bottom:18px; }
+  .distrib-item{ flex:0 0 calc((100% - (var(--cols) - 1) * 10px) / var(--cols)); box-sizing:border-box; text-align:center; background:var(--dk); color:#FFF; border-radius:7px; padding:14px 8px; }
   .distrib-icon{ font-size:16px; margin-bottom:5px; }
   .distrib-lbl{ font-size:9px; color:rgba(255,255,255,0.55); }
   /* Ambientes checkboxes — NOT inside .field, no conflicts */
@@ -485,7 +486,11 @@
 
     <!-- CASAS Y LOTES – DOS VÍAS -->
     <div class="fsec" id="fsec-vias" style="display:none;">
-      <div class="slbl">Vía A · Casa usada (por m² cubierto)</div>
+      <label style="display:flex;align-items:flex-start;gap:8px;margin-bottom:12px;font-size:12px;cursor:pointer;" title="Si lo destildás, la casa se tasa solo por m² cubierto y la página 'Valuación por dos vías' no se incluye en el informe.">
+        <input type="checkbox" id="f-dosvias-on" checked onchange="applyModo();sync()" style="width:16px;height:16px;accent-color:var(--or);cursor:pointer;margin-top:1px;">
+        <span>Tasar por dos vías (casa + lote) e incluir esa página en el informe</span>
+      </label>
+      <div class="slbl" id="slbl-via-a">Vía A · Casa usada (por m² cubierto)</div>
       <div class="fr2">
         <div class="field"><label title="Percentil 25 de los comparables: por debajo de este valor se ubica el 25% más barato. Define el piso del rango.">P25 USD/m²</label><input id="f-a-p25" type="number" value="0"></div>
         <div class="field"><label title="Valor central de los comparables. Es el que se usa para el Valor vía A.">Mediana USD/m²</label><input id="f-a-med" type="number" value="0"></div>
@@ -499,6 +504,7 @@
         <div class="auto-row" style="margin-bottom:0;"><span class="auto-lbl">Valor vía A</span><span class="auto-val" id="av-a-val" style="font-size:12px;">—</span></div>
       </div>
 
+      <div id="fsec-via-b">
       <div class="slbl" style="margin-top:16px;">Vía B · Lote para desarrollo (por m² de terreno)</div>
       <div class="fr2">
         <div class="field"><label title="Percentil 25 de los comparables: por debajo de este valor se ubica el 25% más barato. Define el piso del rango.">P25 USD/m²</label><input id="f-b-p25" type="number" value="0"></div>
@@ -513,8 +519,10 @@
         <div class="auto-row" style="margin-bottom:0;"><span class="auto-lbl">Valor vía B</span><span class="auto-val" id="av-b-val" style="font-size:12px;">—</span></div>
       </div>
 
+      </div><!-- /fsec-via-b -->
+
       <div class="slbl" style="margin-top:16px;">Resultado</div>
-      <div class="field" style="margin-bottom:8px;"><label title="Elegí qué vía define el valor de la tasación. 'La mayor' toma automáticamente la más alta entre A y B; también podés forzar una sola vía (la otra queda como referencia en el informe).">Vía que define el cálculo</label><select id="f-via-modo" onchange="sync()"><option value="max">La mayor de A y B (automático)</option><option value="a">Solo Vía A · Casa usada</option><option value="b">Solo Vía B · Lote para desarrollo</option></select></div>
+      <div class="field" id="field-via-modo" style="margin-bottom:8px;"><label title="Elegí qué vía define el valor de la tasación. 'La mayor' toma automáticamente la más alta entre A y B; también podés forzar una sola vía (la otra queda como referencia en el informe).">Vía que define el cálculo</label><select id="f-via-modo" onchange="sync()"><option value="max">La mayor de A y B (automático)</option><option value="a">Solo Vía A · Casa usada</option><option value="b">Solo Vía B · Lote para desarrollo</option></select></div>
       <div class="fr2">
         <div class="field"><label>Margen de publicación %</label><input id="f-margen-pub" type="number" value="11"></div>
         <div class="field"><label>Publicación de terceros USD</label><input id="f-pedido" type="number" value="0"></div>
@@ -693,6 +701,7 @@
         <div><div class="pr-lbl">Precio de mercado realista</div><div class="pr-val" id="p-rango3">USD 60.000 – USD 65.000</div></div>
       </div>
       <div class="comp-grid" id="p-comp-grid"><!-- JS --></div>
+      <div class="insight-box" id="p-valor-unico" style="display:none;margin-top:14px;margin-bottom:16px;"><!-- JS --></div>
       <div class="metod">
         <div class="metod-title">Criterios de tasación</div>
         <div class="metod-items">
@@ -986,6 +995,7 @@ function sync() {
     m2Html += `<div class="m2-col"><div class="m2-val highlight">${fmt1(mhom)}<span style="font-size:13px;opacity:.7"> m²</span></div><div class="m2-sub">Homogeneizados</div><div class="m2-pct">Base de cálculo</div></div>`;
   }
   g('p-m2-breakdown').innerHTML = m2Html;
+  g('p-m2-breakdown').style.gridTemplateColumns = 'repeat(' + Math.max(1, (m2Html.match(/class="m2-col"/g) || []).length) + ', 1fr)';
 
   // Char cards – show/hide based on toggles
   const cardToggle = (cardId, toggleId) => {
@@ -1007,6 +1017,18 @@ function sync() {
   g('p-orient').textContent = orient;
   g('p-lote').textContent = lote ? fmt1(lote) + ' m²' : '';
   g('p-estado').textContent = estado;
+  // Tarjetas: sin huecos (3 → tres columnas; impar → la última ocupa el ancho) y texto largo más chico
+  const cg = g('p-char-grid');
+  if (cg) {
+    const vis = Array.from(cg.querySelectorAll('.char-card:not(.full)')).filter(c => c.style.display !== 'none');
+    vis.forEach(c => {
+      c.style.gridColumn = '';
+      const v = c.querySelector('.char-val');
+      if (v) v.classList.toggle('long', (v.textContent || '').length > 18);
+    });
+    cg.style.gridTemplateColumns = vis.length === 3 ? '1fr 1fr 1fr' : '';
+    if (vis.length !== 3 && vis.length % 2 === 1) vis[vis.length - 1].style.gridColumn = '1 / -1';
+  }
   g('p-condicion').textContent = isOn('f-condicion-on') && cond ? '✦  ' + cond : '';
   if (g('p-condicion')) g('p-condicion').style.display = (isOn('f-condicion-on') && cond) ? '' : 'none';
 
@@ -1015,6 +1037,10 @@ function sync() {
   if (distribEl) {
     if (isOn('f-distrib-on') && distribItems.length > 0) {
       distribEl.style.display = '';
+      // Columnas según la cantidad, para que no quede un ambiente suelto en la última fila
+      const nD = distribItems.length;
+      const colsD = nD <= 5 ? nD : [4, 5, 6, 3].find(c => nD % c === 0) || [5, 4, 6].find(c => nD % c >= c - 2) || 5;
+      distribEl.style.setProperty('--cols', colsD);
       distribEl.innerHTML = distribItems.map(it =>
         `<div class="distrib-item"><div class="distrib-icon">${it.emoji}</div><div class="distrib-lbl">${it.label}</div></div>`).join('');
     } else {
@@ -1028,6 +1054,18 @@ function sync() {
   g('p-mh-comp').textContent = compd;
   g('p-mbody').innerHTML = `Del análisis comparativo de mercado realizado sobre propiedades de características similares en la zona, el valor de m² promedio se ubica en <strong>USD ${fmt(pp)}</strong>, arrojando un valor teórico de <strong>USD ${fmt(valpubAuto)}</strong>. Sin embargo, el valor lo define la <strong>competencia directa disponible hoy</strong>: <strong>${compd}</strong> unidades similares ubican el precio de mercado realista en <strong>${rangoStr}</strong>.`;
   g('p-rango3').textContent = rangoStr;
+  // Casas tasadas por una sola vía: el valor y el precio sugerido van acá (no hay página de vías)
+  const vu = g('p-valor-unico');
+  if (vu) {
+    const solo = isCasa() && !isDosVias();
+    vu.style.display = solo ? '' : 'none';
+    if (solo) {
+      const V = calcVias();
+      vu.innerHTML = '💡 <strong>Valor de referencia: USD ' + fmt(r1k(V.adopt)) + '</strong> (' + fmt(V.A.med) +
+        ' USD/m² × ' + V.A.baseLbl + (V.A.aj ? ', ajuste ' + (V.A.aj > 0 ? '+' : '') + (V.A.aj * 100).toFixed(1).replace('.', ',') + ' %' : '') +
+        '). Precio sugerido de publicación: <strong>USD ' + fmt(r1k(V.pub)) + '</strong>, con piso de negociación en USD ' + fmt(r1k(V.bajo)) + '.';
+    }
+  }
 
   // Build comp-grid dynamically based on toggles
   const cats = [
@@ -1114,6 +1152,8 @@ const AJ = {
 const VIA_LBL = { a:'A — Casa usada', b:'B — Lote para desarrollo' };
 
 function isCasa(){ const s = g('f-modo'); return !!s && s.value === 'casa'; }
+// Casas: ¿se tasa por dos vías (casa + lote)? Si no, solo vale la vía A y la página de vías no se imprime.
+function isDosVias(){ const c = g('f-dosvias-on'); return !c || c.checked; }
 
 function renderAj(k){
   const box = g('aj-' + k + '-rows');
@@ -1148,7 +1188,7 @@ function calcVias(){
     v.bajo    = v.p25 * v.base * (1 + v.aj - 0.05);
     v.alto    = v.p75 * v.base * (1 + v.aj + 0.05);
   });
-  const modo = (g('f-via-modo') && g('f-via-modo').value) || 'max';
+  const modo = !isDosVias() ? 'a' : ((g('f-via-modo') && g('f-via-modo').value) || 'max');
   let via, adopt, bajo, alto;
   if (modo === 'a'){
     via = 'a'; adopt = A.central; bajo = A.bajo; alto = A.alto;
@@ -1189,7 +1229,11 @@ function applyModo(){
   if (t) t.textContent = casa ? 'Tasación · Casas y lotes' : 'Tasación · Departamentos';
   const show = (id, on) => { const el = g(id); if (el) el.style.display = on ? '' : 'none'; };
   show('fsec-vias',       casa);
-  show('rp-vias',         casa);
+  show('rp-vias',         casa && isDosVias());
+  show('fsec-via-b',      isDosVias());
+  show('field-via-modo',  isDosVias());
+  const la = g('slbl-via-a');
+  if (la) la.textContent = isDosVias() ? 'Vía A · Casa usada (por m² cubierto)' : 'Valuación por m² cubierto';
   show('fsec-segmentos', !casa);
   show('fsec-escenarios',!casa);
   show('rp-segmentos',   !casa);
@@ -1404,6 +1448,8 @@ function getEstado(){
 
 function setEstado(st){
   if (!st || !st.campos) return false;
+  // Tasaciones guardadas antes del selector de dos vías: se tasaban siempre por dos vías
+  if (!('f-dosvias-on' in st.campos) && document.getElementById('f-dosvias-on')) document.getElementById('f-dosvias-on').checked = true;
   Object.entries(st.campos).forEach(([id, val]) => {
     const el = document.getElementById(id);
     if (!el) return;

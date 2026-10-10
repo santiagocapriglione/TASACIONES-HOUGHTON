@@ -1,0 +1,185 @@
+{
+  "v": 1,
+  "campos": {
+    "f-modo": "casa",
+    "f-dir-on": true,
+    "f-dir": "Lisandro de la Torre 735",
+    "f-piso-on": false,
+    "f-piso": "",
+    "f-barrio-on": true,
+    "f-barrio": "Vicente López, GBA Norte",
+    "f-ant-on": false,
+    "f-ant": "",
+    "f-tipo": "Casa moderna · 5 dormitorios + dependencia",
+    "f-plantas-on": true,
+    "f-plantas": "3 plantas (PB + 2 pisos)",
+    "f-cochera-on": true,
+    "f-cochera": "Descubierta · 1 auto",
+    "f-orient-on": false,
+    "f-orient": "",
+    "f-mc-on": true,
+    "f-mc": "378",
+    "f-ms-on": false,
+    "f-ms": "0",
+    "f-md-on": false,
+    "f-md": "0",
+    "f-lote-on": true,
+    "f-lote": "299",
+    "f-pc": "100",
+    "f-ps": "60",
+    "f-pd": "40",
+    "f-estado-on": true,
+    "f-estado": "Buen estado general de uso y mantenimiento. Cocina y baños de planta baja y primer piso con terminaciones originales; segundo piso renovado (baño y pisos nuevos). Calefacción central por radiadores. Pisos de madera en primer piso.",
+    "f-distrib-on": true,
+    "acb-living": true,
+    "acb-comedor": true,
+    "acb-cocina": true,
+    "acb-lavadero": true,
+    "acb-estudio": true,
+    "acb-terraza": true,
+    "acb-patio": false,
+    "acb-jardin": true,
+    "acb-parrilla": false,
+    "acb-quincho": false,
+    "acb-pileta": true,
+    "acb-playroom": true,
+    "acb-despensa": false,
+    "acb-dorm": true,
+    "acb-suite": true,
+    "acb-bano": true,
+    "acb-toilette": true,
+    "acb-balcon": false,
+    "acb-balconaterr": false,
+    "acb-garage": false,
+    "f-condicion-on": true,
+    "f-condicion": "Lote 8,66 x 34,64 m · pileta climatizada · galería · jardín de invierno · dependencia de servicio con entrada independiente · dos terrazas en 2° piso",
+    "f-pp": "1854",
+    "f-pc2": "1757",
+    "f-compd": "13",
+    "f-c1-on": true,
+    "f-c1-lbl": "Casas relevadas en el partido (USD 400.000–1.300.000)",
+    "f-c1": "489",
+    "f-c2-on": true,
+    "f-c2-lbl": "Fichas analizadas (Vicente López y Olivos)",
+    "f-c2": "279",
+    "f-c3-on": true,
+    "f-c3-lbl": "Avisos en zona (Av. Maipú al río, Gral. Paz a Villate)",
+    "f-c3": "115",
+    "f-c4-on": true,
+    "f-c4-lbl": "Competencia directa (300–520 m² cub., lote hasta 540 m²)",
+    "f-c4": "13",
+    "f-a-p25": "1754",
+    "f-a-med": "1854",
+    "f-a-p75": "1952",
+    "f-b-p25": "0",
+    "f-b-med": "0",
+    "f-b-p75": "0",
+    "f-via-modo": "a",
+    "f-margen-pub": "5.5",
+    "f-pedido": "0",
+    "s0-name": "Promedio publicación",
+    "s0-usd": "1854",
+    "s1-name": "Promedio cierre",
+    "s1-usd": "1757",
+    "s2-name": "Competitivo 1",
+    "s2-usd": "2018",
+    "s3-name": "Competitivo 2",
+    "s3-usd": "1894",
+    "s4-name": "Competitivo 3",
+    "s4-usd": "1731",
+    "s5-name": "Estrella ★",
+    "s5-usd": "1525",
+    "en-cons": "Mayor plazo, mayor margen de negociación",
+    "ed-cons": "6–12 meses · Pocos interesados · 5–20 visualizaciones",
+    "en-comp": "Mayor volumen de consultas · mejor relación tiempo/valor",
+    "ed-comp": "~65 días · Varios interesados · 25–45 visualizaciones",
+    "en-alta": "Alta demanda inicial · venta rápida garantizada",
+    "ed-alta": "< 20 días · Excelente cantidad de interesados · +60 visualizaciones",
+    "f-rebaja": "7",
+    "f-analisis": "METODOLOGÍA — Relevamiento de 489 casas en venta en el partido de Vicente López (Zonaprop, 10/10/2026); 279 fichas analizadas y 115 avisos en la zona de la propiedad: de Av. Maipú al río, entre Gral. Paz y Villate, a no más de 16 cuadras. Valuación por USD/m² cubierto sobre 13 casas comparables (300 a 520 m² cubiertos, lote hasta 540 m²).\n\nMERCADO — Promedio de publicación del segmento: USD 1.854/m² cubierto. Valor de referencia: USD 1.757/m², aplicando la diferencia entre publicación y cierre de casas en Vicente López (5,2 %, Mudafy, octubre 2026). En la zona el valor por m² baja al crecer la superficie cubierta y sube con el lote.\n\nCOMPARABLES — Entre USD 600.000 y USD 800.000 hay 25 propiedades en la zona y 20 tienen más lote que esta. Por el mismo valor o menos se ofrecen lotes de 400 a 650 m², casas recicladas a nuevo o con más superficie cubierta; por encima de USD 740.000 los lotes superan los 500 m² o la casa supera los 500 m² cubiertos. Con un lote de 299 m², cochera descubierta para un auto y terminaciones originales en cocina y baños, la propiedad necesita ubicarse en torno a USD 700.000 para competir con esa oferta.\n\nSALVEDADES — Valores de publicación y superficies declaradas por cada aviso; sin cierres propios en la zona.",
+    "f-agente": "Santiago Capriglione",
+    "f-mat": "CPI 5710 · CMCPSI 6703",
+    "f-fecha": "10/10/2026",
+    "f-dosvias-on": false
+  },
+  "qty": {
+    "acb-dorm": "2",
+    "acb-suite": "3",
+    "acb-bano": "5",
+    "acb-toilette": "1",
+    "acb-balcon": "",
+    "acb-balconaterr": "",
+    "acb-garage": ""
+  },
+  "aj": {
+    "a": [
+      {
+        "t": "Diferencia publicación → cierre (casas Vicente López)",
+        "p": -5.2
+      }
+    ],
+    "b": []
+  },
+  "comparables": [
+    {
+      "id": 1,
+      "titulo": "L. de la Torre 400 · USD 650.000 · 315 m² cub. · lote 412 m² · reciclada a nuevo, a 3 cuadras",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-casa-en-venta-en-vicente-lopez-con-jardin-y-pileta.-60070230.html"
+    },
+    {
+      "id": 2,
+      "titulo": "25 de Mayo 800 · USD 650.000 · 354 m² cub. · lote 415 m² · 5 dorm., pileta, a 1,5 cuadras",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-casa-en-vicente-lopez-60398978.html"
+    },
+    {
+      "id": 3,
+      "titulo": "Vergara 900 · USD 650.000 · 379 m² cub. · lote 655 m² · pileta",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-venta-casa-8-ambientes-gran-lote-vicente-lopez-60383760.html"
+    },
+    {
+      "id": 4,
+      "titulo": "Roca 1339 · USD 650.000 · 371 m² cub. · lote 648 m² · más de 1 año publicada",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-casa-de-6-ambientes-con-cochera-y-dependencia-en-venta-54505721.html"
+    },
+    {
+      "id": 5,
+      "titulo": "Madero 1300 · USD 659.000 · 330 m² cub. · moderna, 5 dorm., pileta · RESERVADA",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-reservada-reservada-reservada-reservada-reservada-59688422.html"
+    },
+    {
+      "id": 6,
+      "titulo": "Monasterio 300 · USD 680.000 · 522 m² cub. · lote 345 m² · moderna, pileta",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-casa-venta-vicente-lopez-7-ambientes-piscina-jardin-59758279.html"
+    },
+    {
+      "id": 7,
+      "titulo": "Libertad 1100 · USD 695.000 · 356 m² cub. · lote 537 m² · más de 1 año publicada",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-casa-vicente-lopez-vias-a-maipu-52017045.html"
+    },
+    {
+      "id": 8,
+      "titulo": "L. de la Torre 1400 · USD 740.000 · 330 m² cub. · doble lote 554 m² · pileta, quincho",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-imponente-chalet-sobre-doble-lote-en-el-bajo-de-vte-59287897.html"
+    },
+    {
+      "id": 9,
+      "titulo": "Arenales 700 · USD 750.000 · 364 m² cub. · lote 396 m² · impecable, 172 días publicada",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-casa-en-venta-6-ambientes-olivos-con-jardin-y-pileta-58911995.html"
+    },
+    {
+      "id": 10,
+      "titulo": "Monasterio 700 · USD 770.000 · 505 m² cub. · lote 8,66 x 51 m · garage 3 autos, a 1 cuadra",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-gran-residencia-en-vicente-lopez-59775024.html"
+    },
+    {
+      "id": 11,
+      "titulo": "Monasterio 1100 · USD 820.000 · 350 m² cub. · lote 512 m² · actualizada, pileta",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-venta-de-casa-estilo-racionalista-60382414.html"
+    },
+    {
+      "id": 12,
+      "titulo": "L. de la Torre 1164 · USD 830.000 · 362 m² cub. · lote 666 m² · pileta, quincho",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-exclusiva-casa-en-venta-y-alquiler-con-jardin-y-60041932.html"
+    }
+  ]
+}
