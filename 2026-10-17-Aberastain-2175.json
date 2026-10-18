@@ -1,0 +1,185 @@
+{
+ "v": 1,
+ "campos": {
+  "f-modo": "casa",
+  "f-dir-on": true,
+  "f-dir": "Aberastain 2175",
+  "f-piso-on": false,
+  "f-piso": "",
+  "f-barrio-on": true,
+  "f-barrio": "La Reja, Moreno, GBA Oeste",
+  "f-ant-on": true,
+  "f-ant": "2017 · ampliación 2020",
+  "f-tipo": "Casa moderna en containers + construcción en seco · 2 dormitorios + estudio",
+  "f-plantas-on": true,
+  "f-plantas": "1 planta",
+  "f-cochera-on": true,
+  "f-cochera": "Garage · portón automático",
+  "f-orient-on": false,
+  "f-orient": "",
+  "f-mc-on": true,
+  "f-mc": "96.61",
+  "f-ms-on": true,
+  "f-ms": "35",
+  "f-md-on": false,
+  "f-md": "0",
+  "f-lote-on": true,
+  "f-lote": "641.25",
+  "f-pc": "100",
+  "f-ps": "60",
+  "f-pd": "40",
+  "f-estado-on": true,
+  "f-estado": "Casa de diseño moderno, desarrollada en una planta con módulos de containers y construcción en seco. Living comedor integrado con cocina, pisos de madera y grandes ventanales con salida directa al deck y al jardín. Dos dormitorios con aire acondicionado, estudio y sala de música / escritorio independiente con cerramiento vidriado. Dos baños. Galería semicubierta de 35 m². El exterior es el gran diferencial: parque parquizado con árboles añosos, deck de madera, pileta y senderos. Garage con portón automático y portón de acceso de diseño.",
+  "f-distrib-on": true,
+  "acb-living": true,
+  "acb-comedor": true,
+  "acb-cocina": true,
+  "acb-lavadero": false,
+  "acb-estudio": true,
+  "acb-terraza": false,
+  "acb-patio": false,
+  "acb-jardin": true,
+  "acb-parrilla": false,
+  "acb-quincho": false,
+  "acb-pileta": true,
+  "acb-playroom": false,
+  "acb-despensa": false,
+  "acb-dorm": true,
+  "acb-suite": false,
+  "acb-bano": true,
+  "acb-toilette": false,
+  "acb-balcon": false,
+  "acb-balconaterr": false,
+  "acb-garage": true,
+  "f-condicion-on": true,
+  "f-condicion": "Lote 23,61 x 27,16 m (641 m²) · pileta · deck · galería semicubierta 35 m² · portón automático · construcción en containers + seco",
+  "f-pp": "1038",
+  "f-pc2": "1008",
+  "f-compd": "9",
+  "f-c1-on": true,
+  "f-c1-lbl": "Avisos relevados en La Reja (Zonaprop, Argenprop y Mercado Libre)",
+  "f-c1": "949",
+  "f-c2-on": true,
+  "f-c2-lbl": "Casas únicas (sin duplicados entre portales)",
+  "f-c2": "465",
+  "f-c3-on": true,
+  "f-c3-lbl": "Barrio abierto, 70–125 m² cubiertos",
+  "f-c3": "111",
+  "f-c4-on": true,
+  "f-c4-lbl": "Competencia directa (a ≤ 2 km, buen estado, lote 300–1.200 m²)",
+  "f-c4": "9",
+  "f-a-p25": "957",
+  "f-a-med": "1038",
+  "f-a-p75": "1194",
+  "f-b-p25": "0",
+  "f-b-med": "0",
+  "f-b-p75": "0",
+  "f-via-modo": "a",
+  "f-margen-pub": "3",
+  "f-pedido": "0",
+  "s0-name": "Promedio publicación",
+  "s0-usd": "1038",
+  "s1-name": "Promedio cierre",
+  "s1-usd": "1008",
+  "s2-name": "Competitivo 1",
+  "s2-usd": "1027",
+  "s3-name": "Competitivo 2",
+  "s3-usd": "959",
+  "s4-name": "Competitivo 3",
+  "s4-usd": "817",
+  "s5-name": "Estrella ★",
+  "s5-usd": "750",
+  "en-cons": "Mayor plazo, mayor margen de negociación",
+  "ed-cons": "6–12 meses · Pocos interesados · 5–20 visualizaciones",
+  "en-comp": "Mayor volumen de consultas · mejor relación tiempo/valor",
+  "ed-comp": "~65 días · Varios interesados · 25–45 visualizaciones",
+  "en-alta": "Alta demanda inicial · venta rápida garantizada",
+  "ed-alta": "< 20 días · Excelente cantidad de interesados · +60 visualizaciones",
+  "f-rebaja": "7",
+  "f-analisis": "METODOLOGÍA — Relevamiento de 949 avisos de casas en venta en La Reja (Zonaprop, Argenprop y Mercado Libre), 465 propiedades únicas al cruzar duplicados entre portales. Valuación por USD/m² cubierto sobre 9 casas comparables en barrio abierto a menos de 2 km: 75 a 125 m² cubiertos, lote de 300 a 1.200 m², buen estado y, en su mayoría, con pileta. Se excluyeron barrios privados y clubes de campo (Prados del Oeste, Astorga, Haras María Victoria, Casco de Álvarez), que publican en torno a USD 1.370/m².\n\nMERCADO — Promedio de publicación del segmento: USD 1.038/m² cubierto. Valor de referencia: USD 1.008/m², aplicando la diferencia entre publicación y cierre de casas en Moreno (2,9 %, Mudafy, octubre 2026). Las casas de 70 a 125 m² con pileta en barrio abierto publican con una mediana de USD 984/m².\n\nCOMPARABLES — A dos y tres cuadras se ofrecen casas de 83 a 114 m² sobre lotes de 750 a 870 m² entre USD 90.000 y USD 120.000 (Carbo 2100, Carbo lote 26, Pereda 2623, Sancti Spiritu 2200). Sobre la misma calle, Aberastain 2200 —a estrenar, 2 dormitorios, pileta y 2 cocheras— se publica en USD 130.000 y marca el techo del ticket. El diseño, el parque y la pileta ubican a la propiedad en el promedio del segmento; la construcción en containers y seco y una superficie cubierta parcialmente sin declarar en ARBA (59 m² registrados) aconsejan no publicar por encima de USD 100.000.\n",
+  "f-agente": "Santiago Capriglione",
+  "f-mat": "CPI 5710 · CMCPSI 6703",
+  "f-fecha": "17/10/2026",
+  "f-dosvias-on": false
+ },
+ "qty": {
+  "acb-dorm": "2",
+  "acb-suite": "",
+  "acb-bano": "2",
+  "acb-toilette": "",
+  "acb-balcon": "",
+  "acb-balconaterr": "",
+  "acb-garage": "1"
+ },
+ "aj": {
+  "a": [
+   {
+    "t": "Diferencia publicación → cierre (casas Moreno, Mudafy oct-2026)",
+    "p": -2.9
+   }
+  ],
+  "b": []
+ },
+ "comparables": [
+  {
+   "id": 1,
+   "titulo": "Enrique Carbo 2100 · USD 89.999 · 86 m² cub. · lote 830 m² · pileta, galería, 7 años, a 2 cuadras",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-casa-en-venta-en-la-reja-con-pileta-y-parque-60233206.html"
+  },
+  {
+   "id": 2,
+   "titulo": "Enrique Carbo lote 26 · USD 100.000 · 83 m² cub. · lote 830 m² · 3 dorm., 5 años, a 2 cuadras",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-venta-casa-en-la-reja-60214788.html"
+  },
+  {
+   "id": 3,
+   "titulo": "J. M. de Pereda 2623 · USD 119.990 · 100 m² cub. + 41 semi · lote 748 m² esquina · pileta",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-casa-quinta-con-pileta-en-venta-la-reja-moreno.-60297211.html"
+  },
+  {
+   "id": 4,
+   "titulo": "Sancti Spiritu 2200 · USD 114.900 · 114 m² cub. · lote 867 m² · 2015, pileta, apta crédito",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-casa-en-venta-la-reja-moreno-apta-credito-60325372.html"
+  },
+  {
+   "id": 5,
+   "titulo": "J. M. de Pereda 2200 · USD 100.000 · 104 m² cub. · lote 1.200 m² · 3 dorm., pileta (Mercado Libre)",
+   "url": "https://casa.mercadolibre.com.ar/MLA-1814404759-casa-quinta-en-venta-en-la-reja-grande-la-reja-moreno-_JM"
+  },
+  {
+   "id": 6,
+   "titulo": "Pereda e/ Sancti Spiritu y Santa Cruz · USD 120.000 · 125 m² cub. · lote 1.200 m² · 30 años",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-casa-quinta-en-venta-3-dorm.-2-banos-cochera-59791482.html"
+  },
+  {
+   "id": 7,
+   "titulo": "E. Echeverría 1900 · USD 90.000 · 76 m² cub. + 29 semi · lote 330 m² · pileta, barrio semi cerrado",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-casa-3-ambientes-venta-la-reja-barrio-semi-cerrado-60182952.html"
+  },
+  {
+   "id": 8,
+   "titulo": "Elpidio González 2280 · USD 84.000 · 88 m² cub. · lote 300 m² · a estrenar, pileta",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-venta-permuta-casa-c-pileta-4-amb.-la-reja-moreno-60336339.html"
+  },
+  {
+   "id": 9,
+   "titulo": "Sucre 2200 · USD 89.900 · 110 m² cub. · 2 lotes 796 m² · quincho, pileta",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-venta-permuta-casa-con-pileta-la-reja-60274983.html"
+  },
+  {
+   "id": 10,
+   "titulo": "Martín García 4000 · USD 75.000 · 100 m² cub. · lote 600 m² · pileta, quincho · más de 1 año publicada",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-casa-4-ambientes-en-venta-la-reja-52010081.html"
+  },
+  {
+   "id": 11,
+   "titulo": "Aberastain 2200 · USD 130.000 · a estrenar, 2 dorm., pileta, 2 cocheras · lote 600 m² · MISMA CALLE (techo de ticket)",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-venta-casa-moderna-3-4-amb-2-cocheras-pileta-60243078.html"
+  },
+  {
+   "id": 12,
+   "titulo": "Santa Teresa de Jesús 2026 · USD 125.000 · 90 m² cub. · lote 1.600 m² · a estrenar, pileta (techo)",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-venta-casa-quinta-con-pileta-y-amplio-parque-la-60272423.html"
+  }
+ ]
+}
