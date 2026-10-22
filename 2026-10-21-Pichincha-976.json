@@ -1,0 +1,195 @@
+{
+  "v": 1,
+  "campos": {
+    "f-modo": "depto",
+    "f-dir-on": true,
+    "f-dir": "Pichincha 976",
+    "f-piso-on": true,
+    "f-piso": "Planta baja · contrafrente",
+    "f-barrio-on": true,
+    "f-barrio": "San Cristóbal, CABA",
+    "f-ant-on": true,
+    "f-ant": "45–60 años",
+    "f-tipo": "Departamento 3 amb.",
+    "f-plantas-on": false,
+    "f-plantas": "",
+    "f-cochera-on": false,
+    "f-cochera": "",
+    "f-orient-on": true,
+    "f-orient": "Noreste · contrafrente",
+    "f-mc-on": true,
+    "f-mc": "53.05",
+    "f-ms-on": true,
+    "f-ms": "2.85",
+    "f-md-on": true,
+    "f-md": "63.06",
+    "f-lote-on": false,
+    "f-lote": "0",
+    "f-pc": "100",
+    "f-ps": "60",
+    "f-pd": "30",
+    "f-estado-on": true,
+    "f-estado": "Estado regular, sin reciclar: cocina y baño originales. Todos los ambientes ventilan al exterior. Edificio con encargado sin vivienda; expensas $200.000.",
+    "f-distrib-on": true,
+    "acb-living": true,
+    "acb-comedor": true,
+    "acb-cocina": true,
+    "acb-lavadero": true,
+    "acb-estudio": false,
+    "acb-terraza": false,
+    "acb-patio": true,
+    "acb-jardin": true,
+    "acb-parrilla": false,
+    "acb-quincho": false,
+    "acb-pileta": false,
+    "acb-playroom": false,
+    "acb-despensa": false,
+    "acb-dorm": true,
+    "acb-suite": false,
+    "acb-bano": true,
+    "acb-toilette": false,
+    "acb-balcon": false,
+    "acb-balconaterr": false,
+    "acb-garage": false,
+    "f-condicion-on": true,
+    "f-condicion": "Patio con lavadero semicubierto + jardín propio de 63 m² · superficies por escritura: 53,05 cub · 2,85 semicub · 63,06 descub · apto crédito",
+    "f-pp": "1476",
+    "f-pc2": "1410",
+    "f-compd": "8",
+    "f-c1-on": true,
+    "f-c1-lbl": "Deptos 3 amb. en venta en San Cristóbal (Zonaprop)",
+    "f-c1": "281",
+    "f-c2-on": true,
+    "f-c2-lbl": "Analizados ficha por ficha",
+    "f-c2": "270",
+    "f-c3-on": true,
+    "f-c3-lbl": "Mismo producto (3 amb. 40–70 años, 40–70 m² cub.)",
+    "f-c3": "96",
+    "f-c4-on": true,
+    "f-c4-lbl": "Competencia directa (PB con patio, sin oportunidades)",
+    "f-c4": "8",
+    "f-a-p25": "0",
+    "f-a-med": "0",
+    "f-a-p75": "0",
+    "f-b-p25": "0",
+    "f-b-med": "0",
+    "f-b-p75": "0",
+    "f-via-modo": "max",
+    "f-margen-pub": "4",
+    "f-pedido": "119000",
+    "s0-name": "Promedio publicación",
+    "s0-usd": "1476",
+    "s1-name": "Promedio cierre",
+    "s1-usd": "1410",
+    "s2-name": "Competitivo 2",
+    "s2-usd": "1473",
+    "s3-name": "Competitivo 3",
+    "s3-usd": "1423",
+    "s4-name": "Estrella ★",
+    "s4-usd": "1236",
+    "s5-name": "Oportunidad",
+    "s5-usd": "1208",
+    "en-cons": "Mayor plazo, mayor margen de negociación",
+    "ed-cons": "6–12 meses · Pocos interesados · 5–20 visualizaciones",
+    "en-comp": "Mayor volumen de consultas · mejor relación tiempo/valor",
+    "ed-comp": "~65 días · Varios interesados · 25–45 visualizaciones",
+    "en-alta": "Alta demanda inicial · venta rápida garantizada",
+    "ed-alta": "< 20 días · Excelente cantidad de interesados · +60 visualizaciones",
+    "f-rebaja": "7",
+    "f-analisis": "METODOLOGÍA — Relevamiento de los 281 departamentos de 3 ambientes en venta en San Cristóbal (Zonaprop, 21/10/2026), 270 analizados ficha por ficha. De los 96 con 40–70 años de antigüedad y 40–70 m² cubiertos, la mediana es USD 1.593/m² sobre cubierto. Competencia directa: 8 departamentos en planta baja con patio, de 50–70 años, entre ellos uno en la misma cuadra (Pichincha al 900, PB a renovar, USD 65.000). Superficie homogeneizada: 73,7 m² (cubierta 100%, semicubierta 60%, descubierta 30%). Promedio de la competencia directa: USD 1.476/m² homogeneizado, lo que da un valor de referencia de USD 109.000.\n\nPOSICIONAMIENTO — El jardín se pondera al 30% y no al 40% habitual porque es más grande que la superficie cubierta, y en la zona el comprador paga sobre todo el cubierto: los PB con patio se publican a USD 1.540–1.780/m² cubierto, tengan 5 o 43 m² de exterior (Av. Entre Ríos al 1000, 67 m² cub. + 43 m² de patio, pide USD 115.000). Al precio actual (USD 119.000 = USD 2.243/m² cubierto, 41% sobre la mediana de la zona) lleva 2 años sin venderse. Brecha publicación→cierre: 4,44% (Índice m² Real RE/MAX–UCEMA, 3 ambientes, ago-2026). Publicación sugerida USD 105.000–107.000; cierre esperable USD 100.000–104.000. Para una venta rápida, USD 99.000.\n\nCONSIDERACIONES — Estado regular, con cocina y baño a actualizar; expensas de $200.000, más del doble que en otra unidad de la misma cuadra ($90.000), lo que pesa en la decisión del comprador. El jardín es el gran diferencial frente a los demás PB de la zona y conviene mostrarlo bien en fotos y video.",
+    "f-agente": "Santiago Capriglione",
+    "f-mat": "CPI 5710 · CMCPSI 6703",
+    "f-fecha": "21/10/2026",
+    "f-dosvias-on": true
+  },
+  "qty": {
+    "acb-dorm": "2",
+    "acb-suite": "",
+    "acb-bano": "1",
+    "acb-toilette": "",
+    "acb-balcon": "",
+    "acb-balconaterr": "",
+    "acb-garage": ""
+  },
+  "aj": {
+    "a": [],
+    "b": []
+  },
+  "comparables": [
+    {
+      "id": 1,
+      "titulo": "Cochabamba 2800 · 3 amb PB con patio interno, 39 m² cub. · USD 62.000",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-depto-3-amb.-con-patio-en-pb-san-cristobal-60286472.html"
+    },
+    {
+      "id": 2,
+      "titulo": "Pichincha al 900 · 3 amb PB al frente, patio 6 m2, requiere renovación baño y cocina (MISMA CUADRA), 38 m² cub. · USD 65.000",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-tres-ambientes-en-planta-baja-en-pichincha-entre-58420195.html"
+    },
+    {
+      "id": 3,
+      "titulo": "Estados Unidos 2400 · 3 amb PB al frente con patio semicubierto, 50 m² cub. · USD 67.000 (Estrella ★)",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-estados-unidos-2400-departamento-3-amb-planta-baja-59215237.html"
+    },
+    {
+      "id": 4,
+      "titulo": "Pasco 1200 · 3 amb PB contrafrente, patio con cerramiento 8 m2, 45 m² cub. · USD 74.000",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-3-ambientes-en-planta-baja-con-patio-55812872.html"
+    },
+    {
+      "id": 5,
+      "titulo": "Carlos Calvo 1957 · 3 amb PB a la calle con patio, 48 m² cub. · USD 74.000",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-3-ambientes.-calvo-carlos-al-1900-59425499.html"
+    },
+    {
+      "id": 6,
+      "titulo": "Humberto I al 2000 · 3 amb PB con patio, terminaciones de época, 50 m² cub. · USD 89.000",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-humberto-i-al-2000-venta-3-ambientes-c-patio-san-57806317.html"
+    },
+    {
+      "id": 7,
+      "titulo": "Av. Entre Ríos al 1000 · 3 amb contrafrente con patio grande y parrilla, 67 m² cub. · USD 115.000",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-en-venta-en-san-cristobal-av-entre-rios-60099506.html"
+    },
+    {
+      "id": 8,
+      "titulo": "Humberto 1º 2200 · 3 amb fondo de pasillo con 2 patios, 73 m² cub. · USD 117.000",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-departamento-3-ambientes-con-patio-60263846.html"
+    },
+    {
+      "id": 9,
+      "titulo": "Cochabamba 1854 · 3 amb reciclado 1er piso, patio + terraza de uso exclusivo, 45 m² cub. · USD 67.000 · referencia",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-en-san-cristobal-59975347.html"
+    },
+    {
+      "id": 10,
+      "titulo": "Chile al 2200 · 3 amb PB al frente con patio, excelente estado (edificio 20 años), 41 m² cub. · USD 68.000 · referencia",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-en-san-cristobal-58640350.html"
+    },
+    {
+      "id": 11,
+      "titulo": "Dean Funes al 900 · 3 amb PB al frente con patio interno - OCUPADA, 60 m² cub. · USD 75.000 · referencia",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-en-venta-en-san-cristobal-dean-funes-al-59181533.html"
+    },
+    {
+      "id": 12,
+      "titulo": "Estados Unidos 1800 · 3 amb PB interno, 2 patios, requiere mejoras, 44,68 m² cub. · USD 98.000 · referencia",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-3-ambientes-planta-baja-con-patio-estados-unidos-1800.-53840455.html"
+    },
+    {
+      "id": 13,
+      "titulo": "Av. San Juan al 2300 · 3 amb al frente con balcón y patio, 50 m² cub. · USD 125.000 · referencia",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-san-cristobal-56940585.html"
+    },
+    {
+      "id": 14,
+      "titulo": "Av. San Juan al 2200 · 3 amb contrafrente con patio + dependencia, reciclado a nuevo, 84 m² cub. · USD 145.000 · referencia",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-excelente-3-ambientes-con-dependencia-en-san-cristobal-60175074.html"
+    },
+    {
+      "id": 15,
+      "titulo": "Chile 1400 · 3 amb PB con 2 patios, reciclado hace 15 años, 85 m² cub. · USD 159.000 · referencia",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-gran-departamento-3-ambientes-dos-patios-56173493.html"
+    }
+  ]
+}
