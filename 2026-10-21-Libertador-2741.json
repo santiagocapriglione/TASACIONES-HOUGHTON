@@ -60,11 +60,11 @@
     "f-c1-lbl": "Monoambientes en venta en Olivos (Zonaprop)",
     "f-c1": "80",
     "f-c2-on": true,
-    "f-c2-lbl": "Fichas de MercadoLibre analizadas (cruzadas con Zonaprop)",
+    "f-c2-lbl": "Fichas analizadas (MercadoLibre, cruzadas con Zonaprop y Argenprop)",
     "f-c2": "70",
     "f-c3-on": true,
     "f-c3-lbl": "Mismo producto (usados 40–60 años, corredor Libertador / Puerto)",
-    "f-c3": "20",
+    "f-c3": "21",
     "f-c4-on": true,
     "f-c4-lbl": "Competencia directa (reciclados o buen estado, con demanda)",
     "f-c4": "13",
@@ -96,7 +96,7 @@
     "en-alta": "Alta demanda inicial · venta rápida garantizada",
     "ed-alta": "< 20 días · Excelente cantidad de interesados · +60 visualizaciones",
     "f-rebaja": "7",
-    "f-analisis": "METODOLOGÍA — Relevamiento de los monoambientes en venta en Olivos en MercadoLibre (72 avisos, 70 fichas analizadas) y Zonaprop (80 avisos), 21/10/2026, cruzados entre portales. Se tomaron 20 comparables usados de 40–60 años y 19–33 m² cubiertos sobre el corredor de Av. del Libertador 2300–2900 y el Puerto de Olivos, entre ellos una unidad del mismo edificio (Libertador 2741 5°, contrafrente, 25,31 m² cub., USD 78.000). Superficie homogeneizada: 26,2 m² (cubierta 100%, balcón al 60%). Promedio de los 13 que representan el segmento (reciclados o en buen estado y con demanda): USD 2.801/m² homogeneizado, lo que da un valor de referencia de USD 73.000.\n\nPOSICIONAMIENTO — Al precio actual (USD 83.000 = USD 3.168/m² homogeneizado) la unidad queda por arriba de toda la competencia directa: solo los pisos altos con vista al río de las torres de Libertador 2400/2491 llegan a USD 2.900–3.000/m², y la unidad gemela del mismo edificio lleva más de un año publicada a USD 78.000 sin venderse. Por el reciclado a nuevo y la vista parcial al río se puede posicionar en la franja alta del segmento. Brecha publicación→cierre: 4,3% (promedio de Mudafy deptos GBA Norte, 3,8%, oct-2026, e Índice m² Real RE/MAX–UCEMA 1 ambiente, 4,76%, ago-2026). Publicación sugerida USD 76.000–78.000; cierre esperable USD 72.000–74.000. Para una venta rápida, USD 66.000–70.000.\n\nCONSIDERACIONES — Orientación sur, disposición lateral y 4° piso: la vista al río es parcial, a diferencia de los pisos altos que marcan el techo de la zona. El reciclado completo es el diferencial frente a la mayoría de los monoambientes del edificio y del corredor, que están en estado original: conviene mostrarlo bien en fotos y video.",
+    "f-analisis": "METODOLOGÍA — Relevamiento de los monoambientes en venta en Olivos en MercadoLibre (72 avisos, 70 fichas analizadas) y Zonaprop (80 avisos), 21/10/2026, cruzados entre portales. Se tomaron 20 comparables usados de 40–60 años y 19–33 m² cubiertos sobre el corredor de Av. del Libertador 2300–2900 y el Puerto de Olivos, entre ellos dos unidades del mismo edificio: Libertador 2741 5°, contrafrente, 25,31 m² cub., USD 78.000, y un monoambiente lateral actualizado con vista abierta al río, 25 m² cub., USD 82.000. Superficie homogeneizada: 26,2 m² (cubierta 100%, balcón al 60%). Promedio de los 13 que representan el segmento (reciclados o en buen estado y con demanda): USD 2.801/m² homogeneizado, lo que da un valor de referencia de USD 73.000.\n\nPOSICIONAMIENTO — Al precio actual (USD 83.000 = USD 3.168/m² homogeneizado) la unidad queda por arriba de toda la competencia directa: solo los pisos altos con vista al río de las torres de Libertador 2400/2491 llegan a USD 2.900–3.000/m², y las dos unidades del mismo edificio llevan más de un año publicadas a USD 78.000 y USD 82.000 sin venderse. Por el reciclado a nuevo y la vista parcial al río se puede posicionar en la franja alta del segmento. Brecha publicación→cierre: 4,3% (promedio de Mudafy deptos GBA Norte, 3,8%, oct-2026, e Índice m² Real RE/MAX–UCEMA 1 ambiente, 4,76%, ago-2026). Publicación sugerida USD 76.000–78.000; cierre esperable USD 72.000–74.000. Para una venta rápida, USD 66.000–70.000.\n\nCONSIDERACIONES — Orientación sur, disposición lateral y 4° piso: la vista al río es parcial, a diferencia de los pisos altos que marcan el techo de la zona. El reciclado completo es el diferencial frente a la mayoría de los monoambientes del edificio y del corredor, que están en estado original: conviene mostrarlo bien en fotos y video.",
     "f-agente": "Santiago Capriglione",
     "f-mat": "CPI 5710 · CMCPSI 6703",
     "f-fecha": "21/10/2026",
@@ -203,16 +203,21 @@
     },
     {
       "id": 18,
+      "titulo": "Av. del Libertador e/ Sáenz Peña y Alberdi (2741) · Mono lateral E actualizado, vista abierta al río - MISMO EDIFICIO, 25 m² cub. · USD 82.000 · referencia",
+      "url": "https://www.argenprop.com/departamento-en-venta-en-vicente-lopez-1-ambiente--17961336"
+    },
+    {
+      "id": 19,
       "titulo": "Av. del Libertador al 2400 · Mono contrafrente vista río 98k, 30 m² cub. · USD 98.000 · referencia",
       "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-olivos-departamento-venta-usd-98.000-45941160.html"
     },
     {
-      "id": 19,
+      "id": 20,
       "titulo": "Av. del Libertador 2400 2° · Mono 2° frente impecable, con renta, 27 m² cub. · USD 85.000",
       "url": "https://departamento.mercadolibre.com.ar/MLA-1666716717"
     },
     {
-      "id": 20,
+      "id": 21,
       "titulo": "Av. Libertador al 2400 · Mono frente 26 m2 pisos madera, 26 m² cub. · USD 85.000 · referencia",
       "url": "https://departamento.mercadolibre.com.ar/MLA-3718207198"
     }
