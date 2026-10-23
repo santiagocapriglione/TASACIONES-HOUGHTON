@@ -1,0 +1,220 @@
+{
+  "v": 1,
+  "campos": {
+    "f-modo": "depto",
+    "f-dir-on": true,
+    "f-dir": "Av. del Libertador 2741",
+    "f-piso-on": true,
+    "f-piso": "4° G · lateral",
+    "f-barrio-on": true,
+    "f-barrio": "Olivos, Vicente López",
+    "f-ant-on": true,
+    "f-ant": "40–50 años",
+    "f-tipo": "Departamento monoambiente",
+    "f-plantas-on": false,
+    "f-plantas": "",
+    "f-cochera-on": false,
+    "f-cochera": "",
+    "f-orient-on": true,
+    "f-orient": "Sur · lateral",
+    "f-mc-on": true,
+    "f-mc": "25",
+    "f-ms-on": true,
+    "f-ms": "2",
+    "f-md-on": true,
+    "f-md": "0",
+    "f-lote-on": false,
+    "f-lote": "0",
+    "f-pc": "100",
+    "f-ps": "60",
+    "f-pd": "40",
+    "f-estado-on": true,
+    "f-estado": "Reciclado a nuevo: cocina independiente equipada (mesada y pileta de acero, bajo mesada, alacena) y baño completo con receptáculo de ducha. Edificio con ascensor, sin amenities.",
+    "f-distrib-on": true,
+    "acb-living": false,
+    "acb-comedor": false,
+    "acb-cocina": true,
+    "acb-lavadero": false,
+    "acb-estudio": false,
+    "acb-terraza": false,
+    "acb-patio": false,
+    "acb-jardin": false,
+    "acb-parrilla": false,
+    "acb-quincho": false,
+    "acb-pileta": false,
+    "acb-playroom": false,
+    "acb-despensa": false,
+    "acb-dorm": false,
+    "acb-suite": false,
+    "acb-bano": true,
+    "acb-toilette": false,
+    "acb-balcon": true,
+    "acb-balconaterr": false,
+    "acb-garage": false,
+    "f-condicion-on": true,
+    "f-condicion": "Balcón de 1,90 × 1,00 m · vista parcial al río · a metros del Puerto de Olivos · apto crédito · superficies del aviso: 25 cub · 27 totales",
+    "f-pp": "2801",
+    "f-pc2": "2681",
+    "f-compd": "13",
+    "f-c1-on": true,
+    "f-c1-lbl": "Monoambientes en venta en Olivos (Zonaprop)",
+    "f-c1": "80",
+    "f-c2-on": true,
+    "f-c2-lbl": "Fichas de MercadoLibre analizadas (cruzadas con Zonaprop)",
+    "f-c2": "70",
+    "f-c3-on": true,
+    "f-c3-lbl": "Mismo producto (usados 40–60 años, corredor Libertador / Puerto)",
+    "f-c3": "20",
+    "f-c4-on": true,
+    "f-c4-lbl": "Competencia directa (reciclados o buen estado, con demanda)",
+    "f-c4": "13",
+    "f-a-p25": "0",
+    "f-a-med": "0",
+    "f-a-p75": "0",
+    "f-b-p25": "0",
+    "f-b-med": "0",
+    "f-b-p75": "0",
+    "f-via-modo": "max",
+    "f-margen-pub": "4",
+    "f-pedido": "83000",
+    "s0-name": "Promedio publicación",
+    "s0-usd": "2801",
+    "s1-name": "Promedio cierre",
+    "s1-usd": "2681",
+    "s2-name": "Competitivo 2",
+    "s2-usd": "2663",
+    "s3-name": "Competitivo 3",
+    "s3-usd": "2517",
+    "s4-name": "Estrella ★",
+    "s4-usd": "2500",
+    "s5-name": "Oportunidad",
+    "s5-usd": "2253",
+    "en-cons": "Mayor plazo, mayor margen de negociación",
+    "ed-cons": "6–12 meses · Pocos interesados · 5–20 visualizaciones",
+    "en-comp": "Mayor volumen de consultas · mejor relación tiempo/valor",
+    "ed-comp": "~65 días · Varios interesados · 25–45 visualizaciones",
+    "en-alta": "Alta demanda inicial · venta rápida garantizada",
+    "ed-alta": "< 20 días · Excelente cantidad de interesados · +60 visualizaciones",
+    "f-rebaja": "7",
+    "f-analisis": "METODOLOGÍA — Relevamiento de los monoambientes en venta en Olivos en MercadoLibre (72 avisos, 70 fichas analizadas) y Zonaprop (80 avisos), 21/10/2026, cruzados entre portales. Se tomaron 20 comparables usados de 40–60 años y 19–33 m² cubiertos sobre el corredor de Av. del Libertador 2300–2900 y el Puerto de Olivos, entre ellos una unidad del mismo edificio (Libertador 2741 5°, contrafrente, 25,31 m² cub., USD 78.000). Superficie homogeneizada: 26,2 m² (cubierta 100%, balcón al 60%). Promedio de los 13 que representan el segmento (reciclados o en buen estado y con demanda): USD 2.801/m² homogeneizado, lo que da un valor de referencia de USD 73.000.\n\nPOSICIONAMIENTO — Al precio actual (USD 83.000 = USD 3.168/m² homogeneizado) la unidad queda por arriba de toda la competencia directa: solo los pisos altos con vista al río de las torres de Libertador 2400/2491 llegan a USD 2.900–3.000/m², y la unidad gemela del mismo edificio lleva más de un año publicada a USD 78.000 sin venderse. Por el reciclado a nuevo y la vista parcial al río se puede posicionar en la franja alta del segmento. Brecha publicación→cierre: 4,3% (promedio de Mudafy deptos GBA Norte, 3,8%, oct-2026, e Índice m² Real RE/MAX–UCEMA 1 ambiente, 4,76%, ago-2026). Publicación sugerida USD 76.000–78.000; cierre esperable USD 72.000–74.000. Para una venta rápida, USD 66.000–70.000.\n\nCONSIDERACIONES — Orientación sur, disposición lateral y 4° piso: la vista al río es parcial, a diferencia de los pisos altos que marcan el techo de la zona. El reciclado completo es el diferencial frente a la mayoría de los monoambientes del edificio y del corredor, que están en estado original: conviene mostrarlo bien en fotos y video.",
+    "f-agente": "Santiago Capriglione",
+    "f-mat": "CPI 5710 · CMCPSI 6703",
+    "f-fecha": "21/10/2026",
+    "f-dosvias-on": true
+  },
+  "qty": {
+    "acb-dorm": "",
+    "acb-suite": "",
+    "acb-bano": "1",
+    "acb-toilette": "",
+    "acb-balcon": "1",
+    "acb-balconaterr": "",
+    "acb-garage": ""
+  },
+  "aj": {
+    "a": [],
+    "b": []
+  },
+  "comparables": [
+    {
+      "id": 1,
+      "titulo": "Av. del Libertador al 2400 6°C · Mono 6°C frente amplio balcón, 30 m² cub. · USD 73.000 · referencia",
+      "url": "https://departamento.mercadolibre.com.ar/MLA-2204679265"
+    },
+    {
+      "id": 2,
+      "titulo": "Wineberg al 2700 · Mono Bajo de Olivos 30 m2, 30 m² cub. · USD 72.000 · referencia",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-olivos-47762688.html"
+    },
+    {
+      "id": 3,
+      "titulo": "Av. del Libertador 2861 5°D · Mono 5°D lateral, vista arboleda, 24,7 m² cub. · USD 60.000 · referencia",
+      "url": "https://departamento.mercadolibre.com.ar/MLA-1703607741"
+    },
+    {
+      "id": 4,
+      "titulo": "Av. del Libertador al 2400 · Mono RECICLADO vista al Puerto, 32 m² cub. · USD 80.000 (Estrella ★)",
+      "url": "https://departamento.mercadolibre.com.ar/MLA-1778142613"
+    },
+    {
+      "id": 5,
+      "titulo": "Matías Sturiza 494 (esq. Libertador) · Mono Puerto de Olivos vista al río, 31 m² cub. · USD 78.000",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-monoambiente-puerto-de-olivos-59926982.html"
+    },
+    {
+      "id": 6,
+      "titulo": "Av. del Libertador 2658 6° · Mono 6° balcón 2do cuerpo frente, 26 m² cub. · USD 70.000",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-monoambiente-con-balcon-sobre-av-libertador-bajas-59073565.html"
+    },
+    {
+      "id": 7,
+      "titulo": "Av. del Libertador al 2700 9° · Mono 9° dividido, baño reciclado, 26 m² cub. · USD 69.000",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-en-venta-monoambiente-dividido-muy-60409628.html"
+    },
+    {
+      "id": 8,
+      "titulo": "Av. del Libertador 2491 13° · Mono 13° REFACCIONADO vista al río, 29,11 m² cub. · USD 82.000",
+      "url": "https://departamento.mercadolibre.com.ar/MLA-2160359871"
+    },
+    {
+      "id": 9,
+      "titulo": "Guillermo Rawson 2394 4° · Mono Bajo de Olivos balcón francés, 28 m² cub. · USD 75.000 · referencia",
+      "url": "https://departamento.mercadolibre.com.ar/MLA-2116737117"
+    },
+    {
+      "id": 10,
+      "titulo": "Matías Sturiza 494 · Mono Puerto de Olivos contrafrente, 25 m² cub. · USD 73.000",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-de-25-m-sup2--de-1-ambiente-en-venta-en-59540777.html"
+    },
+    {
+      "id": 11,
+      "titulo": "Uribelarrea 400 3° · Mono REFACCIONADO A NUEVO 3° escalera, 19,5 m² cub. · USD 55.000",
+      "url": "https://departamento.mercadolibre.com.ar/MLA-4001272946"
+    },
+    {
+      "id": 12,
+      "titulo": "Av. del Libertador al 2400 11° · Mono piso 11 balcón vista río y puerto, 29 m² cub. · USD 88.000",
+      "url": "https://departamento.mercadolibre.com.ar/MLA-4086056860"
+    },
+    {
+      "id": 13,
+      "titulo": "Av. del Libertador al 2700 · Mono lateral N cocina separada, 24 m² cub. · USD 70.000",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-en-olivos-58939491.html"
+    },
+    {
+      "id": 14,
+      "titulo": "Av. Libertador al 2400 18° · Mono piso 18 frente impecable, 30 m² cub. · USD 88.000",
+      "url": "https://departamento.mercadolibre.com.ar/MLA-1718789985"
+    },
+    {
+      "id": 15,
+      "titulo": "Av. del Libertador 2741 5° · Mono 5° contraf. - MISMO EDIFICIO, 25,31 m² cub. · USD 78.000 · referencia",
+      "url": "https://departamento.mercadolibre.com.ar/MLA-4073817618"
+    },
+    {
+      "id": 16,
+      "titulo": "Av. del Libertador al 2400 18° · Mono piso 18 frente vista panorámica río, 30 m² cub. · USD 90.000",
+      "url": "https://departamento.mercadolibre.com.ar/MLA-3415982544"
+    },
+    {
+      "id": 17,
+      "titulo": "Av. del Libertador 2491 14° · Mono 14° frente con balcón, 28 m² cub. · USD 85.000",
+      "url": "https://departamento.mercadolibre.com.ar/MLA-2029926575"
+    },
+    {
+      "id": 18,
+      "titulo": "Av. del Libertador al 2400 · Mono contrafrente vista río 98k, 30 m² cub. · USD 98.000 · referencia",
+      "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-olivos-departamento-venta-usd-98.000-45941160.html"
+    },
+    {
+      "id": 19,
+      "titulo": "Av. del Libertador 2400 2° · Mono 2° frente impecable, con renta, 27 m² cub. · USD 85.000",
+      "url": "https://departamento.mercadolibre.com.ar/MLA-1666716717"
+    },
+    {
+      "id": 20,
+      "titulo": "Av. Libertador al 2400 · Mono frente 26 m2 pisos madera, 26 m² cub. · USD 85.000 · referencia",
+      "url": "https://departamento.mercadolibre.com.ar/MLA-3718207198"
+    }
+  ]
+}
