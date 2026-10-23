@@ -1507,7 +1507,8 @@ function cargarArchivo(input){
   const r = new FileReader();
   r.onload = () => {
     try {
-      setEstado(JSON.parse(r.result));
+      // El "datos.json" de tasar.py (con "sujeto"/"propiedades") no es un estado de la app
+      if (!setEstado(JSON.parse(r.result))) { hint('Ese .json no es una tasación de esta app (¿es el datos.json del script?)'); return; }
       autoguardar();
       hint('Tasación cargada');
     } catch(e){ hint('El archivo no es una tasación válida'); }
@@ -1531,7 +1532,21 @@ function estadoDesdeHash(){
   catch(e){ return null; }
 }
 
-function restaurarEstado(){
+// Tasación guardada en el repo: #t=2026-10-21-Pichincha-976.json
+async function estadoDesdeRepo(){
+  const m = location.hash.match(/[#&]t=([^&]+)/);
+  if (!m) return null;
+  const archivo = decodeURIComponent(m[1]);
+  if (!/^[\w.\-]+\.json$/.test(archivo)) return null;
+  try {
+    const r = await fetch(archivo, { cache:'no-store' });
+    return r.ok ? await r.json() : null;
+  } catch(e){ return null; }
+}
+
+async function restaurarEstado(){
+  const desdeRepo = await estadoDesdeRepo();
+  if (desdeRepo && setEstado(desdeRepo)){ hint('Tasación cargada desde el repositorio'); return; }
   const desdeHash = estadoDesdeHash();
   if (desdeHash && setEstado(desdeHash)){ hint('Tasación cargada desde el link'); return; }
   try {
