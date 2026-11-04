@@ -462,6 +462,10 @@
       <div class="field"><label>Competencia directa (unid.)</label><input id="f-compd" value=""></div>
       <div class="auto-row" style="margin-top:6px;"><span class="auto-lbl" id="av-valpub-lbl" title="Valor de tasación adoptado (el mismo que figura en Resultado y en la portada).">Valor pub. promedio</span><span class="auto-val" id="av-valpub" style="font-size:12px;">—</span></div>
       <div class="auto-row"><span class="auto-lbl" id="av-rango-lbl">Rango de precio realista (Comp.2 – Comp.3)</span><span class="auto-val" id="av-rango" style="font-size:11px;min-width:140px;">—</span></div>
+      <div class="fr2" id="rango-sel" style="margin-bottom:8px;">
+        <div class="field" style="margin-bottom:0;"><label>Rango de publicación: desde</label><select id="f-rango-desde" onchange="sync()" style="font-size:11px;padding:4px 6px;border:1px solid #E5E2DE;border-radius:5px;width:100%;"><option value="s0">s0</option><option value="s1">s1</option><option value="s2" selected>s2</option><option value="s3">s3</option><option value="s4">s4</option><option value="s5">s5</option></select></div>
+        <div class="field" style="margin-bottom:0;"><label>hasta</label><select id="f-rango-hasta" onchange="sync()" style="font-size:11px;padding:4px 6px;border:1px solid #E5E2DE;border-radius:5px;width:100%;"><option value="s0">s0</option><option value="s1">s1</option><option value="s2">s2</option><option value="s3" selected>s3</option><option value="s4">s4</option><option value="s5">s5</option></select></div>
+      </div>
       <div style="display:grid;grid-template-columns:24px 1fr 72px;gap:6px;margin-bottom:7px;align-items:end;">
         <input type="checkbox" id="f-c1-on" checked onchange="sync()" style="width:16px;height:16px;accent-color:var(--or);margin-top:24px;cursor:pointer;">
         <div class="field" style="margin-bottom:0;"><label>Categoría 1</label><input id="f-c1-lbl" value=""></div>
@@ -562,7 +566,7 @@
       <!-- COMPETITIVO -->
       <div class="esc-auto comp">
         <div class="esc-auto-head">
-          <span class="esc-auto-lbl" style="color:var(--or);">Competitivo · Promedio Comp. 2 y 3</span>
+          <span class="esc-auto-lbl" id="ep-comp-lbl" style="color:var(--or);">Competitivo · Promedio Comp. 2 y 3</span>
           <span class="esc-auto-price" id="ep-comp">—</span>
         </div>
         <input class="esc-name-inp" id="en-comp" value="Mayor volumen de consultas · mejor relación tiempo/valor">
@@ -936,7 +940,21 @@ function sync() {
 
   // ── Scenario prices (auto)
   const priceCons = segVals['s0'].pub;
-  const priceComp = (segVals['s2'].pub + segVals['s3'].pub) / 2;
+  // Rango de publicación: dos escalones de la tabla elegidos en Mercado (por defecto Comp. 2 y Comp. 3)
+  const rangoNom = id => (g(id + '-name') && g(id + '-name').value) || id;
+  ['f-rango-desde', 'f-rango-hasta'].forEach(sid => {
+    const sel = g(sid);
+    if (sel) Array.from(sel.options).forEach(o => { o.textContent = rangoNom(o.value); });
+  });
+  if (g('rango-sel')) g('rango-sel').style.display = isCasa() ? 'none' : '';
+  const rDesde = (g('f-rango-desde') && g('f-rango-desde').value) || 's2';
+  const rHasta = (g('f-rango-hasta') && g('f-rango-hasta').value) || 's3';
+  const rLo = Math.min(segVals[rDesde].pub, segVals[rHasta].pub);
+  const rHi = Math.max(segVals[rDesde].pub, segVals[rHasta].pub);
+  const rangoLbl = rDesde === rHasta ? rangoNom(rDesde) : rangoNom(rDesde) + ' – ' + rangoNom(rHasta);
+  const priceComp = (rLo + rHi) / 2;
+  const ecl = g('ep-comp-lbl');
+  if (ecl) ecl.textContent = 'Competitivo · ' + (rDesde === rHasta ? rangoNom(rDesde) : 'Promedio ' + rangoLbl);
   const priceAlta = priceComp * (1 - rebaja / 100);
 
   g('ep-cons').textContent = 'USD ' + fmt(priceCons);
@@ -953,12 +971,12 @@ function sync() {
     rangoStr   = 'USD ' + fmt(r1k(V.bajo)) + ' – USD ' + fmt(r1k(V.alto));
   } else {
     valpubAuto = segVals['s0'].pub;
-    rangoStr   = 'USD ' + fmt(segVals['s2'].pub) + ' – USD ' + fmt(segVals['s3'].pub);
+    rangoStr   = rLo === rHi ? 'USD ' + fmt(rLo) : 'USD ' + fmt(rLo) + ' – USD ' + fmt(rHi);
   }
   const el_vp = g('av-valpub'); if(el_vp) el_vp.textContent = 'USD ' + fmt(valpubAuto);
   const el_rg = g('av-rango');  if(el_rg) el_rg.textContent = rangoStr;
   const el_rgl = g('av-rango-lbl');
-  if (el_rgl) el_rgl.textContent = isCasa() ? 'Rango de precio realista (P25 – P75)' : 'Rango de precio realista (Comp.2 – Comp.3)';
+  if (el_rgl) el_rgl.textContent = isCasa() ? 'Rango de precio realista (P25 – P75)' : 'Rango de precio realista (' + rangoLbl + ')';
 
   // ── PORTADA
   const addrParts = [];
@@ -1105,7 +1123,7 @@ function sync() {
   const escData = [
     { cls:'cons', num:'1', lbl:'Escenario Conservador', price:priceCons, source:'Promedio publicación', rec:false,
       det: g('ed-cons').value, name: g('en-cons').value },
-    { cls:'comp', num:'2', lbl:'Escenario Competitivo', price:priceComp, source:'Promedio Comp. 2 y Comp. 3', rec:true,
+    { cls:'comp', num:'2', lbl:'Escenario Competitivo', price:priceComp, source:esc(rDesde === rHasta ? rangoNom(rDesde) : 'Promedio ' + rangoLbl), rec:true,
       det: g('ed-comp').value, name: g('en-comp').value },
     { cls:'alta', num:'3', lbl:'Alta Demanda',          price:priceAlta, source:`−${rebaja}% sobre Competitivo`, rec:false,
       det: g('ed-alta').value, name: g('en-alta').value },
@@ -1452,6 +1470,9 @@ function setEstado(st){
   if (!st || !st.campos) return false;
   // Tasaciones guardadas antes del selector de dos vías: se tasaban siempre por dos vías
   if (!('f-dosvias-on' in st.campos) && document.getElementById('f-dosvias-on')) document.getElementById('f-dosvias-on').checked = true;
+  // Tasaciones guardadas antes del selector de rango: siempre Comp. 2 – Comp. 3
+  if (!('f-rango-desde' in st.campos) && g('f-rango-desde')) g('f-rango-desde').value = 's2';
+  if (!('f-rango-hasta' in st.campos) && g('f-rango-hasta')) g('f-rango-hasta').value = 's3';
   Object.entries(st.campos).forEach(([id, val]) => {
     const el = document.getElementById(id);
     if (!el) return;
