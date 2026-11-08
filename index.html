@@ -333,6 +333,18 @@
       font-size:11px;cursor:pointer;font-family:'DM Sans',sans-serif;}
     #save-bar button:hover{border-color:var(--or);color:var(--or);}
     #save-hint{padding:0 18px 8px;font-size:10px;color:var(--gy);}
+  /* ── Relato inicial + valor sugerido (pedido de Pablo, 2026-11) ── */
+  #preview-panel > .rpage{ flex-shrink:0; }  /* que las hojas no se aplasten en la vista previa */
+  #rp-relato{ display:none; }
+  #rp-relato.has-data{ display:block; }
+  .relato-text{ font-size:13px; line-height:1.8; color:var(--md); white-space:pre-wrap; margin-top:2px; }
+  .relato-text strong{ color:var(--dk); font-weight:700; }
+  .valor-box{ margin-top:28px; background:var(--dk); border-radius:10px; padding:24px 28px; border-left:5px solid var(--or); }
+  .valor-box-lbl{ font-size:9px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.55); }
+  .valor-box-val{ font-family:'Playfair Display',serif; font-size:34px; font-weight:700; color:#FFF; margin-top:8px; line-height:1.1; }
+  .valor-box-sub{ font-size:10.5px; color:rgba(255,255,255,0.62); margin-top:12px; line-height:1.7; }
+  .valor-box-sub:empty{ display:none; }
+  body.resumida .rp-tecnica{ display:none !important; }
 </style>
 </head>
 <body>
@@ -349,6 +361,21 @@
   </div>
 
   <div id="form-scroll">
+
+    <!-- RELATO + VALOR SUGERIDO -->
+    <div class="fsec" id="relato-fsec">
+      <div class="slbl">Relato de la propiedad</div>
+      <p style="font-size:10px;color:var(--gy);margin-bottom:10px;line-height:1.5;">Va en la página 2, justo después de la portada: cómo es la propiedad contada en un párrafo. Escribí <strong>{VALOR}</strong> donde quieras que aparezca el valor sugerido (se completa solo y cambia si cambiás los escalones). Si queda vacío, la página no se imprime.</p>
+      <textarea id="f-relato" oninput="sync()" placeholder="Ej.: Al entrar, el living se abre hacia un balcón al frente... Por todo esto, sugerimos publicarla en {VALOR}." style="width:100%;min-height:150px;resize:vertical;font-family:'DM Sans',sans-serif;font-size:12px;line-height:1.5;padding:9px 10px;border:1px solid #E5E2DE;border-radius:6px;background:#F4F2EF;color:#1C1C1C;outline:none;box-sizing:border-box;"></textarea>
+      <div class="fr2" style="margin-top:8px;">
+        <div class="field"><label>Valor sugerido como</label><select id="f-valor-modo" onchange="sync()"><option value="numero" selected>Número concreto</option><option value="rango">Rango</option></select></div>
+        <div class="field"><label>Número tomado de</label><select id="f-valor-esc" onchange="sync()"><option value="medio" selected>Medio del rango de publicación</option><option value="hasta">Tope del rango</option><option value="s0">s0</option><option value="s1">s1</option><option value="s2">s2</option><option value="s3">s3</option><option value="s4">s4</option><option value="s5">s5</option></select></div>
+      </div>
+      <div class="fr2">
+        <div class="field"><label title="Si ponés un número acá, manda sobre el escalón elegido (solo en modo número).">Número a mano USD (opcional)</label><input id="f-valor-manual" type="number" value="0" oninput="sync()"></div>
+        <div class="field"><label title="La resumida deja portada, relato, características y plan de comercialización. La completa suma todo el análisis.">Versión del informe</label><select id="f-version" onchange="applyModo();sync();renumberPages()"><option value="completa" selected>Completa (con análisis)</option><option value="resumida">Resumida</option></select></div>
+      </div>
+    </div>
 
     <!-- PROPIEDAD -->
     <div class="fsec">
@@ -658,10 +685,26 @@
           <div class="cv-stat"><div class="cv-stat-val" id="p-total">49 m²</div><div class="cv-stat-lbl">Total</div></div>
           <div class="cv-stat"><div class="cv-stat-val" id="p-tipo">2 amb.</div><div class="cv-stat-lbl">Tipología</div></div>
           <div class="cv-stat"><div class="cv-stat-val" id="p-ant">50 años</div><div class="cv-stat-lbl">Antigüedad</div></div>
-          <div class="cv-stat wide"><div class="cv-stat-val" id="p-rango-cv">USD 62.000 – USD 70.000</div><div class="cv-stat-lbl">Rango de valor estratégico</div></div>
+          <div class="cv-stat wide"><div class="cv-stat-val" id="p-rango-cv">USD 62.000 – USD 70.000</div><div class="cv-stat-lbl" id="p-rango-cv-lbl">Rango de valor estratégico</div></div>
         </div>
         <div class="cv-r-lbl">Houghton Propiedades · 2026</div>
       </div>
+    </div>
+  </div>
+
+  <!-- PAGE 1b – RELATO + VALOR SUGERIDO (oculta si no hay relato) -->
+  <div class="rpage" id="rp-relato">
+    <div class="inner">
+      <div class="pg-hdr" id="pg-hdr-relato"></div>
+      <div class="sec-tag">La Propiedad</div>
+      <div class="sec-title">Conocé <span>la propiedad</span></div>
+      <div class="relato-text" id="p-relato-text"></div>
+      <div class="valor-box">
+        <div class="valor-box-lbl">Valor sugerido de publicación</div>
+        <div class="valor-box-val" id="p-valor-sug">—</div>
+        <div class="valor-box-sub" id="p-valor-sub"></div>
+      </div>
+      <div class="pg-ftr" id="pg-ftr-relato"></div>
     </div>
   </div>
 
@@ -689,10 +732,10 @@
   </div>
 
   <!-- PAGE 3 – ANÁLISIS DE MERCADO -->
-  <div class="rpage">
+  <div class="rpage rp-tecnica">
     <div class="inner">
       <div class="pg-hdr"><div class="pg-hdr-logo" style="display:flex;align-items:center;gap:6px;"><img class="lp" src="data:image/png;base64,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" style="height:18px;width:auto;"><span>Houghton Propiedades</span></div><div class="pg-hdr-addr" id="p-hdr3">Av. Corrientes 2963 P11 · Balvanera</div></div>
-      <div class="sec-tag">Contexto</div>
+      <div class="sec-tag">Fundamento técnico · Contexto</div>
       <div class="sec-title">Análisis <span>de Mercado</span></div>
       <div class="mhero">
         <div class="mh-col"><div class="mh-val" id="p-mh-pp">USD 1.535</div><div class="mh-sub">valor/m²</div><div class="mh-desc">Promedio publicación en zona</div></div>
@@ -723,7 +766,7 @@
   </div>
 
   <!-- PAGE 4B – VALUACIÓN POR DOS VÍAS (modo casa / lote) -->
-  <div class="rpage" id="rp-vias" style="display:none;">
+  <div class="rpage rp-tecnica" id="rp-vias" style="display:none;">
     <div class="inner">
       <div class="pg-hdr" id="pg-hdr-vias"></div>
       <div class="sec-tag">Valuación por dos vías</div>
@@ -754,7 +797,7 @@
   </div>
 
   <!-- PAGE 4 – TABLA DE SEGMENTOS -->
-  <div class="rpage" id="rp-segmentos">
+  <div class="rpage rp-tecnica" id="rp-segmentos">
     <div class="inner">
       <div class="pg-hdr"><div class="pg-hdr-logo" style="display:flex;align-items:center;gap:6px;"><img class="lp" src="data:image/png;base64,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" style="height:18px;width:auto;"><span>Houghton Propiedades</span></div><div class="pg-hdr-addr" id="p-hdr4">Av. Corrientes 2963 P11 · Balvanera</div></div>
       <div class="sec-tag">Posicionamiento de Precio</div>
@@ -772,7 +815,7 @@
   </div>
 
   <!-- PAGE 5 – ESTRATEGIA -->
-  <div class="rpage" id="rp-estrategia">
+  <div class="rpage rp-tecnica" id="rp-estrategia">
     <div class="inner">
       <div class="pg-hdr"><div class="pg-hdr-logo" style="display:flex;align-items:center;gap:6px;"><img class="lp" src="data:image/png;base64,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" style="height:18px;width:auto;"><span>Houghton Propiedades</span></div><div class="pg-hdr-addr" id="p-hdr5">Av. Corrientes 2963 P11 · Balvanera</div></div>
       <div class="sec-tag">Decisión de precio</div>
@@ -827,7 +870,7 @@
   </div>
 
   <!-- PAGE 7 – COMPARABLES (oculta si vacía) -->
-  <div class="rpage" id="p-comp-page">
+  <div class="rpage rp-tecnica" id="p-comp-page">
     <div class="inner">
       <div class="pg-hdr"><div class="pg-hdr-logo" style="display:flex;align-items:center;gap:6px;"><img class="lp" src="data:image/png;base64,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" style="height:18px;width:auto;"><span>Houghton Propiedades</span></div><div class="pg-hdr-addr" id="p-hdr-comp"></div></div>
       <div id="p-analisis-block" style="display:none;margin-bottom:14px;">
@@ -946,6 +989,7 @@ function sync() {
     const sel = g(sid);
     if (sel) Array.from(sel.options).forEach(o => { o.textContent = rangoNom(o.value); });
   });
+  if (g('f-valor-esc')) Array.from(g('f-valor-esc').options).forEach(o => { if (/^s\d$/.test(o.value)) o.textContent = 'Escalón ' + rangoNom(o.value); });
   if (g('rango-sel')) g('rango-sel').style.display = isCasa() ? 'none' : '';
   const rDesde = (g('f-rango-desde') && g('f-rango-desde').value) || 's2';
   const rHasta = (g('f-rango-hasta') && g('f-rango-hasta').value) || 's3';
@@ -991,12 +1035,54 @@ function sync() {
   g('p-total').textContent = fmt1(total) + ' m²';
   g('p-tipo').textContent = tipo;
   g('p-ant').textContent = ant;
-  g('p-rango-cv').textContent = rangoStr;
+  // ── Valor sugerido de publicación (relato de la página 2 y portada)
+  const vModo = (g('f-valor-modo') && g('f-valor-modo').value) || 'numero';
+  const vEsc  = (g('f-valor-esc') && g('f-valor-esc').value) || 'medio';
+  const vMan  = gv('f-valor-manual');
+  let vLo, vHi, vNum;
+  if (isCasa()) {
+    const V = calcVias();
+    vLo = r1k(V.bajo); vHi = r1k(V.alto); vNum = r1k(V.pub);
+  } else {
+    vLo = r1k(rLo); vHi = r1k(rHi);
+    vNum = vEsc === 'medio' ? r1k((rLo + rHi) / 2)
+         : (vEsc === 'hasta' ? r1k(rHi) : (segVals[vEsc] ? r1k(segVals[vEsc].pub) : r1k((rLo + rHi) / 2)));
+  }
+  if (vMan > 0) vNum = vMan;
+  const esRango = vModo === 'rango' && vLo !== vHi;
+  const valorSugStr = esRango ? 'USD ' + fmt(vLo) + ' – USD ' + fmt(vHi) : 'USD ' + fmt(vNum);
+  const relato = ((g('f-relato') && g('f-relato').value) || '').trim();
+  const escH = t => t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const rpRel = g('rp-relato');
+  if (rpRel) rpRel.classList.toggle('has-data', relato.length > 0);
+  const rtx = g('p-relato-text');
+  if (rtx) rtx.innerHTML = escH(relato).replace(/\{VALOR\}/g, '<strong>' + valorSugStr + '</strong>');
+  const vs = g('p-valor-sug'); if (vs) vs.textContent = valorSugStr;
+  const subP = [];
+  if (!esRango && vLo !== vHi) subP.push('Rango de mercado: USD ' + fmt(vLo) + ' – USD ' + fmt(vHi));
+  const cierreEst = isCasa() ? 0 : r1k(segVals['s1'].pub);
+  if (cierreEst > 0) subP.push('Valor de cierre estimado: USD ' + fmt(cierreEst));
+  const vsub = g('p-valor-sub'); if (vsub) vsub.textContent = subP.join('  ·  ');
+  // Con relato, la portada muestra el mismo valor sugerido; sin relato, el rango de siempre
+  window.__valorSugCv = relato ? valorSugStr : '';
+  g('p-rango-cv').textContent = relato ? valorSugStr : rangoStr;
+  const cvl = g('p-rango-cv-lbl');
+  if (cvl) cvl.textContent = relato ? 'Valor sugerido de publicación' : 'Rango de valor estratégico';
+  document.body.classList.toggle('resumida', ((g('f-version') && g('f-version').value) || 'completa') === 'resumida');
 
   // Headers
   const hdr = `${dir} ${piso} · ${barrio}`;
   ['p-hdr2','p-hdr3','p-hdr4','p-hdr5','p-hdr6'].forEach(id => { const el=g(id); if(el) el.textContent=hdr; });
   ['p-agente2','p-agente3','p-agente4','p-agente5','p-agente6'].forEach(id => { const el=g(id); if(el) el.textContent=agente; });
+  // La página del relato usa el mismo encabezado y pie que Características
+  const h2 = g('p-hdr2') && g('p-hdr2').closest('.pg-hdr');
+  const f2 = g('p-agente2') && g('p-agente2').closest('.pg-ftr');
+  [[h2, g('pg-hdr-relato')], [f2, g('pg-ftr-relato')]].forEach(([src, dst]) => {
+    if (!src || !dst) return;
+    dst.innerHTML = src.innerHTML;
+    dst.querySelectorAll('[id]').forEach(e => e.removeAttribute('id'));
+  });
+  if (typeof renumberPages === 'function') renumberPages();
 
   // ── CARACTERÍSTICAS – m² breakdown (each surface has its own toggle)
   let m2Html = '';
@@ -1256,6 +1342,7 @@ function applyModo(){
   show('fsec-escenarios',!casa);
   show('rp-segmentos',   !casa);
   show('rp-estrategia',  !casa);
+  document.body.classList.toggle('resumida', (g('f-version') && g('f-version').value) === 'resumida');
 }
 
 function syncVias(){
@@ -1287,7 +1374,7 @@ function syncVias(){
 
   const rangoStr = 'USD ' + fmt(r1k(V.bajo)) + ' – USD ' + fmt(r1k(V.alto));
   set('p-vias-rango', rangoStr);
-  const cv = g('p-rango-cv'); if (cv) cv.textContent = rangoStr;
+  const cv = g('p-rango-cv'); if (cv && !window.__valorSugCv) cv.textContent = rangoStr;
 
   set('p-vias-note', '');
   const noteEl = g('p-vias-note');
