@@ -1,0 +1,197 @@
+{
+ "v": 1,
+ "campos": {
+  "f-modo": "depto",
+  "f-dir-on": true,
+  "f-dir": "Juan Francisco Seguí 3524",
+  "f-piso-on": true,
+  "f-piso": "8° piso · Unidad E (UF 48)",
+  "f-barrio-on": true,
+  "f-barrio": "Palermo Chico, CABA",
+  "f-ant-on": true,
+  "f-ant": "~55 años (reglamento 1970)",
+  "f-tipo": "Departamento 3 amb.",
+  "f-plantas-on": false,
+  "f-plantas": "",
+  "f-cochera-on": true,
+  "f-cochera": "Sin cochera",
+  "f-orient-on": false,
+  "f-orient": "",
+  "f-mc-on": true,
+  "f-mc": "57.43",
+  "f-ms-on": true,
+  "f-ms": "1.18",
+  "f-md-on": false,
+  "f-md": "0",
+  "f-lote-on": false,
+  "f-lote": "0",
+  "f-pc": "100",
+  "f-ps": "60",
+  "f-pd": "40",
+  "f-estado-on": true,
+  "f-estado": "Buen estado. Necesita pintura y posiblemente pulido de pisos. Edificio sin amenities.",
+  "f-distrib-on": true,
+  "acb-living": true,
+  "acb-comedor": true,
+  "acb-cocina": true,
+  "acb-lavadero": true,
+  "acb-estudio": false,
+  "acb-terraza": false,
+  "acb-patio": false,
+  "acb-jardin": false,
+  "acb-parrilla": false,
+  "acb-quincho": false,
+  "acb-pileta": false,
+  "acb-playroom": false,
+  "acb-despensa": false,
+  "acb-dorm": true,
+  "acb-suite": false,
+  "acb-bano": true,
+  "acb-toilette": false,
+  "acb-balcon": false,
+  "acb-balconaterr": false,
+  "acb-garage": false,
+  "f-condicion-on": true,
+  "f-condicion": "57,43 m² cubiertos + balcón 1,18 m² = 58,61 m² totales (escritura)",
+  "f-pp": "3161",
+  "f-pc2": "3025",
+  "f-compd": "22",
+  "f-c1-on": true,
+  "f-c1-lbl": "Deptos 3 amb. 40–80 m² cub. en venta en Palermo Chico (Zonaprop)",
+  "f-c1": "127",
+  "f-c2-on": true,
+  "f-c2-lbl": "Analizados ficha por ficha",
+  "f-c2": "111",
+  "f-c3-on": true,
+  "f-c3-lbl": "Usados sin amenities y sin cochera",
+  "f-c3": "25",
+  "f-c4-on": true,
+  "f-c4-lbl": "Comparables que promedian",
+  "f-c4": "22",
+  "f-a-p25": "0",
+  "f-a-med": "0",
+  "f-a-p75": "0",
+  "f-b-p25": "0",
+  "f-b-med": "0",
+  "f-b-p75": "0",
+  "f-via-modo": "max",
+  "f-margen-pub": "4.3",
+  "f-pedido": "0",
+  "s0-name": "Promedio publicación",
+  "s0-usd": "3161",
+  "s1-name": "Promedio cierre",
+  "s1-usd": "3025",
+  "s2-name": "Competitivo 1",
+  "s2-usd": "3325",
+  "s3-name": "Competitivo 2",
+  "s3-usd": "2984",
+  "s4-name": "Estrella ★",
+  "s4-usd": "2338",
+  "s5-name": "Oportunidad",
+  "s5-usd": "2018",
+  "en-cons": "Mayor plazo, mayor margen de negociación",
+  "ed-cons": "6–12 meses · Pocos interesados · 5–20 visualizaciones",
+  "en-comp": "Mayor volumen de consultas · mejor relación tiempo/valor",
+  "ed-comp": "~65 días · Varios interesados · 25–45 visualizaciones",
+  "en-alta": "Alta demanda inicial · venta rápida garantizada",
+  "ed-alta": "< 20 días · Excelente cantidad de interesados · +60 visualizaciones",
+  "f-rebaja": "7",
+  "f-analisis": "METODOLOGÍA — Relevamiento de los 127 departamentos de 3 ambientes y 40–80 m² cubiertos en venta en Palermo Chico (Zonaprop, 8/11/2026); 111 fichas analizadas una por una. Se separan las torres con amenities (Las Plazas, OM Cerviño) y la obra nueva de la misma cuadra (Seguí 3581 y Seguí 3500, USD 4.170–5.000/m²), que quedan como techo. Competencia directa: 25 usados de 30–90 años sin amenities y SIN cochera. Superficie homogeneizada del sujeto: 58,1 m² (57,43 cub + balcón 1,18 al 60%). Promedio de publicación: USD 3.161/m², valor de referencia USD 184.000.\n\nPOSICIONAMIENTO — Comparable directo en la misma cuadra: Seguí 3567, 60 m² + balcón corrido, contrafrente, USD 220.000 (3.274/m²). Brecha publicación→cierre: 4,3% (promedio de cierres propios Houghton CABA 3,8%, Índice m² Real 3 amb 4,81% y Mudafy Palermo 4,2%). Escalera: Competitivo 1 USD 193.000, Competitivo 2 USD 174.000, Competitivo 3 USD 146.000, Estrella USD 136.000. Por el estado (pintura y pulido) la publicación sugerida va entre el Competitivo 2 y el Promedio: USD 175.000–184.000; cierre esperable alrededor de USD 172.000–176.000.\n\nCOCHERA — Los 3 ambientes usados sin amenities CON cochera publican USD 3.948/m² (7 avisos): USD 230.000 para esta superficie, unos USD 46.000 más. La diferencia supera el valor de una cochera suelta en la zona (≈USD 25.000) porque los edificios con cochera suelen ser mejores; el comprador que necesita cochera no compite por esta unidad.",
+  "f-agente": "Santiago Capriglione",
+  "f-mat": "CPI 5710 · CMCPSI 6703",
+  "f-fecha": "08/11/2026",
+  "f-dosvias-on": false,
+  "f-rango-desde": "s2",
+  "f-rango-hasta": "s3"
+ },
+ "qty": {
+  "acb-dorm": "2",
+  "acb-suite": "",
+  "acb-bano": "1",
+  "acb-toilette": "",
+  "acb-balcon": "",
+  "acb-balconaterr": "",
+  "acb-garage": ""
+ },
+ "aj": {
+  "a": [],
+  "b": []
+ },
+ "comparables": [
+  {
+   "id": 1,
+   "titulo": "Seguí 3567 (misma cuadra) · 3 amb. 60 m² cub. · USD 220.000 = 3.274/m² (Competitivo 1)",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-segui-y-salguero-3-ambientes-con-dependencia-y-60581141.html"
+  },
+  {
+   "id": 2,
+   "titulo": "Cerviño 3900 · 3 amb. 56 m² cub. · USD 198.000 = 3.356/m² (Competitivo 1)",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-en-venta-en-palermo-chico-capital-58932823.html"
+  },
+  {
+   "id": 3,
+   "titulo": "Lafinur 3000 · 3 amb. 56 m² cub. · USD 185.000 = 3.304/m² (Competitivo 1)",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-en-venta-en-palermo-chico-capital-60548100.html"
+  },
+  {
+   "id": 4,
+   "titulo": "Paunero 2700 · 3 amb. 51 m² cub. · USD 199.000 = 3.328/m² (Competitivo 1)",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-3-ambientes-palermo-chico-capital-60649947.html"
+  },
+  {
+   "id": 5,
+   "titulo": "Ugarteche 3300 · 3 amb. 66 m² cub. · USD 235.000 = 3.319/m² (Competitivo 1)",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-en-venta-ubicado-en-palermo-chico-51994335.html"
+  },
+  {
+   "id": 6,
+   "titulo": "Ortiz de Ocampo 2643 · 3 amb. 72 m² cub. · USD 259.000 = 3.372/m² (Competitivo 1)",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-3-ambientes-con-balcon-palermo-chico!-60057345.html"
+  },
+  {
+   "id": 7,
+   "titulo": "Av. Cerviño 3520 · 3 amb. 53 m² cub. · USD 165.000 = 3.011/m² (Competitivo 2)",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-palermo-chico-3-amb.-al-frente-piso-11-60516185.html"
+  },
+  {
+   "id": 8,
+   "titulo": "Av. Las Heras 3400 2° · 3 amb. 60 m² cub. · USD 199.000 = 3.071/m² (Competitivo 2)",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-departamento-3-ambientes-con-dependencia-en-57681004.html"
+  },
+  {
+   "id": 9,
+   "titulo": "Juncal al 3700 · 3 amb. 66 m² cub. · USD 195.000 = 2.955/m² (Competitivo 2)",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-departamento-palermo-chico-juncal-59772355.html"
+  },
+  {
+   "id": 10,
+   "titulo": "Av. Las Heras al 3400 · 3 amb. 71 m² cub. · USD 206.000 = 2.901/m² (Competitivo 2)",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-3-ambientes-con-dependencia-72-m-sup2--frente-al-60185297.html"
+  },
+  {
+   "id": 11,
+   "titulo": "Las Heras al 3100 · 3 amb. 67 m² cub. · USD 175.000 = 2.522/m² (Competitivo 3)",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-de-3-ambientes-en-venta-en-palermo-59739420.html"
+  },
+  {
+   "id": 12,
+   "titulo": "Cerviño al 3500 · 3 amb. 74 m² cub. · USD 195.000 = 2.635/m² (Competitivo 3)",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-departamento-3-ambientes-con-dependencia-palermo-60545669.html"
+  },
+  {
+   "id": 13,
+   "titulo": "Castex 3300 · 3 amb. 65 m² cub. · USD 159.000 = 2.446/m² (Competitivo 3)",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-3-amb-65-m-sup2--palermo-chico-bano-y-toilet-60623652.html"
+  },
+  {
+   "id": 14,
+   "titulo": "Cabello 3900 · 3 amb. 50 m² cub. · USD 125.000 = 2.470/m² (Competitivo 3)",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-en-venta-3-ambientes-palermo-chico-58286605.html"
+  },
+  {
+   "id": 15,
+   "titulo": "Lafinur 3000 · 3 amb. 68 m² cub. · USD 159.000 = 2.338/m² (Estrella)",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-3-ambientes-palermo-chico-capital-60572172.html"
+  }
+ ]
+}
