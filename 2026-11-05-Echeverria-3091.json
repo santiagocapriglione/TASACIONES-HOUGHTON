@@ -102,7 +102,13 @@
   "f-fecha": "04/11/2026",
   "f-dosvias-on": false,
   "f-rango-desde": "s2",
-  "f-rango-hasta": "s3"
+  "f-rango-hasta": "s3",
+  "f-relato": "A metros de la estación Belgrano R, en Echeverría 3091, este amplio tres ambientes del 4° piso combina buenas medidas con la nobleza de los edificios de época.\n\nSe ingresa a un palier muy amplio (2,30 x 2,26 m). Hacia la izquierda se abre una amplia cocina comedor (5 x 2,26 m), con mesada generosa, alacenas y bajo mesada funcionales, y a continuación el sector de lavadero, hoy integrado, con bacha y calefón. Desde el mismo palier se pasa al living (3 x 6,15 m), con ventana al este.\n\nUn pasillo conduce a las habitaciones, ubicadas al frente; sobre su lateral derecho está el baño completo. La habitación principal tiene placard empotrado (3 x 4,08 m libres) y la segunda (3,11 x 3 m) suma un vestidor que podría transformarse en un segundo baño.\n\nLos pisos de madera están en buen estado: con un pulido, la reposición de algunos faltantes y un plastificado, recuperan todo su valor.\n\nPor su ubicación, sus medidas y su potencial, sugerimos publicarlo en {VALOR}.",
+  "f-relato-on": true,
+  "f-valor-modo": "numero",
+  "f-valor-esc": "medio",
+  "f-valor-manual": "0",
+  "f-version": "completa"
  },
  "qty": {
   "acb-dorm": "2",
