@@ -1006,7 +1006,7 @@ function sync() {
   const rangoLbl = rDesde === rHasta ? rangoNom(rDesde) : rangoNom(rDesde) + ' – ' + rangoNom(rHasta);
   const priceComp = (rLo + rHi) / 2;
   const ecl = g('ep-comp-lbl');
-  if (ecl) ecl.textContent = 'Competitivo · ' + (rDesde === rHasta ? rangoNom(rDesde) : 'Promedio ' + rangoLbl);
+  if (ecl) ecl.textContent = 'Competitivo · ' + (rDesde === rHasta ? rangoNom(rDesde) : 'Medio entre ' + rangoLbl);
   const priceAlta = priceComp * (1 - rebaja / 100);
 
   g('ep-cons').textContent = 'USD ' + fmt(priceCons);
@@ -1232,7 +1232,7 @@ function sync() {
   const escData = [
     { cls:'cons', num:'1', lbl:'Escenario Conservador', price:priceCons, source:'Promedio publicación', rec:false,
       det: g('ed-cons').value, name: g('en-cons').value },
-    { cls:'comp', num:'2', lbl:'Escenario Competitivo', price:priceComp, source:esc(rDesde === rHasta ? rangoNom(rDesde) : 'Promedio ' + rangoLbl), rec:true,
+    { cls:'comp', num:'2', lbl:'Escenario Competitivo', price:priceComp, source:esc(rDesde === rHasta ? rangoNom(rDesde) : 'Medio entre ' + rangoLbl), rec:true,
       det: g('ed-comp').value, name: g('en-comp').value },
     { cls:'alta', num:'3', lbl:'Alta Demanda',          price:priceAlta, source:`−${rebaja}% sobre Competitivo`, rec:false,
       det: g('ed-alta').value, name: g('en-alta').value },
