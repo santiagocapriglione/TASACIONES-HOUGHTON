@@ -376,6 +376,7 @@
       <div class="fr2">
         <div class="field"><label title="Si ponés un número acá, manda sobre el escalón elegido (solo en modo número).">Número a mano USD (opcional)</label><input id="f-valor-manual" type="number" value="0" oninput="sync()"></div>
         <div class="field"><label title="Cuántos departamentos competidores hay publicados en el segmento del valor sugerido. Si queda en 0, se suma la columna Comp. de los escalones del rango elegido.">Competidores en el segmento (unid.)</label><input id="f-comp-seg" type="number" min="0" value="0" oninput="sync()"></div>
+        <div class="field"><label title="Cómo se lee el número de competidores en la portada y en la caja del valor.">Competidores: texto</label><select id="f-comp-modo" onchange="sync()"><option value="seg" selected>en este segmento de valor</option><option value="debajo">por debajo de este valor</option></select></div>
       </div>
       <div class="fr2">
         <div class="field"><label title="La resumida deja portada, relato, características y plan de comercialización. La completa suma todo el análisis.">Versión del informe</label><select id="f-version" onchange="applyModo();sync();renumberPages()"><option value="completa" selected>Completa (con análisis)</option><option value="resumida">Resumida</option></select></div>
@@ -691,7 +692,7 @@
           <div class="cv-stat"><div class="cv-stat-val" id="p-tipo">2 amb.</div><div class="cv-stat-lbl">Tipología</div></div>
           <div class="cv-stat"><div class="cv-stat-val" id="p-ant">50 años</div><div class="cv-stat-lbl">Antigüedad</div></div>
           <div class="cv-stat wide"><div class="cv-stat-val" id="p-rango-cv">USD 62.000 – USD 70.000</div><div class="cv-stat-lbl" id="p-rango-cv-lbl">Rango de valor estratégico</div></div>
-          <div class="cv-stat wide" id="cv-comp-stat" style="display:none;"><div class="cv-stat-val" id="p-comp-cv">—</div><div class="cv-stat-lbl">Departamentos competidores en el segmento de valor</div></div>
+          <div class="cv-stat wide" id="cv-comp-stat" style="display:none;"><div class="cv-stat-val" id="p-comp-cv">—</div><div class="cv-stat-lbl" id="p-comp-cv-lbl">Departamentos competidores en el segmento de valor</div></div>
         </div>
         <div class="cv-r-lbl">Houghton Propiedades · 2026</div>
       </div>
@@ -1081,9 +1082,10 @@ function sync() {
     nSeg = 0; for (let i = a; i <= b; i++) nSeg += gv(ids[i] + '-n');
   }
   window.__nSeg = nSeg > 0 ? Math.round(nSeg) : 0;
-  const compTxt = window.__nSeg ? window.__nSeg + (window.__nSeg === 1 ? ' departamento competidor publicado' : ' departamentos competidores publicados') + ' en este segmento de valor' : '';
+  const compTxt = window.__nSeg ? window.__nSeg + (window.__nSeg === 1 ? ' departamento competidor publicado' : ' departamentos competidores publicados') + ((g('f-comp-modo') && g('f-comp-modo').value === 'debajo') ? ' por debajo de este valor' : ' en este segmento de valor') : '';
   const vcomp = g('p-valor-comp'); if (vcomp) vcomp.textContent = compTxt;
   const ccs = g('cv-comp-stat'); if (ccs) ccs.style.display = window.__nSeg ? '' : 'none';
+  const ccl = g('p-comp-cv-lbl'); if (ccl) ccl.textContent = (g('f-comp-modo') && g('f-comp-modo').value === 'debajo') ? 'Departamentos competidores publicados por debajo de este valor' : 'Departamentos competidores en el segmento de valor';
   const ccv = g('p-comp-cv'); if (ccv) ccv.textContent = window.__nSeg ? window.__nSeg + ' publicados' : '—';
   // Con relato, la portada muestra el mismo valor sugerido; sin relato, el rango de siempre
   window.__valorSugCv = relato ? valorSugStr : '';
