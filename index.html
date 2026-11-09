@@ -54,7 +54,7 @@
   .hpct-item input:focus{ border-color:var(--or); }
 
   /* segment rows */
-  .seg-hdr{ display:grid; grid-template-columns:1fr 76px 100px; gap:5px; font-size:9px; color:var(--gy); letter-spacing:1px; text-transform:uppercase; margin-bottom:5px; padding:0 2px; }
+  .seg-hdr{ display:grid; grid-template-columns:1fr 44px 70px 88px; gap:5px; font-size:9px; color:var(--gy); letter-spacing:1px; text-transform:uppercase; margin-bottom:5px; padding:0 2px; }
   .seg-hdr span:last-child{ text-align:right; color:var(--or); }
 
   /* escenario auto blocks */
@@ -342,6 +342,8 @@
   .valor-box{ margin-top:28px; background:var(--dk); border-radius:10px; padding:24px 28px; border-left:5px solid var(--or); }
   .valor-box-lbl{ font-size:9px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.55); }
   .valor-box-val{ font-family:'Playfair Display',serif; font-size:34px; font-weight:700; color:#FFF; margin-top:8px; line-height:1.1; }
+  .valor-box-comp{ font-size:11px; color:#fff; margin-top:10px; padding-top:10px; border-top:1px solid rgba(255,255,255,0.15); }
+  .valor-box-comp:empty{ display:none; }
   .valor-box-sub{ font-size:10.5px; color:rgba(255,255,255,0.62); margin-top:12px; line-height:1.7; }
   .valor-box-sub:empty{ display:none; }
   body.resumida .rp-tecnica{ display:none !important; }
@@ -373,6 +375,9 @@
       </div>
       <div class="fr2">
         <div class="field"><label title="Si ponés un número acá, manda sobre el escalón elegido (solo en modo número).">Número a mano USD (opcional)</label><input id="f-valor-manual" type="number" value="0" oninput="sync()"></div>
+        <div class="field"><label title="Cuántos departamentos competidores hay publicados en el segmento del valor sugerido. Si queda en 0, se suma la columna Comp. de los escalones del rango elegido.">Competidores en el segmento (unid.)</label><input id="f-comp-seg" type="number" min="0" value="0" oninput="sync()"></div>
+      </div>
+      <div class="fr2">
         <div class="field"><label title="La resumida deja portada, relato, características y plan de comercialización. La completa suma todo el análisis.">Versión del informe</label><select id="f-version" onchange="applyModo();sync();renumberPages()"><option value="completa" selected>Completa (con análisis)</option><option value="resumida">Resumida</option></select></div>
       </div>
     </div>
@@ -571,7 +576,7 @@
     <div class="fsec" id="fsec-segmentos">
       <div class="slbl">Tabla de segmentos</div>
       <div class="auto-row" style="margin-bottom:8px;"><span class="auto-lbl">m² base (homogeneizados)</span><span class="auto-val" id="av-mhom2">47,4</span></div>
-      <div class="seg-hdr"><span>Segmento</span><span>USD/m²</span><span>= Valor pub. ✦</span></div>
+      <div class="seg-hdr"><span>Segmento</span><span title="Departamentos competidores publicados en ese escalón">Comp.</span><span>USD/m²</span><span>= Valor pub. ✦</span></div>
       <div id="seg-rows"></div>
     </div>
 
@@ -686,6 +691,7 @@
           <div class="cv-stat"><div class="cv-stat-val" id="p-tipo">2 amb.</div><div class="cv-stat-lbl">Tipología</div></div>
           <div class="cv-stat"><div class="cv-stat-val" id="p-ant">50 años</div><div class="cv-stat-lbl">Antigüedad</div></div>
           <div class="cv-stat wide"><div class="cv-stat-val" id="p-rango-cv">USD 62.000 – USD 70.000</div><div class="cv-stat-lbl" id="p-rango-cv-lbl">Rango de valor estratégico</div></div>
+          <div class="cv-stat wide" id="cv-comp-stat" style="display:none;"><div class="cv-stat-val" id="p-comp-cv">—</div><div class="cv-stat-lbl">Departamentos competidores en el segmento de valor</div></div>
         </div>
         <div class="cv-r-lbl">Houghton Propiedades · 2026</div>
       </div>
@@ -703,6 +709,7 @@
         <div class="valor-box-lbl">Valor sugerido de publicación</div>
         <div class="valor-box-val" id="p-valor-sug">—</div>
         <div class="valor-box-sub" id="p-valor-sub"></div>
+        <div class="valor-box-comp" id="p-valor-comp"></div>
       </div>
       <div class="pg-ftr" id="pg-ftr-relato"></div>
     </div>
@@ -804,7 +811,7 @@
       <div class="sec-title">Comparables <span>del Mercado</span></div>
       <div class="seg-note" id="p-seg-note"><!-- JS --></div>
       <table class="seg-table">
-        <thead><tr><th>Segmento</th><th>USD / m²</th><th>Valor publicación</th></tr></thead>
+        <thead><tr><th>Segmento</th><th>Competidores</th><th>USD / m²</th><th>Valor publicación</th></tr></thead>
         <tbody id="p-seg-tbody"><!-- JS --></tbody>
       </table>
       <div class="insight-box">
@@ -904,11 +911,12 @@ const DEF_USD = { s0:1535, s1:1457, s2:1431, s3:1371, s4:1300, s5:982 };
 const segRows = document.getElementById('seg-rows');
 SEGS.forEach(s => {
   segRows.innerHTML += `
-    <div style="display:grid;grid-template-columns:1fr 76px 100px;gap:5px;margin-bottom:5px;align-items:center;">
+    <div style="display:grid;grid-template-columns:1fr 44px 70px 88px;gap:5px;margin-bottom:5px;align-items:center;">
       <div style="font-size:11px;color:#555;display:flex;align-items:center;gap:6px;">
         <span style="width:8px;height:8px;border-radius:50%;background:${s.color};display:inline-block;flex-shrink:0;"></span>
         <input id="${s.id}-name" type="text" value="${s.name}" oninput="sync()" title="Nombre editable del segmento" style="font-size:11px;color:#555;width:100%;min-width:0;padding:4px 6px;border:1px solid #E5E2DE;border-radius:5px;background:#F4F2EF;outline:none;">
       </div>
+      <input id="${s.id}-n" type="number" min="0" value="" placeholder="#" title="Competidores directos publicados en este escalón" style="text-align:center;font-family:'DM Mono',monospace;font-size:12px;padding:5px 4px;border:1px solid #E5E2DE;border-radius:5px;background:#F4F2EF;color:#1C1C1C;outline:none;width:100%;">
       <input id="${s.id}-usd" type="number" value="${DEF_USD[s.id]}" style="text-align:right;font-family:'DM Mono',monospace;font-size:12px;padding:5px 7px;border:1px solid #E5E2DE;border-radius:5px;background:#F4F2EF;color:#1C1C1C;outline:none;width:100%;">
       <div id="${s.id}-pub" style="text-align:right;font-family:'DM Mono',monospace;font-size:12px;padding:5px 7px;color:#E87B4A;font-weight:600;">—</div>
     </div>`;
@@ -998,7 +1006,7 @@ function sync() {
   const rangoLbl = rDesde === rHasta ? rangoNom(rDesde) : rangoNom(rDesde) + ' – ' + rangoNom(rHasta);
   const priceComp = (rLo + rHi) / 2;
   const ecl = g('ep-comp-lbl');
-  if (ecl) ecl.textContent = 'Competitivo · ' + (rDesde === rHasta ? rangoNom(rDesde) : 'Promedio ' + rangoLbl);
+  if (ecl) ecl.textContent = 'Competitivo · ' + (rDesde === rHasta ? rangoNom(rDesde) : 'Medio entre ' + rangoLbl);
   const priceAlta = priceComp * (1 - rebaja / 100);
 
   g('ep-cons').textContent = 'USD ' + fmt(priceCons);
@@ -1063,6 +1071,20 @@ function sync() {
   const cierreEst = isCasa() ? 0 : r1k(segVals['s1'].pub);
   if (cierreEst > 0) subP.push('Valor de cierre estimado: USD ' + fmt(cierreEst));
   const vsub = g('p-valor-sub'); if (vsub) vsub.textContent = subP.join('  ·  ');
+  // ── Competidores en el segmento del valor elegido (siempre visible)
+  let nSeg = gv('f-comp-seg');
+  if (!(nSeg > 0) && !isCasa()) {
+    const ids = SEGS.map(x => x.id);
+    let a, b;
+    if (/^s\d$/.test(vEsc)) { a = b = ids.indexOf(vEsc); }
+    else { a = ids.indexOf(rDesde); b = ids.indexOf(rHasta); if (a > b) [a, b] = [b, a]; }
+    nSeg = 0; for (let i = a; i <= b; i++) nSeg += gv(ids[i] + '-n');
+  }
+  window.__nSeg = nSeg > 0 ? Math.round(nSeg) : 0;
+  const compTxt = window.__nSeg ? window.__nSeg + (window.__nSeg === 1 ? ' departamento competidor publicado' : ' departamentos competidores publicados') + ' en este segmento de valor' : '';
+  const vcomp = g('p-valor-comp'); if (vcomp) vcomp.textContent = compTxt;
+  const ccs = g('cv-comp-stat'); if (ccs) ccs.style.display = window.__nSeg ? '' : 'none';
+  const ccv = g('p-comp-cv'); if (ccv) ccv.textContent = window.__nSeg ? window.__nSeg + ' publicados' : '—';
   // Con relato, la portada muestra el mismo valor sugerido; sin relato, el rango de siempre
   window.__valorSugCv = relato ? valorSugStr : '';
   g('p-rango-cv').textContent = relato ? valorSugStr : rangoStr;
@@ -1200,6 +1222,7 @@ function sync() {
     const {usd, pub} = segVals[s.id];
     return `<tr${s.hl ? ' class="row-hl"' : ''}>
       <td><span class="seg-badge2"><span class="s-dot" style="background:${s.color}"></span>${segName(s)}</span></td>
+      <td>${gv(s.id + '-n') > 0 ? Math.round(gv(s.id + '-n')) : '—'}</td>
       <td>${fmt(usd)}</td>
       <td><span class="seg-usd">${fmt(pub)} <small>USD</small></span></td>
     </tr>`;
@@ -1209,7 +1232,7 @@ function sync() {
   const escData = [
     { cls:'cons', num:'1', lbl:'Escenario Conservador', price:priceCons, source:'Promedio publicación', rec:false,
       det: g('ed-cons').value, name: g('en-cons').value },
-    { cls:'comp', num:'2', lbl:'Escenario Competitivo', price:priceComp, source:esc(rDesde === rHasta ? rangoNom(rDesde) : 'Promedio ' + rangoLbl), rec:true,
+    { cls:'comp', num:'2', lbl:'Escenario Competitivo', price:priceComp, source:esc(rDesde === rHasta ? rangoNom(rDesde) : 'Medio entre ' + rangoLbl), rec:true,
       det: g('ed-comp').value, name: g('en-comp').value },
     { cls:'alta', num:'3', lbl:'Alta Demanda',          price:priceAlta, source:`−${rebaja}% sobre Competitivo`, rec:false,
       det: g('ed-alta').value, name: g('en-alta').value },
