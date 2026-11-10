@@ -1240,7 +1240,7 @@ function sync() {
   const soloCub = !((isOn('f-ms-on') && ms > 0) || (isOn('f-md-on') && md > 0));
   g('p-seg-note').innerHTML = soloCub
     ? `Cada valor = USD/m² × los <strong>${fmt1(mhom)} m² cubiertos</strong> del departamento. De mayor a menor.`
-    : `Cada valor = USD/m² × <strong>${fmt1(mhom)} m²</strong> (cubiertos al 100%, semicubiertos al ${Math.round(gv('f-ps'))}% y descubiertos al ${Math.round(gv('f-pd'))}%). De mayor a menor.`;
+    : `Cada valor = USD/m² × <strong>${fmt1(mhom)} m²</strong> (cubiertos al 100%` + ((isOn('f-ms-on') && ms > 0) ? `, semicubiertos al ${Math.round(gv('f-ps'))}%` : '') + ((isOn('f-md-on') && md > 0) ? `, descubiertos al ${Math.round(gv('f-pd'))}%` : '') + `). De mayor a menor.`;
   // la explicación sale del NOMBRE del escalón (los nombres se pueden cambiar), y la del competitivo depende de si queda arriba o abajo del promedio
   const segDesc = (s, usd) => {
     const n = (g(s.id + '-name')?.value || s.name).toLowerCase();
@@ -1269,7 +1269,7 @@ function sync() {
     const pSug = segVals[vEscSel].pub, pCie = segVals['s1'].pub, pProm = segVals['s0'].pub;
     g('p-seg-insight').innerHTML = `💡 <strong>Cómo leer esta tabla:</strong> cada fila es un precio posible para este departamento, de mayor a menor. `
       + `Sugerimos publicar en <strong>USD ${fmt(pSug)}</strong>` + (pProm > pSug ? `, por debajo de lo que piden en promedio los departamentos como este (USD ${fmt(pProm)}): así se destaca frente a la competencia desde el primer día` : `, en línea con lo que piden en promedio los departamentos como este`)
-      + (pCie > 0 && pCie < pSug ? ` y queda margen para negociar hasta el cierre esperable (USD ${fmt(pCie)})` : '') + '.';
+      + (pCie > 0 && pCie < pSug ? (pProm > pSug ? ` y queda margen` : `, con margen`) + ` para negociar hasta el cierre esperable (USD ${fmt(pCie)})` : '') + '.';
   }
 
   // ── ESCENARIOS
