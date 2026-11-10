@@ -492,6 +492,7 @@
         <div class="field"><label>USD/m² prom. publicación</label><input id="f-pp" type="number" value="0"></div>
         <div class="field"><label>USD/m² prom. cierre</label><input id="f-pc2" type="number" value="0"></div>
       </div>
+      <div class="field"><label title="Promedio de los comparables elegidos (misma tipología, antigüedad y estado). Si es mayor que 0, reemplaza en el informe al cuadro de cierre y el texto lo explica.">USD/m² prom. de esta tipología, antigüedad y estado (0 = no se muestra)</label><input id="f-pt" type="number" value="0"></div>
       <div class="field"><label>Competencia directa (unid.)</label><input id="f-compd" value=""></div>
       <div class="auto-row" style="margin-top:6px;"><span class="auto-lbl" id="av-valpub-lbl" title="Valor de tasación adoptado (el mismo que figura en Resultado y en la portada).">Valor pub. promedio</span><span class="auto-val" id="av-valpub" style="font-size:12px;">—</span></div>
       <div class="auto-row"><span class="auto-lbl" id="av-rango-lbl">Rango de precio realista (Comp.2 – Comp.3)</span><span class="auto-val" id="av-rango" style="font-size:11px;min-width:140px;">—</span></div>
@@ -747,7 +748,7 @@
       <div class="sec-title">Análisis <span>de Mercado</span></div>
       <div class="mhero">
         <div class="mh-col"><div class="mh-val" id="p-mh-pp">USD 1.535</div><div class="mh-sub">valor/m²</div><div class="mh-desc">Promedio publicación en zona</div></div>
-        <div class="mh-col"><div class="mh-val" id="p-mh-pc">USD 1.457</div><div class="mh-sub">valor/m²</div><div class="mh-desc">Promedio cierre – último bimestre</div></div>
+        <div class="mh-col"><div class="mh-val" id="p-mh-pc">USD 1.457</div><div class="mh-sub">valor/m²</div><div class="mh-desc" id="p-mh-pc-desc">Promedio cierre – último bimestre</div></div>
         <div class="mh-col"><div class="mh-val" id="p-mh-comp">105</div><div class="mh-sub">unidades</div><div class="mh-desc">Competencia directa en el segmento</div></div>
       </div>
       <div class="mbody" id="p-mbody"><!-- JS --></div>
@@ -1178,9 +1179,12 @@ function sync() {
 
   // ── MERCADO
   g('p-mh-pp').textContent = 'USD ' + fmt(pp);
-  g('p-mh-pc').textContent = 'USD ' + fmt(pc2);
+  const pt = gv('f-pt');
+  g('p-mh-pc').textContent = 'USD ' + fmt(pt > 0 ? pt : pc2);
+  g('p-mh-pc-desc').textContent = pt > 0 ? 'Promedio de esta tipología, antigüedad y estado' : 'Promedio cierre – último bimestre';
   g('p-mh-comp').textContent = compd;
-  g('p-mbody').innerHTML = `Del análisis comparativo de mercado realizado sobre propiedades de características similares en la zona, el valor de m² promedio se ubica en <strong>USD ${fmt(pp)}</strong>, arrojando un valor teórico de <strong>USD ${fmt(valpubAuto)}</strong>. Sin embargo, el valor lo define la <strong>competencia directa disponible hoy</strong>: <strong>${compd}</strong> unidades similares ubican el precio de mercado realista en <strong>${rangoStr}</strong>.`;
+  if (pt > 0) g('p-mbody').innerHTML = `Del análisis comparativo de mercado realizado sobre propiedades de características similares en la zona, el valor de m² promedio se ubica en <strong>USD ${fmt(pp)}</strong>. Más allá de ese promedio de la zona, encontramos que <strong>esta tipología, antigüedad y estado tiene otro promedio: USD ${fmt(pt)}/m²</strong>, lo que arroja un valor teórico de <strong>USD ${fmt(Math.round(pt * mhom / 1000) * 1000)}</strong>. Sobre esa base, la <strong>competencia directa disponible hoy</strong> (<strong>${compd}</strong> unidades similares) ubica el precio de mercado realista en <strong>${rangoStr}</strong>.`;
+  else g('p-mbody').innerHTML = `Del análisis comparativo de mercado realizado sobre propiedades de características similares en la zona, el valor de m² promedio se ubica en <strong>USD ${fmt(pp)}</strong>, arrojando un valor teórico de <strong>USD ${fmt(valpubAuto)}</strong>. Sin embargo, el valor lo define la <strong>competencia directa disponible hoy</strong>: <strong>${compd}</strong> unidades similares ubican el precio de mercado realista en <strong>${rangoStr}</strong>.`;
   g('p-rango3').textContent = rangoStr;
   // Casas tasadas por una sola vía: el valor y el precio sugerido van acá (no hay página de vías)
   const vu = g('p-valor-unico');
