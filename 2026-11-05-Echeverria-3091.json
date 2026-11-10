@@ -57,16 +57,16 @@
   "f-pc2": "2457",
   "f-compd": "31",
   "f-c1-on": true,
-  "f-c1-lbl": "Deptos 55–95 m² cub. en venta en Belgrano R (Zonaprop)",
-  "f-c1": "181",
+  "f-c1-lbl": "Avisos revisados uno por uno (3 y 4 amb., 55–95 m²)",
+  "f-c1": "115",
   "f-c2-on": true,
-  "f-c2-lbl": "Analizados ficha por ficha",
-  "f-c2": "169",
+  "f-c2-lbl": "Usados de 40–70 años sin amenities",
+  "f-c2": "40",
   "f-c3-on": true,
-  "f-c3-lbl": "Usados 40–70 años sin amenities (incl. reciclados de techo)",
-  "f-c3": "40",
+  "f-c3-lbl": "Competidores directos (sin reciclar o a reciclar)",
+  "f-c3": "31",
   "f-c4-on": true,
-  "f-c4-lbl": "Comparables de esta tipología, antigüedad y estado",
+  "f-c4-lbl": "Comparables elegidos (misma tipología, antigüedad y estado)",
   "f-c4": "15",
   "f-a-p25": "0",
   "f-a-med": "0",
@@ -77,23 +77,23 @@
   "f-via-modo": "max",
   "f-margen-pub": "4.3",
   "f-pedido": "0",
-  "s0-name": "Promedio publicación (tipología)",
+  "s0-name": "Promedio de su tipología",
   "s0-usd": "2505",
-  "s1-name": "Promedio cierre",
-  "s1-usd": "2397",
+  "s1-name": "Cierre esperable",
+  "s1-usd": "2306",
   "s2-name": "Competitivo 1",
   "s2-usd": "2445",
   "s3-name": "Competitivo 2",
   "s3-usd": "2375",
-  "s4-name": "Estrella ★",
+  "s4-name": "Estrella ★ (precio a vencer)",
   "s4-usd": "2089",
   "s5-name": "Oportunidad",
-  "s5-usd": "1897",
+  "s5-usd": "0",
   "en-cons": "Mayor plazo, mayor margen de negociación",
   "ed-cons": "6–12 meses · Pocos interesados · 5–20 visualizaciones",
   "en-comp": "Mayor volumen de consultas · mejor relación tiempo/valor",
   "ed-comp": "~65 días · Varios interesados · 25–45 visualizaciones",
-  "en-alta": "Alta demanda inicial · venta rápida garantizada",
+  "en-alta": "Alta demanda inicial · venta rápida probable",
   "ed-alta": "< 20 días · Excelente cantidad de interesados · +60 visualizaciones",
   "f-rebaja": "7",
   "f-analisis": "METODOLOGÍA — Relevamiento de los departamentos de 3 y 4 ambientes de 55–95 m² cubiertos en venta en Belgrano R (Zonaprop, 5/11/2026, ampliado el 9/11/2026: 79 avisos de 3 ambientes y 36 de 4 ambientes revisados uno por uno). Se excluyen obra nueva, edificios con amenities, edificios de menos de 40 años y avisos de otras sub-zonas. Quedan 31 competidores directos: usados de 40–70 años sin reciclar o a reciclar; los reciclados a nuevo quedan como techo de referencia. De ellos tomamos 15 comparables de la misma tipología, antigüedad y estado que el departamento. Superficie homogeneizada del sujeto: 71,57 m² (sin balcón).\n\nMERCADO — El promedio de publicación de la zona es USD 2.567/m². Más allá de ese promedio, encontramos que esta tipología, antigüedad y estado tiene otro promedio: los 15 comparables seleccionados publican en promedio USD 2.505/m² (mediana USD 2.512/m²), lo que para los 71,57 m² del departamento da USD 179.000. En ese valor y por encima aparecen unidades con mejoras que esta no tiene: balcón al frente, muy buen estado o cochera (Zapiola 2200 3° con balcón, USD 185.000; Mendoza 2900 en muy buen estado con balcón corrido, USD 185.000; Mendoza 2906 con cochera fija, USD 200.000). Los más parecidos, sin reciclar, se publican entre USD 160.000 y USD 175.000: Echeverría 3000 en la misma cuadra, con la misma planta de cocina separada y lavadero (USD 165.000), y otro de 65 m² en 8° piso (USD 160.000); Sucre 2900 9° (USD 175.000); Rómulo Naón 2300 8° sin reciclar (USD 169.000); Zapiola 2100 1° (USD 162.000). Hoy hay 15 departamentos competidores publicados por debajo de USD 175.000: 5 plantas bajas, 3 primeros pisos por escalera y 7 en pisos superiores. Las plantas bajas y los primeros pisos también compiten, sobre todo para un comprador inversor.\n\nPOSICIONAMIENTO — Por eso sugerimos publicar en USD 175.000 (USD 2.445/m²), un 2,4% por debajo del promedio de su tipología: es el techo de salida, con margen para negociar. Brecha publicación → cierre: 4,3% (promedio entre los cierres propios de Houghton en CABA (3,8%), el Índice m² Real RE/MAX–UCEMA para 3 ambientes (4,81%) y Mudafy Belgrano (4,2%)). Escalera: Promedio de su tipología USD 179.000, Competitivo 1 (publicación sugerida) USD 175.000, Competitivo 2 USD 170.000, Competitivo 3 USD 165.000, Estrella USD 150.000 (Virrey del Pino 2700, contrafrente). Cierre esperable alrededor de USD 165.000.",
@@ -136,77 +136,137 @@
   {
    "id": 1,
    "titulo": "Olazábal 3200 · 4 amb. 60 m² cub. · USD 179.000",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-en-venta-en-belgrano-r-capital-federal-60241526.html"
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-en-venta-en-belgrano-r-capital-federal-60241526.html",
+   "precio": 179000,
+   "m2": 64.8,
+   "etiqueta": "Más caro: tiene cochera",
+   "vs": "caro"
   },
   {
    "id": 2,
    "titulo": "Sucre 2900. 9° piso · 3 amb. 64 m² cub. · USD 175.000",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-belgrano-r-depto-3-amb-c-baulera-60543323.html"
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-belgrano-r-depto-3-amb-c-baulera-60543323.html",
+   "precio": 175000,
+   "m2": 64.6,
+   "etiqueta": "Parecido: sin reciclar (con balcón)",
+   "vs": "igual"
   },
   {
    "id": 3,
    "titulo": "Echeverría 3000 (frente SO) · 3 amb. 62 m² cub. · USD 165.000",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-belgrano-r-3-ambientes-60580266.html"
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-belgrano-r-3-ambientes-60580266.html",
+   "precio": 165000,
+   "m2": 62.0,
+   "etiqueta": "Muy parecido: misma cuadra y misma planta",
+   "vs": "igual"
   },
   {
    "id": 4,
    "titulo": "Mendoza 2900. contrafrente · 3 amb. 63 m² cub. · USD 185.000",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-oppel-departamento-en-venta-belgrano-r-capital-60242526.html"
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-oppel-departamento-en-venta-belgrano-r-capital-60242526.html",
+   "precio": 185000,
+   "m2": 69.6,
+   "etiqueta": "Más caro: muy buen estado y balcón",
+   "vs": "caro"
   },
   {
    "id": 5,
    "titulo": "Blanco Encalada 3153. 7° contrafrente · 3 amb. 61 m² cub. · USD 161.000",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-3-amb-belgrano-59911039.html"
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-3-amb-belgrano-59911039.html",
+   "precio": 161000,
+   "m2": 62.2,
+   "etiqueta": "Parecido: baño y cocina actualizados",
+   "vs": "igual"
   },
   {
    "id": 6,
    "titulo": "Zapiola 2200. 3° frente · 3 amb. 65 m² cub. · USD 185.000",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-3amb-belgrano-r-60494625.html"
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-3amb-belgrano-r-60494625.html",
+   "precio": 185000,
+   "m2": 72.2,
+   "etiqueta": "Más caro: balcón al frente",
+   "vs": "caro"
   },
   {
    "id": 7,
    "titulo": "Zárraga 3400. último piso entero · 4 amb. 67 m² cub. · USD 190.000",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-depto-4-amb-en-belgrano-r-apto-credito-60263857.html"
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-depto-4-amb-en-belgrano-r-apto-credito-60263857.html",
+   "precio": 190000,
+   "m2": 74.2,
+   "etiqueta": "Más caro: último piso, piso entero",
+   "vs": "caro"
   },
   {
    "id": 8,
    "titulo": "Mendoza 2906 · 3 amb. 73.63 m² cub. · USD 200.000",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-mendoza-2900-amplio-3-amb-d-s-cochera-fija-vista-58556001.html"
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-mendoza-2900-amplio-3-amb-d-s-cochera-fija-vista-58556001.html",
+   "precio": 200000,
+   "m2": 79.61,
+   "etiqueta": "Más caro: cochera fija",
+   "vs": "caro"
   },
   {
    "id": 9,
    "titulo": "Echeverría 3000. 8° lateral · 3 amb. 65 m² cub. · USD 160.000",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-departamento-3-ambientes-en-belgrano-r-60635367.html"
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-departamento-3-ambientes-en-belgrano-r-60635367.html",
+   "precio": 160000,
+   "m2": 65.0,
+   "etiqueta": "Muy parecido: misma cuadra, 8° piso",
+   "vs": "igual"
   },
   {
    "id": 10,
    "titulo": "La Pampa 3257. 5° frente · 4 amb. 65 m² cub. · USD 160.000",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-de-4-ambientes-en-venta-belgrano-60120901.html"
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-de-4-ambientes-en-venta-belgrano-60120901.html",
+   "precio": 160000,
+   "m2": 65.0,
+   "etiqueta": "Parecido: 4 amb. chicos",
+   "vs": "igual"
   },
   {
    "id": 11,
    "titulo": "Conesa 2100. semipiso frente · 4 amb. 85 m² cub. · USD 215.000",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-oppel-departamento-en-venta-belgrano-r-capital-59798645.html"
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-oppel-departamento-en-venta-belgrano-r-capital-59798645.html",
+   "precio": 215000,
+   "m2": 87.4,
+   "etiqueta": "Más caro: semipiso en muy buen estado",
+   "vs": "caro"
   },
   {
    "id": 12,
    "titulo": "Rómulo Naón 2300. 8° · 3 amb. 64 m² cub. · USD 169.000",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-de-3-ambientes-con-balcon-en-belgrano-r-60108167.html"
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-de-3-ambientes-con-balcon-en-belgrano-r-60108167.html",
+   "precio": 169000,
+   "m2": 69.4,
+   "etiqueta": "Parecido: sin reciclar",
+   "vs": "igual"
   },
   {
    "id": 13,
    "titulo": "Zapiola 2100. 1° frente NE · 4 amb. 69 m² cub. · USD 162.000",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-departamento-4-ambientes-en-belgrano-59615931.html"
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-departamento-4-ambientes-en-belgrano-59615931.html",
+   "precio": 162000,
+   "m2": 69.0,
+   "etiqueta": "Más barato: 1er piso",
+   "vs": "barato"
   },
   {
    "id": 14,
    "titulo": "Olazábal 3200. piso 16 · 4 amb. 74 m² cub. · USD 185.000",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin--dpto.-4-ambientes-piso-16-con-balcon-60575768.html"
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin--dpto.-4-ambientes-piso-16-con-balcon-60575768.html",
+   "precio": 185000,
+   "m2": 80.0,
+   "etiqueta": "Más barato por m²: piso 16 con balcón",
+   "vs": "barato"
   },
   {
    "id": 15,
-   "titulo": "Virrey del Pino 2700. contrafrente · 4 amb. 67 m² cub. · USD 140.000 (Estrella ★)",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-departamento-4-ambientes-belgrano-60122056.html"
+   "titulo": "Virrey del Pino 2700. contrafrente · 4 amb. 67 m² cub. · USD 140.000",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-departamento-4-ambientes-belgrano-60122056.html",
+   "precio": 140000,
+   "m2": 67.0,
+   "etiqueta": "El precio a vencer: contrafrente",
+   "vs": "barato"
   }
  ]
 }
