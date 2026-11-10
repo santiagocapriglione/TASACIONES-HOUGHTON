@@ -1025,7 +1025,7 @@ function sync() {
     rangoStr   = 'USD ' + fmt(r1k(V.bajo)) + ' – USD ' + fmt(r1k(V.alto));
   } else {
     valpubAuto = segVals['s0'].pub;
-    rangoStr   = rLo === rHi ? 'USD ' + fmt(rLo) : 'USD ' + fmt(rLo) + ' – USD ' + fmt(rHi);
+    rangoStr   = r1k(rLo) === r1k(rHi) ? 'USD ' + fmt(r1k(rLo)) : 'USD ' + fmt(r1k(rLo)) + ' – USD ' + fmt(r1k(rHi));
   }
   const el_vp = g('av-valpub'); if(el_vp) el_vp.textContent = 'USD ' + fmt(valpubAuto);
   const el_rg = g('av-rango');  if(el_rg) el_rg.textContent = rangoStr;
