@@ -1260,7 +1260,7 @@ function sync() {
     const sug = hayEscSug ? s.id === vEscSel : s.hl;
     return `<tr${sug ? ' class="row-hl"' : ''}>
       <td><span class="seg-badge2"><span class="s-dot" style="background:${s.color}"></span>${segName(s)}</span></td>
-      <td style="text-align:left;font-family:inherit;font-size:10.5px;">${sug && hayEscSug ? '<strong>Precio sugerido de publicación.</strong> ' : ''}${segDesc(s, usd)}</td>
+      <td style="text-align:left;font-family:inherit;font-size:10.5px;">${sug && hayEscSug ? '<strong>Precio sugerido de publicación</strong>' + (usd < segVals['s0'].usd ? ': por debajo del promedio, para destacarse frente a la competencia' : '') : segDesc(s, usd)}</td>
       <td>${fmt(usd)}</td>
       <td><span class="seg-usd">${fmt(pub)} <small>USD</small></span></td>
     </tr>`;
