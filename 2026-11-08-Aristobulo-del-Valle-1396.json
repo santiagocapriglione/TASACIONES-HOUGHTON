@@ -53,9 +53,9 @@
   "acb-garage": false,
   "f-condicion-on": true,
   "f-condicion": "111,54 m² cubiertos (escritura) · terraza propia ≈ 99,5 m² (cubierto menos el escritorio del entrepiso, ≈12 m², a confirmar) · sin cochera",
-  "f-pp": "1881",
-  "f-pc2": "1785",
-  "f-compd": "44",
+  "f-pp": "2003",
+  "f-pc2": "1901",
+  "f-compd": "29",
   "f-c1-on": true,
   "f-c1-lbl": "PH en venta en Vicente López (partido, Zonaprop)",
   "f-c1": "1018",
@@ -66,8 +66,8 @@
   "f-c3-lbl": "Analizados ficha por ficha",
   "f-c3": "82",
   "f-c4-on": true,
-  "f-c4-lbl": "Comparables que promedian",
-  "f-c4": "44",
+  "f-c4-lbl": "Comparables que promedian (selección Santiago)",
+  "f-c4": "29",
   "f-a-p25": "0",
   "f-a-med": "0",
   "f-a-p75": "0",
@@ -78,9 +78,9 @@
   "f-margen-pub": "5.1",
   "f-pedido": "0",
   "s0-name": "Promedio publicación",
-  "s0-usd": "1881",
+  "s0-usd": "2003",
   "s1-name": "Promedio cierre",
-  "s1-usd": "1785",
+  "s1-usd": "1901",
   "s2-name": "Competitivo 2",
   "s2-usd": "1948",
   "s3-name": "Competitivo 3",
@@ -96,19 +96,27 @@
   "en-alta": "Alta demanda inicial · venta rápida garantizada",
   "ed-alta": "< 20 días · Excelente cantidad de interesados · +60 visualizaciones",
   "f-rebaja": "7",
-  "f-analisis": "METODOLOGÍA — Relevamiento de los 1.018 PH en venta en el partido de Vicente López (Zonaprop, 7/11/2026), geolocalizados: 113 a ≤1,5 km de Aristóbulo del Valle 1396; 82 fichas analizadas una por una. Se excluyen obra nueva, premium con pileta, blocks, lotes y PH a reciclar. Superficie homogeneizada del sujeto: 151,4 m² (111,54 m² cubiertos al 100% + terraza ≈99,5 m² al 40%). Promedio de publicación de los 44 que promedian: USD 1.881/m², valor de referencia USD 285.000.\n\nPOSICIONAMIENTO — Gemelos con terraza grande en planta alta: Lavalle 1400 (104 cub + terraza 78 m², USD 250.000), Laprida a 1 c de Maipú (93 cub + terraza, cocina y baño reciclados, USD 200.000), Melo 1471 (93 cub + terraza, impecable, USD 210.000), Santa Rosa 1300 (reciclado, terraza, USD 260.000) y L. de la Torre 100 (reciclado hace 3 años, USD 250.000). Por USD/m² cubierto esos gemelos dan USD 2.457/m², o sea USD 274.000 para el sujeto: dentro de un 4% del método homogeneizado. Si la terraza se ponderara al 30%, el valor de referencia baja a USD 266.000. Brecha publicación→cierre: 5,1% (Mudafy, PH GBA Norte). Escalera: Competitivo 1 USD 336.000 (reciclados con exterior chico), Competitivo 2 USD 295.000, Competitivo 3 USD 263.000, Estrella USD 246.000 (Lavalle 1400). Publicación sugerida USD 285.000–295.000 (valor sugerido USD 290.000); cierre esperable alrededor de USD 270.000.",
+  "f-analisis": "METODOLOGÍA — Relevamiento de los 1.018 PH en venta en el partido de Vicente López (Zonaprop, 7/11/2026), geolocalizados: 113 a ≤1,5 km de Aristóbulo del Valle 1396; 82 fichas analizadas una por una. Se excluyen obra nueva, premium con pileta, blocks, lotes, PH a reciclar y los que no compiten con un PH reciclado con terraza (PB por pasillo, contrafrentes, unidades sin exterior). Quedan 29 comparables. Superficie homogeneizada del sujeto: 151,4 m² (111,54 m² cubiertos al 100% + terraza ≈99,5 m² al 40%). Promedio de publicación: USD 2.003/m² (mediana 1.944), valor de referencia USD 303.000. 16 de los 29 publican por debajo y 13 por arriba: el promedio representa al segmento.\n\nPOSICIONAMIENTO — Los mejores comparables son PH reciclados en planta alta con terraza: Santa Rosa 1300 (100 m² cub + terraza 50 m², USD 260.000), Lisandro de la Torre al 100 (95 m² cub, reciclado hace 3 años, USD 250.000) y Laprida al 2300 (tríplex en 1er piso, USD 198.000), entre USD 2.170 y 2.390/m². Son más chicos y con menos terraza que el sujeto: por m² cubierto (USD 2.580/m²) darían unos USD 288.000, por eso el valor sugerido queda en el promedio y no en ese nivel. Brecha publicación→cierre: 5,1% (Mudafy, PH GBA Norte). Escalera: Competitivo 1 USD 336.000, Competitivo 2 USD 295.000, Competitivo 3 USD 263.000, Estrella USD 246.000 (Lavalle 1400). Valor de publicación sugerido USD 303.000; cierre esperable alrededor de USD 288.000.",
   "f-agente": "Santiago Capriglione",
   "f-mat": "CPI 5710 · CMCPSI 6703",
-  "f-fecha": "08/11/2026",
+  "f-fecha": "09/11/2026",
   "f-dosvias-on": false,
   "f-rango-desde": "s0",
   "f-rango-hasta": "s2",
   "f-relato-on": true,
   "f-relato": "PH en esquina, en primer piso por escalera, en Vicente López, a una cuadra de Av. Maipú. Reciclado a nuevo: cocina, baño y placares. Luminoso y amplio.\n\nAl subir la escalera se llega a un gran living comedor, con el sector comedor en la esquina, de forma semicircular, todo integrado a la cocina reciclada a nuevo. Tiene un baño completo hecho a nuevo y dos dormitorios con aberturas de DVH y placares nuevos. Bajando tres o cuatro escalones está el tercer dormitorio y, sobre él, un entrepiso que funciona como escritorio, al que se accede desde el fondo de la propiedad.\n\nSobre toda la unidad se extiende una gran terraza propia, con bacha y una hermosa parrilla.\n\nPor su estado, su ubicación en esquina y su terraza, sugerimos publicarla en {VALOR}.",
   "f-valor-modo": "numero",
-  "f-valor-esc": "medio",
+  "f-valor-esc": "s0",
   "f-valor-manual": "0",
-  "f-version": "completa"
+  "f-version": "completa",
+  "s0-n": "1",
+  "s1-n": "",
+  "s2-n": "3",
+  "s3-n": "2",
+  "s4-n": "4",
+  "s5-n": "0",
+  "f-comp-modo": "debajo",
+  "f-comp-seg": "16"
  },
  "qty": {
   "acb-dorm": "3",
@@ -126,76 +134,81 @@
  "comparables": [
   {
    "id": 1,
+   "titulo": "Santa Rosa 1300 · 3 amb. 100 m² cub. · USD 260.000 = 2.167/m² (Competitivo 1 · mejor comparable)",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-ph-de-3-ambientes-reciclado-con-terraza-propia-sin-59527562.html"
+  },
+  {
+   "id": 2,
+   "titulo": "Lisandro de la Torre al 100 · 4 amb. 95 m² cub. · USD 250.000 = 2.381/m² (Competitivo 1 · mejor comparable)",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-ph-3-dorm.-venta-barrio-vicente-lopez-60422085.html"
+  },
+  {
+   "id": 3,
+   "titulo": "Laprida al 2300 · 3 amb. 79 m² cub. · USD 198.000 = 2.386/m² (comparable · mejor comparable)",
+   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-ph-triplex-en-venta-en-florida-vicente-lopez-60206021.html"
+  },
+  {
+   "id": 4,
    "titulo": "Melo al 1400 · 3 amb. 76 m² cub. · USD 198.000 = 2.190/m² (Competitivo 1)",
    "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-ph-3-amb.-con-balcon-terraza-y-parrilla-en-vte.-lopez-59457076.html"
   },
   {
-   "id": 2,
-   "titulo": "Santa Rosa 1300 · 3 amb. 100 m² cub. · USD 260.000 = 2.167/m² (Competitivo 1)",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-ph-de-3-ambientes-reciclado-con-terraza-propia-sin-59527562.html"
-  },
-  {
-   "id": 3,
+   "id": 5,
    "titulo": "25 de Mayo al 1100 · 5 amb. 106 m² cub. · USD 248.000 = 2.160/m² (Competitivo 1)",
    "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-ph-en-venta-de-5-ambientes-en-vicente-lopez-con-60236854.html"
   },
   {
-   "id": 4,
-   "titulo": "Lisandro de la Torre al 100 · 4 amb. 95 m² cub. · USD 250.000 = 2.381/m² (Competitivo 1)",
-   "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-ph-3-dorm.-venta-barrio-vicente-lopez-60422085.html"
-  },
-  {
-   "id": 5,
+   "id": 6,
    "titulo": "Avellaneda al 800 · 4 amb. 90 m² cub. · USD 229.000 = 2.160/m² (Competitivo 1)",
    "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-casa-ph-a-3-cuadras-av-maipu.-antigua-exc-estado-4-60156593.html"
   },
   {
-   "id": 6,
+   "id": 7,
    "titulo": "Lavalle 1900 · 3 amb. 85 m² cub. · USD 210.000 = 2.258/m² (Competitivo 1)",
    "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-ph-venta-florida-3-amb-sum-terraza-60653060.html"
   },
   {
-   "id": 7,
+   "id": 8,
    "titulo": "Aristóbulo del Valle 1400 (misma cuadra) · 3 amb. 76 m² cub. · USD 158.000 = 1.927/m² (Competitivo 2)",
    "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-vta.-ph-3-amb-escritorio-al-fte.-vicente-lopez-60414565.html"
   },
   {
-   "id": 8,
+   "id": 9,
    "titulo": "Melo 1471 · 3 amb. 93 m² cub. · USD 210.000 = 1.927/m² (Competitivo 2)",
    "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-luminoso-ph-planta-alta-primer-piso-por-escalera.-59491783.html"
   },
   {
-   "id": 9,
+   "id": 10,
    "titulo": "Av. Maipú 600 · 3 amb. 70 m² cub. · USD 189.000 = 1.994/m² (Competitivo 2)",
    "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphpa-ph-3-ambientes-al-frente-remodelado-a-nuevo-con-60538535.html"
   },
   {
-   "id": 10,
+   "id": 11,
    "titulo": "Gaspar Campos al 400 · 3 amb. 81 m² cub. · USD 180.000 = 1.944/m² (Competitivo 2)",
    "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-ph-venta-vicente-lopez-3-ambientes-patio-parrilla-60519719.html"
   },
   {
-   "id": 11,
+   "id": 12,
    "titulo": "25 de Mayo al 200 · 4 amb. 125 m² cub. · USD 229.000 = 1.696/m² (Competitivo 3)",
    "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-vicente-lopez-ph-venta-usd-229.000-52144075.html"
   },
   {
-   "id": 12,
+   "id": 13,
    "titulo": "Laprida (V. López. a 1 c de Maipú) · 4 amb. 93 m² cub. · USD 200.000 = 1.721/m² (Competitivo 3)",
    "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-amplio-ph-en-planta-alta-de-4-amb.-exc.-ubicacion-57140765.html"
   },
   {
-   "id": 13,
+   "id": 14,
    "titulo": "Laprida 1200 (V. López) · 3 amb. 62 m² cub. · USD 150.000 = 1.761/m² (Competitivo 3)",
    "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-venta-ph-3-ambientes-con-terraza-en-vicente-lopez-60372865.html"
   },
   {
-   "id": 14,
+   "id": 15,
    "titulo": "Aristóbulo del Valle al 1700 · 3 amb. 81 m² cub. · USD 165.000 = 1.774/m² (Competitivo 3)",
    "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-ph-2-dorm.-venta-vicente-lopez-maipu-rio-60422049.html"
   },
   {
-   "id": 15,
+   "id": 16,
    "titulo": "Lavalle al 1400 · 4 amb. 104 m² cub. · USD 250.000 = 1.623/m² (Estrella)",
    "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-excelente-ph-en-planta-alta-a-media-cuadra-de-av-59211254.html"
   }
