@@ -940,6 +940,14 @@ const g = id => document.getElementById(id);
 const gv = id => parseFloat(g(id)?.value) || 0;
 const fmt = n => Math.round(n).toLocaleString('es-AR').replace(/,/g, '.');
 const fmt1 = n => n.toFixed(1).replace('.', ',');
+// Sustantivo según la tipología (f-tipo / modo): que el informe no diga "departamento" en un PH o una casa
+const tipoNom = () => {
+  const t = ((document.getElementById('f-tipo') || {}).value || '').trim().toLowerCase();
+  if (t.startsWith('ph')) return { s:'PH', p:'PH', Pp:'PH', este:'este PH', como:'los PH como este' };
+  if (isCasa() || t.startsWith('casa')) return { s:'casa', p:'casas', Pp:'Casas', este:'esta casa', como:'las casas como esta' };
+  return { s:'departamento', p:'departamentos', Pp:'Departamentos', este:'este departamento', como:'los departamentos como este' };
+};
+const antOn = () => { const c = document.getElementById('f-ant-on'), v = document.getElementById('f-ant'); return !!(c && c.checked && v && v.value.trim()); };
 const esc = t => String(t).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const segName = s => esc(g(s.id + '-name')?.value.trim() || s.name);
 
@@ -1057,6 +1065,7 @@ function sync() {
   g('p-total').textContent = fmt1(total) + ' m²';
   g('p-tipo').textContent = tipo;
   g('p-ant').textContent = ant;
+  { const st = g('p-ant').closest('.cv-stat'); if (st) st.style.display = antOn() ? '' : 'none'; }
   // ── Valor sugerido de publicación (relato de la página 2 y portada)
   const vModo = (g('f-valor-modo') && g('f-valor-modo').value) || 'numero';
   const vEsc  = (g('f-valor-esc') && g('f-valor-esc').value) || 'medio';
@@ -1095,10 +1104,10 @@ function sync() {
     nSeg = 0; for (let i = a; i <= b; i++) nSeg += gv(ids[i] + '-n');
   }
   window.__nSeg = nSeg > 0 ? Math.round(nSeg) : 0;
-  const compTxt = window.__nSeg ? window.__nSeg + (window.__nSeg === 1 ? ' departamento competidor publicado' : ' departamentos competidores publicados') + ((g('f-comp-modo') && g('f-comp-modo').value === 'debajo') ? ' por debajo de este valor' : ' en este segmento de valor') : '';
+  const compTxt = window.__nSeg ? window.__nSeg + (window.__nSeg === 1 ? ' ' + tipoNom().s + ' competidor publicado' : ' ' + tipoNom().p + ' competidores publicados') + ((g('f-comp-modo') && g('f-comp-modo').value === 'debajo') ? ' por debajo de este valor' : ' en este segmento de valor') : '';
   const vcomp = g('p-valor-comp'); if (vcomp) vcomp.textContent = compTxt;
   const ccs = g('cv-comp-stat'); if (ccs) ccs.style.display = window.__nSeg ? '' : 'none';
-  const ccl = g('p-comp-cv-lbl'); if (ccl) ccl.textContent = (g('f-comp-modo') && g('f-comp-modo').value === 'debajo') ? 'Departamentos competidores publicados por debajo de este valor' : 'Departamentos competidores en el segmento de valor';
+  const ccl = g('p-comp-cv-lbl'); if (ccl) ccl.textContent = (g('f-comp-modo') && g('f-comp-modo').value === 'debajo') ? tipoNom().Pp + ' competidores publicados por debajo de este valor' : tipoNom().Pp + ' competidores en el segmento de valor';
   const ccv = g('p-comp-cv'); if (ccv) ccv.textContent = window.__nSeg ? window.__nSeg + ' publicados' : '—';
   // Con relato, la portada muestra el mismo valor sugerido; sin relato, el rango de siempre
   window.__valorSugCv = relato ? valorSugStr : '';
@@ -1197,9 +1206,9 @@ function sync() {
   const ptRaw = gv('f-pt');
   const pt = (ptRaw > 0 && pp > 0 && Math.abs(ptRaw - pp) / pp >= 0.01) ? ptRaw : 0;
   g('p-mh-pc').textContent = 'USD ' + fmt(pt > 0 ? pt : pc2);
-  g('p-mh-pc-desc').textContent = pt > 0 ? 'Promedio de esta tipología, antigüedad y estado' : 'Promedio cierre – último bimestre';
+  g('p-mh-pc-desc').textContent = pt > 0 ? 'Promedio de esta tipología' + (antOn() ? ', antigüedad' : '') + ' y estado' : 'Promedio cierre – último bimestre';
   g('p-mh-comp').textContent = compd;
-  if (pt > 0) g('p-mbody').innerHTML = `Del análisis comparativo de mercado realizado sobre propiedades de características similares en la zona, el valor de m² promedio se ubica en <strong>USD ${fmt(pp)}</strong>. Más allá de ese promedio de la zona, encontramos que <strong>esta tipología, antigüedad y estado tiene un promedio ${pt < pp ? 'más bajo' : 'más alto'}: USD ${fmt(pt)}/m²</strong>, lo que arroja un valor teórico de <strong>USD ${fmt(Math.round(pt * mhom / 1000) * 1000)}</strong>. Sobre esa base, y frente a los <strong>${compd} competidores directos</strong> publicados hoy, el precio de mercado realista es <strong>${rangoStr}</strong>.`;
+  if (pt > 0) g('p-mbody').innerHTML = `Del análisis comparativo de mercado realizado sobre propiedades de características similares en la zona, el valor de m² promedio se ubica en <strong>USD ${fmt(pp)}</strong>. Más allá de ese promedio de la zona, encontramos que <strong>esta tipología${antOn() ? ', antigüedad' : ''} y estado tiene un promedio ${pt < pp ? 'más bajo' : 'más alto'}: USD ${fmt(pt)}/m²</strong>, lo que arroja un valor teórico de <strong>USD ${fmt(Math.round(pt * mhom / 1000) * 1000)}</strong>. Sobre esa base, y frente a los <strong>${compd} competidores directos</strong> publicados hoy, el precio de mercado realista es <strong>${rangoStr}</strong>.`;
   else g('p-mbody').innerHTML = `Del análisis comparativo de mercado realizado sobre propiedades de características similares en la zona, el valor de m² promedio se ubica en <strong>USD ${fmt(pp)}</strong>, arrojando un valor teórico de <strong>USD ${fmt(valpubAuto)}</strong>. Sin embargo, el valor lo define la <strong>competencia directa disponible hoy</strong>: <strong>${compd}</strong> unidades similares ubican el precio de mercado realista en <strong>${rangoStr}</strong>.`;
   g('p-rango3').textContent = rangoStr;
   // Casas tasadas por una sola vía: el valor y el precio sugerido van acá (no hay página de vías)
@@ -1241,7 +1250,7 @@ function sync() {
   // ── TABLA SEGMENTOS
   const soloCub = !((isOn('f-ms-on') && ms > 0) || (isOn('f-md-on') && md > 0));
   g('p-seg-note').innerHTML = soloCub
-    ? `Cada valor = USD/m² × los <strong>${fmt1(mhom)} m² cubiertos</strong> del departamento. De mayor a menor.`
+    ? `Cada valor = USD/m² × los <strong>${fmt1(mhom)} m² cubiertos</strong> de la propiedad. De mayor a menor.`
     : `Cada valor = USD/m² × <strong>${fmt1(mhom)} m²</strong> (cubiertos al 100%` + ((isOn('f-ms-on') && ms > 0) ? `, semicubiertos al ${Math.round(gv('f-ps'))}%` : '') + ((isOn('f-md-on') && md > 0) ? `, descubiertos al ${Math.round(gv('f-pd'))}%` : '') + `). De mayor a menor.`;
   // la explicación sale del NOMBRE del escalón (los nombres se pueden cambiar), y la del competitivo depende de si queda arriba o abajo del promedio
   const segDesc = (s, usd) => {
@@ -1249,7 +1258,7 @@ function sync() {
     if (n.includes('competitivo')) return usd > segVals['s0'].usd ? 'Por encima del promedio: comparables con alguna mejora que este no tiene'
       : 'Por debajo del promedio: más consultas, menos margen para negociar';
     if (n.includes('cierre')) return SEG_DESC.s1;
-    if (n.includes('promedio')) return SEG_DESC.s0;
+    if (n.includes('promedio')) return 'Lo que piden en promedio ' + tipoNom().como;
     if (n.includes('estrella') || n.includes('vencer')) return SEG_DESC.s4;
     if (n.includes('oportunidad')) return SEG_DESC.s5;
     return SEG_DESC[s.id] || '';
@@ -1269,8 +1278,8 @@ function sync() {
   }).join('');
   if (hayEscSug) {
     const pSug = segVals[vEscSel].pub, pCie = segVals['s1'].pub, pProm = segVals['s0'].pub;
-    g('p-seg-insight').innerHTML = `💡 <strong>Cómo leer esta tabla:</strong> cada fila es un precio posible para este departamento, de mayor a menor. `
-      + `Sugerimos publicar en <strong>USD ${fmt(pSug)}</strong>` + (pProm > pSug ? `, por debajo de lo que piden en promedio los departamentos como este (USD ${fmt(pProm)}): así se destaca frente a la competencia desde el primer día` : `, en línea con lo que piden en promedio los departamentos como este`)
+    g('p-seg-insight').innerHTML = `💡 <strong>Cómo leer esta tabla:</strong> cada fila es un precio posible para ${tipoNom().este}, de mayor a menor. `
+      + `Sugerimos publicar en <strong>USD ${fmt(pSug)}</strong>` + (pProm > pSug ? `, por debajo de lo que piden en promedio ${tipoNom().como} (USD ${fmt(pProm)}): así se destaca frente a la competencia desde el primer día` : `, en línea con lo que piden en promedio ${tipoNom().como}`)
       + (pCie > 0 && pCie < pSug ? (pProm > pSug ? ` y queda margen` : `, con margen`) + ` para negociar hasta el cierre esperable (USD ${fmt(pCie)})` : '') + '.';
   }
 
@@ -1283,6 +1292,8 @@ function sync() {
     eComp = vNum; eCompSrc = 'Valor sugerido de publicación';
     const arriba = SEGS.filter(s => segVals[s.id].pub > vNum).sort((a, b) => segVals[a.id].pub - segVals[b.id].pub)[0];
     if (arriba) { eCons = segVals[arriba.id].pub; eConsSrc = segName(arriba); }
+    else if (pp > 0 && Math.round(pp * mhom / 1000) * 1000 > vNum) { eCons = Math.round(pp * mhom / 1000) * 1000; eConsSrc = 'Promedio de publicación de la zona'; }
+    else { eCons = Math.round(vNum * 1.05 / 1000) * 1000; eConsSrc = '+5% sobre el valor sugerido'; }
     eAlta = Math.round(vNum * (1 - rebaja / 100) / 1000) * 1000;
   }
   const escData = [
