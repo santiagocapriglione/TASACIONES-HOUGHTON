@@ -917,7 +917,7 @@ const SEG_DESC = {
   s1: 'Lo que se espera cobrar después de negociar',
   s2: 'Por debajo del promedio, para destacarse',
   s3: 'Más agresivo: más consultas, menos margen',
-  s4: 'El competidor parecido más barato: el precio a vencer',
+  s4: 'El más parecido entre los más baratos: el precio a vencer',
   s5: 'Lo más barato de la zona (otro producto)',
 };
 
@@ -1257,6 +1257,7 @@ function sync() {
     const n = (g(s.id + '-name')?.value || s.name).toLowerCase();
     if (n.includes('competitivo')) return usd > segVals['s0'].usd ? 'Por encima del promedio: comparables con alguna mejora que este no tiene'
       : 'Por debajo del promedio: más consultas, menos margen para negociar';
+    if (n.includes('sugerid') || n.includes('fijad')) return 'El valor de publicación que sugerimos para ' + tipoNom().este;
     if (n.includes('cierre')) return SEG_DESC.s1;
     if (n.includes('promedio')) return 'Lo que piden en promedio ' + tipoNom().como;
     if (n.includes('estrella') || n.includes('vencer')) return SEG_DESC.s4;
@@ -1277,9 +1278,9 @@ function sync() {
     </tr>`;
   }).join('');
   if (hayEscSug) {
-    const pSug = segVals[vEscSel].pub, pCie = segVals['s1'].pub, pProm = segVals['s0'].pub;
+    const pSug = segVals[vEscSel].pub, pCie = segVals['s1'].pub, pProm = gv('f-pt') > 0 ? Math.round(gv('f-pt') * mhom / 1000) * 1000 : segVals['s0'].pub;
     g('p-seg-insight').innerHTML = `💡 <strong>Cómo leer esta tabla:</strong> cada fila es un precio posible para ${tipoNom().este}, de mayor a menor. `
-      + `Sugerimos publicar en <strong>USD ${fmt(pSug)}</strong>` + (pProm > pSug ? `, por debajo de lo que piden en promedio ${tipoNom().como} (USD ${fmt(pProm)}): así se destaca frente a la competencia desde el primer día` : `, en línea con lo que piden en promedio ${tipoNom().como}`)
+      + `Sugerimos publicar en <strong>USD ${fmt(pSug)}</strong>` + (pProm > pSug ? `, por debajo de lo que piden en promedio ${tipoNom().como} (USD ${fmt(pProm)}): así se destaca frente a la competencia desde el primer día` : (pProm > 0 && pProm < pSug * 0.99 ? `, un poco por encima de lo que piden en promedio ${tipoNom().como} (USD ${fmt(pProm)}; el análisis explica por qué)` : `, en línea con lo que piden en promedio ${tipoNom().como}`))
       + (pCie > 0 && pCie < pSug ? (pProm > pSug ? ` y queda margen` : `, con margen`) + ` para negociar hasta el cierre esperable (USD ${fmt(pCie)})` : '') + '.';
   }
 
@@ -1592,7 +1593,7 @@ function syncComparables() {
       <div class="comp-card-body">
         <div class="comp-card-title">${c.titulo || 'Comparable ' + (i+1)}</div>
         ${c.etiqueta ? `<div class="comp-card-tag ${c.vs || ''}">${esc(c.etiqueta)}</div>` : ''}
-        <div class="comp-card-url">${c.precio && c.m2 ? 'USD ' + fmt(c.precio / c.m2) + '/m² · ' : ''}${c.etiqueta ? 'ver aviso en Zonaprop' : c.url}</div>
+        <div class="comp-card-url">${c.precio && c.m2 ? 'USD ' + fmt(c.precio / c.m2) + '/m² · ' : ''}${c.etiqueta ? ('ver aviso en ' + (/remax\./.test(c.url || '') ? 'RE/MAX' : /argenprop\./.test(c.url || '') ? 'Argenprop' : /mercadolibre\./.test(c.url || '') ? 'Mercado Libre' : 'Zonaprop')) : c.url}</div>
       </div>
       <div class="comp-card-arrow">↗</div>
     </a>`).join('');
