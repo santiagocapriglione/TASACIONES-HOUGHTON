@@ -53,21 +53,21 @@
   "acb-garage": false,
   "f-condicion-on": true,
   "f-condicion": "52,59 m² cubiertos + 2 patios interiores de uso exclusivo de 6,89 m² (escritura). Porcentual 9,55%. Los dos dormitorios originales se unieron en uno: se puede volver a dividir.",
-  "f-pp": "2450",
+  "f-pp": "2414",
   "f-pc2": "2160",
-  "f-compd": "22",
+  "f-compd": "25",
   "f-c1-on": true,
-  "f-c1-lbl": "PH de 40–75 m² cub. en venta en Palermo (Zonaprop)",
-  "f-c1": "147",
+  "f-c1-lbl": "PH de 40–75 m² cub. en venta en Palermo (145 en Zonaprop + 9 que solo publica RE/MAX)",
+  "f-c1": "154",
   "f-c2-on": true,
   "f-c2-lbl": "A ≤1,4 km, analizados ficha por ficha",
-  "f-c2": "63",
+  "f-c2": "67",
   "f-c3-on": true,
   "f-c3-lbl": "Usados en estado similar (sin reciclar a nuevo ni a reciclar)",
-  "f-c3": "30",
+  "f-c3": "33",
   "f-c4-on": true,
   "f-c4-lbl": "Comparables que promedian (competencia directa)",
-  "f-c4": "22",
+  "f-c4": "25",
   "f-a-p25": "0",
   "f-a-med": "0",
   "f-a-p75": "0",
@@ -77,7 +77,7 @@
   "f-via-modo": "max",
   "f-margen-pub": "4.5",
   "f-pedido": "0",
-  "s0-name": "Promedio de su tipología",
+  "s0-name": "Publicación sugerida",
   "s0-usd": "2262",
   "s1-name": "Cierre esperable",
   "s1-usd": "2160",
@@ -96,7 +96,7 @@
   "en-alta": "Alta demanda inicial · venta rápida esperable",
   "ed-alta": "< 20 días · Excelente cantidad de interesados · +60 visualizaciones",
   "f-rebaja": "7",
-  "f-analisis": "METODOLOGÍA — Relevamiento de los PH de 40–75 m² cubiertos en venta en Palermo (Zonaprop, 11/11/2026: 147 avisos en el encabezado, 145 únicos en las 5 páginas). Se bajaron las 145 fichas y se geolocalizaron. Quedan 63 PH a 1,4 km o menos de Paraguay 4519, analizados uno por uno. No promedian: los reciclados a nuevo, que son un producto mejor que el sujeto; los que están a reciclar, que marcan el piso de la zona; los que tienen un exterior mucho mayor; y los que llevan mucho tiempo publicados con pocas consultas. Competencia directa: 22 PH usados en buen estado (en planta baja, primer piso o pisos superiores por escalera). Superficie homogeneizada del sujeto: 55,3 m² (52,59 cubiertos + patios de 6,89 m² al 40%).\n\nMás allá del promedio de la zona (USD 2.450/m² con todos los avisos; mediana 2.490), esta tipología y estado tiene un promedio más bajo: USD 2.262/m² (mediana 2.266), es decir USD 125.000 para el sujeto. De los 22 competidores directos, 11 tienen un USD/m² por debajo de ese promedio y 11 por arriba: el promedio representa al segmento.\n\nPOSICIONAMIENTO — Mejores comparables: J. A. Cabrera 4531 (PB al frente en Palermo Soho, 58 m², USD 119.000 = 2.052/m²), Paraguay 4100 (PB al frente con patio, instalaciones nuevas, USD 120.000 = 2.353/m²) y el 1° piso al frente de la misma cuadra de Paraguay 4500 (74 m² homogeneizados: 71 cubiertos + balcón; USD 165.000 = 2.230/m²). El sujeto tiene a favor la ubicación y los dos patios con ventilación cruzada, y en contra la poca luz y que hoy funciona como 2 ambientes. 7 competidores directos publican por debajo de USD 125.000 de precio total, todos en planta baja o en 1° y 2° piso por escalera. Brecha publicación→cierre: 4,5% (Mudafy, PH Palermo, ventas de los últimos 2 años; Índice m² Real 2 amb CABA 4,62%). Escalera: Competitivo 1 USD 121.000, Competitivo 2 USD 115.000, Competitivo 3 USD 110.000. Estrella USD 107.000 (los USD 1.932/m² de Guise 1900, que se publica en USD 119.000, aplicados a los 55,3 m² del sujeto): Guise 1900 es el PB de 3 ambientes más parecido al sujeto entre los más baratos (Güemes 4100 y Bonpland 2300 piden menos, pero son un 2° y un 1° piso por escalera de otra configuración). Cierre esperable ~USD 120.000. Si se vuelve a dividir el dormitorio (3 ambientes), compite contra los 3 ambientes de la zona y gana salida. Valor de publicación sugerido: USD 125.000.",
+  "f-analisis": "METODOLOGÍA — Relevamiento de los PH de 40–75 m² cubiertos en venta en Palermo en Zonaprop (11/11/2026: 147 avisos en el encabezado, 145 únicos) y en RE/MAX (16/11/2026: 72 PH en Palermo, 24 dentro del filtro, 15 de ellos ya publicados en Zonaprop). Todas las fichas se geolocalizaron. Quedan 67 PH a 1,4 km o menos de Paraguay 4519, analizados uno por uno. No promedian: los reciclados a nuevo, que son un producto mejor que el sujeto; los que están a reciclar, que marcan el piso de la zona; los que tienen un exterior mucho mayor; y los que llevan mucho tiempo publicados con pocas consultas. Competencia directa: 25 PH usados en buen estado (en planta baja, primer piso o pisos superiores por escalera). Superficie homogeneizada del sujeto: 55,3 m² (52,59 cubiertos + patios de 6,89 m² al 40%).\n\nMás allá del promedio de la zona (USD 2.414/m² con todos los avisos; mediana 2.353), esta tipología y estado tiene un promedio más bajo: USD 2.211/m² (mediana 2.119). De los 25 competidores directos, 13 tienen un USD/m² por debajo de ese promedio y 12 por arriba. Sugerimos publicar en USD 2.262/m² (USD 125.000), un 2,3% por encima del promedio de su tipología: los tres competidores directos que suma RE/MAX y que tiran el promedio para abajo son unidades con alguna desventaja frente al sujeto (Honduras 4000 tiene 43 m²; J. A. Cabrera 4200 es una PB al fondo de pasillo; Vidt 1900 es un 2° piso por escalera), y el sujeto tiene a favor la ubicación en Palermo Soho y los dos patios con ventilación cruzada.\n\nPOSICIONAMIENTO — Mejores comparables: J. A. Cabrera 4531 (PB al frente en Palermo Soho, 58 m², USD 119.000 = 2.052/m²), Paraguay 4100 (PB al frente con patio, instalaciones nuevas, USD 120.000 = 2.353/m²) y el 1° piso al frente de la misma cuadra de Paraguay 4500 (74 m² homogeneizados: 71 cubiertos + balcón; USD 165.000 = 2.230/m²). A tener en cuenta: Paraguay 4300 (RE/MAX, a 220 m) es un 2 ambientes reciclado a nuevo en 1° piso por escalera, sin patios, publicado en USD 100.000 (1.852/m²); es el aviso más cercano que un comprador va a comparar, y su precio bajo para un reciclado es la principal objeción al valor sugerido. 8 competidores directos publican por debajo de USD 125.000 de precio total, todos en planta baja o en 1° y 2° piso por escalera. Brecha publicación→cierre: 4,5% (Mudafy, PH Palermo, ventas de los últimos 2 años; Índice m² Real 2 amb CABA 4,62%). Escalera: Competitivo 1 USD 121.000, Competitivo 2 USD 115.000, Competitivo 3 USD 110.000. Estrella USD 107.000 (los USD 1.932/m² de Guise 1900, que se publica en USD 119.000, aplicados a los 55,3 m² del sujeto): Guise 1900 es la PB de 3 ambientes más parecida al sujeto entre las más baratas. Cierre esperable ~USD 120.000. Si se vuelve a dividir el dormitorio (3 ambientes), compite contra los 3 ambientes de la zona y gana salida. Valor de publicación sugerido: USD 125.000.",
   "f-agente": "Santiago Capriglione",
   "f-mat": "CPI 5710 · CMCPSI 6703",
   "f-fecha": "11/11/2026",
@@ -109,15 +109,15 @@
   "f-valor-esc": "s0",
   "f-valor-manual": "0",
   "f-version": "completa",
-  "s0-n": "22",
+  "s0-n": "25",
   "s1-n": "",
   "s2-n": "4",
   "s3-n": "3",
   "s4-n": "1",
   "s5-n": "2",
   "f-comp-modo": "debajo",
-  "f-comp-seg": "7",
-  "f-pt": "2262"
+  "f-comp-seg": "8",
+  "f-pt": "2211"
  },
  "qty": {
   "acb-dorm": "1",
@@ -162,6 +162,15 @@
   },
   {
    "id": 4,
+   "titulo": "Paraguay 4300 · 2 amb. 54 m² cub. · USD 100.000",
+   "url": "https://www.remax.com.ar/listings/ph-2-amb-reciclado-venta-en-palermo-sin-expensas",
+   "precio": 100000,
+   "m2": 54.0,
+   "etiqueta": "A tener en cuenta: reciclado a nuevo a 220 m, 1° piso por escalera (RE/MAX)",
+   "vs": "barato"
+  },
+  {
+   "id": 5,
    "titulo": "Charcas 4300 · 3 amb. 51 m² cub. (54,2 homog.) · USD 169.000",
    "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-moderno-3-ambientes-o-2-con-escritorio-toilette-60541688.html",
    "precio": 169000,
@@ -170,7 +179,7 @@
    "vs": "caro"
   },
   {
-   "id": 5,
+   "id": 6,
    "titulo": "Paraguay 4653 · 2 amb. 52 m² cub. (52,8 homog.) · USD 150.000",
    "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-reciclado-2-amb-con-patio-palermo-60341421.html",
    "precio": 150000,
@@ -179,7 +188,7 @@
    "vs": "caro"
   },
   {
-   "id": 6,
+   "id": 7,
    "titulo": "Güemes 3600 · 3 amb. 67 m² cub. · USD 142.000",
    "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-ph-3-ambientes-en-impecable-estado-alto-palermo-sin-59866384.html",
    "precio": 142000,
@@ -188,7 +197,7 @@
    "vs": "caro"
   },
   {
-   "id": 7,
+   "id": 8,
    "titulo": "Acuña de Figueroa 1600 · 4 amb. 54 m² cub. (60,4 homog.) · USD 139.000",
    "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-venta-oportunidad-ph-4-amb-divisible-palermo-s-exp-60492054.html",
    "precio": 139000,
@@ -197,7 +206,7 @@
    "vs": "caro"
   },
   {
-   "id": 8,
+   "id": 9,
    "titulo": "Malabia 1300 · 3 amb. 68 m² cub. · USD 135.000",
    "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-depto.-tipo-casa-de-3-ambientes-en-venta-en-palermo-60463510.html",
    "precio": 135000,
@@ -206,7 +215,7 @@
    "vs": "caro"
   },
   {
-   "id": 9,
+   "id": 10,
    "titulo": "A. J. Carranza 1917 · 2 amb. 60 m² cub. (62,0 homog.) · USD 130.000",
    "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-ph-sin-expensas-en-venta-en-palermo-hollywood.-caba-59961524.html",
    "precio": 130000,
@@ -215,7 +224,16 @@
    "vs": "caro"
   },
   {
-   "id": 10,
+   "id": 11,
+   "titulo": "Vidt 1900 · 3 amb. 61 m² cub. (72,8 homog.) · USD 130.000",
+   "url": "https://www.remax.com.ar/listings/venta-ph-3-ambientes-palermo",
+   "precio": 130000,
+   "m2": 72.8,
+   "etiqueta": "Competencia directa: 2° piso por escalera (RE/MAX)",
+   "vs": "caro"
+  },
+  {
+   "id": 12,
    "titulo": "Humboldt 2475 · 3 amb. 59 m² cub. · USD 125.000",
    "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-ph-en-venta-en-palermo-hollywood-de-3-ambientes-60518173.html",
    "precio": 125000,
@@ -224,7 +242,16 @@
    "vs": "barato"
   },
   {
-   "id": 11,
+   "id": 13,
+   "titulo": "J. A. Cabrera 4200 · 3 amb. 55,7 m² cub. (66,5 homog.) · USD 125.000",
+   "url": "https://www.remax.com.ar/listings/ph-3-ambientes-con-patio-sin-expensas-en-palermo",
+   "precio": 125000,
+   "m2": 66.5,
+   "etiqueta": "Competencia directa: PB al fondo con patio (RE/MAX)",
+   "vs": "barato"
+  },
+  {
+   "id": 14,
    "titulo": "Guise 1900 · 3 amb. 60 m² cub. (61,6 homog.) · USD 119.000",
    "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-venta-ph-3-ambientes-palermo-apto-profesional-60467931.html",
    "precio": 119000,
@@ -233,7 +260,7 @@
    "vs": "barato"
   },
   {
-   "id": 12,
+   "id": 15,
    "titulo": "Malabia 1300 · 2 amb. 52 m² cub. (55,2 homog.) · USD 115.000",
    "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-depto.-tipo-casa-de-2-ambientes-en-venta-en-palermo-60463511.html",
    "precio": 115000,
@@ -242,12 +269,21 @@
    "vs": "barato"
   },
   {
-   "id": 13,
+   "id": 16,
    "titulo": "Av. J. B. Justo 600 · 2 amb. 40 m² cub. (42,4 homog.) · USD 85.000",
    "url": "https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-2-amb-refaccionado.-balcon.-excelente-zona.-ph.-60613969.html",
    "precio": 85000,
    "m2": 42.4,
    "etiqueta": "Competitivo 3",
+   "vs": "barato"
+  },
+  {
+   "id": 17,
+   "titulo": "Honduras 4000 · 2 amb. 43,3 m² cub. (46,0 homog.) · USD 85.000",
+   "url": "https://www.remax.com.ar/listings/ph-2-amb-en-pb-y-patio-en-palermo-bajas-expensas",
+   "precio": 85000,
+   "m2": 46.0,
+   "etiqueta": "Competencia directa: PB al frente con patio (RE/MAX)",
    "vs": "barato"
   }
  ]
