@@ -1193,11 +1193,13 @@ function sync() {
 
   // ── MERCADO
   g('p-mh-pp').textContent = 'USD ' + fmt(pp);
-  const pt = gv('f-pt');
+  // El "otro promedio" de la tipología solo tiene sentido si difiere del de la zona (≥1%); si no, se usa el texto común.
+  const ptRaw = gv('f-pt');
+  const pt = (ptRaw > 0 && pp > 0 && Math.abs(ptRaw - pp) / pp >= 0.01) ? ptRaw : 0;
   g('p-mh-pc').textContent = 'USD ' + fmt(pt > 0 ? pt : pc2);
   g('p-mh-pc-desc').textContent = pt > 0 ? 'Promedio de esta tipología, antigüedad y estado' : 'Promedio cierre – último bimestre';
   g('p-mh-comp').textContent = compd;
-  if (pt > 0) g('p-mbody').innerHTML = `Del análisis comparativo de mercado realizado sobre propiedades de características similares en la zona, el valor de m² promedio se ubica en <strong>USD ${fmt(pp)}</strong>. Más allá de ese promedio de la zona, encontramos que <strong>esta tipología, antigüedad y estado tiene otro promedio: USD ${fmt(pt)}/m²</strong>, lo que arroja un valor teórico de <strong>USD ${fmt(Math.round(pt * mhom / 1000) * 1000)}</strong>. Sobre esa base, y frente a los <strong>${compd} competidores directos</strong> publicados hoy, el precio de mercado realista es <strong>${rangoStr}</strong>.`;
+  if (pt > 0) g('p-mbody').innerHTML = `Del análisis comparativo de mercado realizado sobre propiedades de características similares en la zona, el valor de m² promedio se ubica en <strong>USD ${fmt(pp)}</strong>. Más allá de ese promedio de la zona, encontramos que <strong>esta tipología, antigüedad y estado tiene un promedio ${pt < pp ? 'más bajo' : 'más alto'}: USD ${fmt(pt)}/m²</strong>, lo que arroja un valor teórico de <strong>USD ${fmt(Math.round(pt * mhom / 1000) * 1000)}</strong>. Sobre esa base, y frente a los <strong>${compd} competidores directos</strong> publicados hoy, el precio de mercado realista es <strong>${rangoStr}</strong>.`;
   else g('p-mbody').innerHTML = `Del análisis comparativo de mercado realizado sobre propiedades de características similares en la zona, el valor de m² promedio se ubica en <strong>USD ${fmt(pp)}</strong>, arrojando un valor teórico de <strong>USD ${fmt(valpubAuto)}</strong>. Sin embargo, el valor lo define la <strong>competencia directa disponible hoy</strong>: <strong>${compd}</strong> unidades similares ubican el precio de mercado realista en <strong>${rangoStr}</strong>.`;
   g('p-rango3').textContent = rangoStr;
   // Casas tasadas por una sola vía: el valor y el precio sugerido van acá (no hay página de vías)
